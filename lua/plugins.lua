@@ -57,6 +57,8 @@ return require('packer').startup(function()
   use 'mhinz/vim-signify'
   use 'itchyny/lightline.vim'
   use 'sainnhe/sonokai'
+  use 'romgrk/barbar.nvim'
+  use 'ms-jpq/chadtree'
 
 
 end)
