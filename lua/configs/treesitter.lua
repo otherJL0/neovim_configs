@@ -19,6 +19,23 @@ local _incremental_selection = {
   },
 }
 
+local _playground = {
+  enable = true,
+  disable = {},
+  updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
+  persist_queries = false -- Whether the query persists across vim sessions
+}
+
+local _query_linter = {
+  enable = true,
+  use_virtual_text = true,
+  lint_events = {"BufWrite", "CursorHold"},
+}
+
+local _refactor = {
+  highlight_definitions = { enable = true },
+}
+
 
 -- Load all local settings
 require'nvim-treesitter.configs'.setup {
@@ -26,4 +43,7 @@ require'nvim-treesitter.configs'.setup {
   highlight = _hightlight,
   indent = _indent,
   incremental_selection = _incremental_selection,
+  playground = _playground,
+  query_linter = _query_linter,
+  refactor = _refactor,
 }
