@@ -46,5 +46,13 @@ return require('packer').startup(function()
     requires = { 'nvim-telescope/telescope.nvim' }
   }
 
+  -- Dadbod SQL plugins
+  use {
+    'kristijanhusak/vim-dadbod-ui',
+    requires = {{'tpope/vim-dadbod'}, {'kristijanhusak/vim-dadbod-completion'}}
+  }
+
+  use 'cohama/lexima.vim'
+
 
 end)
