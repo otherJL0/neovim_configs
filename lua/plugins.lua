@@ -13,6 +13,7 @@ return require('packer').startup(function()
     'scalameta/nvim-metals',
     'nvim-lua/completion-nvim',
     'norcalli/snippets.nvim',
+    'nvim-lua/lsp-status.nvim',
   }
 
   -- Treesitter Plugins
@@ -53,6 +54,9 @@ return require('packer').startup(function()
   }
 
   use 'cohama/lexima.vim'
+  use 'mhinz/vim-signify'
+  use 'itchyny/lightline.vim'
+  use 'sainnhe/sonokai'
 
 
 end)
