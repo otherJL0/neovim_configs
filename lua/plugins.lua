@@ -9,6 +9,7 @@ return require('packer').startup(function()
   -- LSP Plugins
   use {
     'neovim/nvim-lspconfig',
+    'mattn/vim-lsp-settings',
     'mfussenegger/nvim-jdtls',
     'scalameta/nvim-metals',
     'nvim-lua/completion-nvim',
