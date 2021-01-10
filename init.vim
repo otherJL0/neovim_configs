@@ -8,5 +8,5 @@ lua require('plugins')
 
 " Load plugin settings
 lua require('configs/lsp')
-lua require('configs/treesitter')
+lua require('configs/treesitter/setup')
 lua require('configs/telescope')

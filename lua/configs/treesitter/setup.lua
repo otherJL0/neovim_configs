@@ -1,5 +1,10 @@
--- settings per component
+-- Settings for extensions
+require'_textobjects'
+require'_refactor'
+require'_tree_docs'
+require'_playground'
 
+-- Settings for built-in modules
 local _highlight = {
   enable = true,
   use_language_tree = true
@@ -19,31 +24,15 @@ local _incremental_selection = {
   },
 }
 
-local _playground = {
-  enable = true,
-  disable = {},
-  updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
-  persist_queries = false -- Whether the query persists across vim sessions
-}
-
-local _query_linter = {
-  enable = true,
-  use_virtual_text = true,
-  lint_events = {"BufWrite", "CursorHold"},
-}
-
-local _refactor = {
-  highlight_definitions = { enable = true },
-}
-
-
 -- Load all local settings
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   highlight = _hightlight,
   indent = _indent,
   incremental_selection = _incremental_selection,
-  playground = _playground,
-  query_linter = _query_linter,
-  refactor = _refactor,
+  playground = _playground.setup,
+  query_linter = _playground.query_linter,
+  textobjects = _textobjects.setup,
+  refactor = _refactor.setup,
+  tree_docs = _tree_docs.setup,
 }
