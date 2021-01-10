@@ -7,4 +7,6 @@ lua require('packer_init')
 lua require('plugins')
 
 " Load plugin settings
-lua require('configs/*')
+lua require('configs/lsp')
+lua require('configs/treesitter')
+lua require('configs/telescope')
