@@ -5,7 +5,15 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function()
   -- Packer can manage itself as an optional plugin
   use {'wbthomason/packer.nvim', opt = true}
-  use {'neovim/nvim-lspconfig'}
+
+  -- LSP Plugins
+  use {
+    'neovim/nvim-lspconfig',
+    'mfussenegger/nvim-jdtls',
+    'scalameta/nvim-metals',
+    'nvim-lua/completion-nvim',
+    'norcalli/snippets.nvim',
+  }
 
   -- Treesitter Plugins
   use {
@@ -16,6 +24,15 @@ return require('packer').startup(function()
     'nvim-treesitter/playground',
     requires = {'nvim-treesitter/nvim-treesitter'}
   }
+
+  -- Debug Adapter Protocol
+  use {
+    'theHamsta/nvim-dap-virtual-text',
+    'mfussenegger/nvim-dap-python',
+    'nvim-telescope/telescope-dap.nvim',
+    requires = {'mfussenegger/nvim-dap'}
+  }
+
 
 
   -- Telescope
@@ -28,7 +45,6 @@ return require('packer').startup(function()
     'nvim-telescope/telescope-packer.nvim',
     requires = { 'nvim-telescope/telescope.nvim' }
   }
-
 
 
 end)
