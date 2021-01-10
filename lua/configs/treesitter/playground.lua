@@ -1,6 +1,6 @@
-_playground = {}
+playground = {}
 
-function setup()
+function playground.setup()
   return {
     enable = true,
     disable = {},
@@ -9,7 +9,7 @@ function setup()
   }
 end
 
-function _query_linter()
+function playground.query_linter()
   return {
     enable = true,
     use_virtual_text = true,
@@ -17,6 +17,6 @@ function _query_linter()
   }
 end
 
-return _playground
+return playground
 
 

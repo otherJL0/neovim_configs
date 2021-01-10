@@ -1,5 +1,6 @@
-_refactor = {}
-function setup()
+refactor = {}
+
+function refactor.setup()
   return {
     highlight_definitions = { enable = true },
     highlight_current_scope = { enable = true },
@@ -20,4 +21,4 @@ function setup()
   }
 end
 
-return _refactor
+return refactor

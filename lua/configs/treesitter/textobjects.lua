@@ -1,5 +1,6 @@
-_textobjects = {}
-function setup()
+textobjects = {}
+
+function textobjects.setup()
   return {
     select = {
       enable = true,
@@ -49,4 +50,4 @@ function setup()
   }
 end
 
-return _textobjects
+return textobjects
