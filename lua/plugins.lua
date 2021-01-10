@@ -6,5 +6,18 @@ return require('packer').startup(function()
   -- Packer can manage itself as an optional plugin
   use {'wbthomason/packer.nvim', opt = true}
   use {'neovim/nvim-lspconfig'}
-  use {'nvim-treesitter/nvim-treesitter'}
+
+  -- Treesitter Plugins
+
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    'nvim-treesitter/nvim-treesitter-refactor',
+    'nvim-treesitter/nvim-tree-docs',
+    'nvim-treesitter/playground',
+    requires = {'nvim-treesitter/nvim-treesitter'}
+  }
+
+
+
 end)
