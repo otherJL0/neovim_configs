@@ -54,6 +54,12 @@ return require('packer').startup(function()
     requires = {{'tpope/vim-dadbod'}, {'kristijanhusak/vim-dadbod-completion'}}
   }
 
+  -- Async plugins
+  use {
+    'skywind3000/asynctasks.vim',
+    requires = {'skywind3000/asyncrun.vim'}
+  }
+
   use 'cohama/lexima.vim'
   use 'mhinz/vim-signify'
   use 'itchyny/lightline.vim'
