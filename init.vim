@@ -19,3 +19,4 @@ source $HOME/.config/nvim/general/colorscheme.vim
 source $HOME/.config/nvim/tabline/barbar.vim
 source $HOME/.config/nvim/file_manager/chadtree.vim
 source $HOME/.config/nvim/vimwiki/vimwiki.vim
+source $HOME/.config/nvim/quickscope/quickscope.vim
