@@ -76,6 +76,7 @@ return require('packer').startup(function()
     'simnalamburt/vim-mundo',
     'chrisbra/csv.vim',
     'SidOfc/mkdx',
+    'vimwiki/vimwiki',
   }
 
 
