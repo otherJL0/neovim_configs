@@ -60,12 +60,23 @@ return require('packer').startup(function()
     requires = {'skywind3000/asyncrun.vim'}
   }
 
-  use 'cohama/lexima.vim'
+  use 'windwp/nvim-autopairs'
   use 'mhinz/vim-signify'
   use 'itchyny/lightline.vim'
   use 'sainnhe/sonokai'
   use 'romgrk/barbar.nvim'
   use 'ms-jpq/chadtree'
+
+  use {
+    'wellle/targets.vim',
+    'tpope/vim-surround',
+    'machakann/vim-sandwich',
+    'unblevable/quick-scope',
+    'tpope/vim-obsession',
+    'simnalamburt/vim-mundo',
+    'chrisbra/csv.vim',
+    'SidOfc/mkdx',
+  }
 
 
 end)

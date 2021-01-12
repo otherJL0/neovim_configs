@@ -12,7 +12,6 @@ lua require('configs/treesitter/setup')
 lua require('configs/telescope/setup')
 
 source $HOME/.config/nvim/telescope/mappings.vim
-source $HOME/.config/nvim/lexima/lexima.vim
 source $HOME/.config/nvim/status/lsp_status.vim
 source $HOME/.config/nvim/status/lightline.vim
 source $HOME/.config/nvim/general/colorscheme.vim
