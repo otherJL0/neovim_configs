@@ -4,7 +4,7 @@ local lspconfig = require'lspconfig'
 
 
 lspconfig.jdtls.setup{ 
-  cmd = _java.setup(),
+  cmd = _java.cmd(),
   filetypes = _java.filetypes()
 }
 
