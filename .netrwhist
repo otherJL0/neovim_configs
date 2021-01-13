@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =6
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/home/jlopez/bitbucket/nssp/hl7shreddtool/ParserLabCorp/build'
 let g:netrw_dirhist_6='/home/jlopez/bitbucket/nssp/charon/charon/build'
 let g:netrw_dirhist_5='/home/jlopez/.config/nvim/status'
 let g:netrw_dirhist_4='/home/jlopez/.config/nvim/plugin'

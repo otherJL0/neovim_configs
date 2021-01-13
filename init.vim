@@ -21,3 +21,11 @@ source $HOME/.config/nvim/file_manager/chadtree.vim
 source $HOME/.config/nvim/vimwiki/vimwiki.vim
 source $HOME/.config/nvim/quickscope/quickscope.vim
 source $HOME/.config/nvim/chadtree/chadtree.vim
+
+
+if has('nvim-0.5')
+  augroup lsp
+    au!
+      au FileType java lua require('jdtls').start_or_attach({cmd = {'/home/jlopez/.local/share/vim-lsp-settings/servers/eclipse-jdt-ls/eclipse-jdt-ls'}})
+  augroup end
+endif
