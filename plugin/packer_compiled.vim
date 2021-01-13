@@ -14,6 +14,13 @@ local plugins = {
     only_sequence = false,
     only_setup = false,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/opt/packer.nvim"
+  },
+  ["vim-lsp-settings"] = {
+    commands = { "LspServerInstall" },
+    loaded = false,
+    only_sequence = false,
+    only_setup = false,
+    path = "/home/jlopez/.local/share/nvim/site/pack/packer/opt/vim-lsp-settings"
   }
 }
 
@@ -123,9 +130,10 @@ _packer_load = function(names, cause)
       vim.fn.feedkeys(prefix, 'n')
     end
 
-    -- NOTE: I'm not sure if the below substitution is correct; it might correspond to the literal
-    -- characters \<Plug> rather than the special <Plug> key.
-    vim.fn.feedkeys(string.gsub(string.gsub(cause.keys, '^<Plug>', '\\<Plug>') .. extra, '<[cC][rR]>', '\r'))
+    local formatted_plug_key = string.format('%c%c%c', 0x80, 253, 83)
+    local keys = string.gsub(cause.keys, '^<Plug>', formatted_plug_key) .. extra
+    local escaped_keys = string.gsub(keys, '<[cC][rR]>', '\r')
+    vim.fn.feedkeys(escaped_keys)
   elseif cause.event then
     vim.cmd(fmt('doautocmd <nomodeline> %s', cause.event))
   elseif cause.ft then
@@ -148,6 +156,7 @@ endfunction
 
 
 " Command lazy-loads
+command! -nargs=* -range -bang -complete=file LspServerInstall call s:load(['vim-lsp-settings'], { "cmd": "LspServerInstall", "l1": <line1>, "l2": <line2>, "bang": <q-bang>, "args": <q-args> })
 
 " Keymap lazy-loads
 
@@ -155,4 +164,5 @@ augroup packer_load_aucmds
   au!
   " Filetype lazy-loads
   " Event lazy-loads
+  " Function lazy-loads
 augroup END

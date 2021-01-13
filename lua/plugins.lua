@@ -6,10 +6,10 @@ return require('packer').startup(function()
   -- Packer can manage itself as an optional plugin
   use {'wbthomason/packer.nvim', opt = true}
 
+    use {'mattn/vim-lsp-settings', cmd = {'LspServerInstall'}}
   -- LSP Plugins
   use {
     'neovim/nvim-lspconfig',
-    'mattn/vim-lsp-settings',
     'mfussenegger/nvim-jdtls',
     'scalameta/nvim-metals',
     'nvim-lua/completion-nvim',
