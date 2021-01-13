@@ -26,3 +26,13 @@ lspconfig.jdtls.setup{
   filetypes = {"java", "gradle", "build", "groovy"}
 }
 
+
+local groovy_cmd = {
+  "/usr/bin/java",
+  "-jar",
+  "/home/jlopez/.local/share/vim-lsp-settings/servers/groovy-language-server/build/libs/groovy-language-server-all.jar"
+}
+
+lspconfig.groovyls.setup{
+  cmd = groovy_cmd
+}
