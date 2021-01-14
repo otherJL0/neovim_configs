@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =0
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/jlopez/.config/nvim/lua/configs/lsp'
 let g:netrw_dirhist_0='/home/jlopez/.local/share/vim-lsp-settings/servers/vim-language-server'
 let g:netrw_dirhist_9='/home/jlopez/.local/share/vim-lsp-settings/servers'
 let g:netrw_dirhist_8='/home/jlopez/bitbucket/nssp/hl7shreddtool/.git'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_5='/home/jlopez/.config/nvim/status'
 let g:netrw_dirhist_4='/home/jlopez/.config/nvim/plugin'
 let g:netrw_dirhist_3='/home/jlopez/.config/nvim'
 let g:netrw_dirhist_2='/home/jlopez/.config/nvim/lexima'
-let g:netrw_dirhist_1='/home/jlopez/.config/nvim/lua/configs/lsp'

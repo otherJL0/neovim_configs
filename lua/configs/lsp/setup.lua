@@ -32,12 +32,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   }
 )
 
-lspconfig.jdtls.setup{
-  on_attach = completion.on_attach,
-  cmd = _jdtls.cmd(),
-  filetypes = _jdtls.filetypes()
-}
-
 lspconfig.groovyls.setup{
   on_attach = completion.on_attach,
   cmd = _groovyls.cmd()
