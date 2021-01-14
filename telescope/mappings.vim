@@ -13,5 +13,4 @@ nnoremap <leader>gs <cmd>Telescope git_status<cr>
 nnoremap <leader>gl <cmd>Telescope git_commits<cr>
 nnoremap <leader>gb <cmd>Telescope git_branches<cr>
 
-
-
+nnoremap <leader>ref <cmd>Telescope lsp_references<cr>

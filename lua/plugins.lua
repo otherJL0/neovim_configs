@@ -87,6 +87,7 @@ return require('packer').startup(function(use)
     'vimwiki/vimwiki',
     'tpope/vim-fugitive',
     'tpope/vim-endwise',
+    'cohama/lexima.vim',
   }
 
 

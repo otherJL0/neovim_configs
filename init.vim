@@ -10,7 +10,7 @@ lua require('plugins')
 lua require('configs/lsp/setup')
 lua require('configs/treesitter/setup')
 lua require('configs/telescope/setup')
-lua require('nvim-autopairs').setup()
+" lua require('nvim-autopairs').setup()
 
 source $HOME/.config/nvim/telescope/mappings.vim
 source $HOME/.config/nvim/status/lsp_status.vim
@@ -24,3 +24,4 @@ source $HOME/.config/nvim/quickscope/quickscope.vim
 source $HOME/.config/nvim/chadtree/chadtree.vim
 source $HOME/.config/nvim/completion/completion.vim
 source $HOME/.config/nvim/jdtls/jdtls.vim
+source $HOME/.config/nvim/lexima/lexima.vim
