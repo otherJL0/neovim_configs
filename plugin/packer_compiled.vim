@@ -130,10 +130,8 @@ _packer_load = function(names, cause)
       vim.fn.feedkeys(prefix, 'n')
     end
 
-    local formatted_plug_key = string.format('%c%c%c', 0x80, 253, 83)
-    local keys = string.gsub(cause.keys, '^<Plug>', formatted_plug_key) .. extra
-    local escaped_keys = string.gsub(keys, '<[cC][rR]>', '\r')
-    vim.fn.feedkeys(escaped_keys)
+    local escaped_keys = vim.api.nvim_replace_termcodes(cause.keys .. extra, true, true, true)
+    vim.api.nvim_feedkeys(escaped_keys, 'm', true)
   elseif cause.event then
     vim.cmd(fmt('doautocmd <nomodeline> %s', cause.event))
   elseif cause.ft then
@@ -146,6 +144,8 @@ end
 
 -- Pre-load configuration
 -- Post-load configuration
+-- Config for: gitsigns.nvim
+loadstring("\27LJ\2\0026\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0")()
 -- Conditional loads
 -- Load plugins in order defined by `after`
 END

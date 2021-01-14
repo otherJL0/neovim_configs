@@ -89,6 +89,25 @@ return require('packer').startup(function(use)
     'tpope/vim-endwise',
     'cohama/lexima.vim',
   }
+  use {
+    'theniceboy/nvim-deus',
+  }
 
+    use {
+    'rockerBOO/boo-colorscheme-nvim',
+    'ishan9299/modus-theme-vim',
+    requires = {'tjdevries/colorbuddy.nvim'}
+  }
+    use {'tjdevries/colorbuddy.nvim'}
+
+  use {
+      'lewis6991/gitsigns.nvim',
+      requires = {
+          'nvim-lua/plenary.nvim'
+        },
+      config = function()
+        require('gitsigns').setup()
+      end
+  }
 
 end)
