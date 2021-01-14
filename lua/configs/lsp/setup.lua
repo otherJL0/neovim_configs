@@ -1,3 +1,12 @@
+local lspconfig = require'lspconfig'
+local util = require'lspconfig/util'
+local completion = require'completion'
+
+local _sumneko_lua = require'configs.lsp.sumneko'
+local _jdtls = require'configs.lsp.java'
+local _groovyls = require'configs.lsp.groovy'
+local _pyright = require'configs.lsp.pyright'
+
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
     -- Enable underline, use default values
@@ -23,25 +32,25 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   }
 )
 
-
-local _java = require'configs.lsp.java'
-local _groovy = require'configs.lsp.groovy'
-require'configs.lsp.sumneko'
-require'configs.lsp.pyright'
-local lspconfig = require'lspconfig'
-local util = require 'lspconfig/util'
-
-
-
 lspconfig.jdtls.setup{
-  on_attach=require'completion'.on_attach,
-  cmd = _java.cmd(),
-  filetypes = _java.filetypes()
+  on_attach = completion.on_attach,
+  cmd = _jdtls.cmd(),
+  filetypes = _jdtls.filetypes()
 }
 
-lspconfig.groovyls.setup{ cmd = _groovy.cmd() }
+lspconfig.groovyls.setup{
+  on_attach = completion.on_attach,
+  cmd = _groovyls.cmd()
+}
 
 lspconfig.pyright.setup{
-on_attach=require'completion'.on_attach,
-root_dir = util.root_pattern(".git", "setup.py", "setup.cfg", "requirements.txt", "pyproject.toml")
+  on_attach = completion.on_attach,
+  root_dir = _pyright.root_dir(),
+  settings = _pyright.settings()
+}
+
+lspconfig.sumneko_lua.setup{
+  on_attach = _sumneko_lua.on_attach(),
+  cmd = _sumneko_lua.cmd(),
+  settints = _sumneko_lua.settings()
 }

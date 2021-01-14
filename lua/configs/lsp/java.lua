@@ -1,7 +1,7 @@
 java = {}
 
  function java.cmd()
-  return { 
+  return {
 "/usr/bin/java",
  "-Declipse.application=org.eclipse.jdt.ls.core.id1",
  "-Dosgi.bundles.defaultStartLevel=4",
@@ -18,11 +18,11 @@ java = {}
  "/home/jlopez/.local/share/vim-lsp-settings/servers/eclipse-jdt-ls/data",
  "--add-modules=ALL-SYSTEM",
  "--add-opens java.base/java.util=ALL-UNNAMED",
- "--add-opens java.base/java.lang=ALL-UNNAMED" 
+ "--add-opens java.base/java.lang=ALL-UNNAMED"
 }
 end
 
-function java.filetypes() 
+function java.filetypes()
   return {"java", "gradle", "build", "groovy"}
 end
 
