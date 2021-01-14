@@ -29,7 +29,7 @@ return require('packer').startup(function(use)
 
   use {
     'nvim-treesitter/completion-treesitter',
-    requires = { 
+    requires = {
       'nvim-lua/completion-nvim',
       'nvim-treesitter/nvim-treesitter'
     }
@@ -85,6 +85,8 @@ return require('packer').startup(function(use)
     'chrisbra/csv.vim',
     'SidOfc/mkdx',
     'vimwiki/vimwiki',
+    'tpope/vim-fugitive',
+    'tpope/vim-endwise',
   }
 
 

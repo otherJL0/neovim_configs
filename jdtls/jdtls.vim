@@ -1,7 +1,7 @@
 if has('nvim-0.5')
   augroup lsp
     au!
-		au FileType java lua require('jdtls').start_or_attach({cmd = {'java-lsp.sh'}, root_dir = require('jdtls.setup').find_root({'gradle.build', 'pom.xml', '.git', 'gradle.build.kts'})})
+		au FileType java lua require('jdtls').start_or_attach({cmd = {'/home/jlopez/.local/bin/jdtls.sh'}, root_dir = require('jdtls.setup').find_root({'gradle.build', 'pom.xml', '.git', 'gradle.build.kts'})})
   augroup end
 endif
 
