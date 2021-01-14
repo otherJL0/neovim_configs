@@ -29,3 +29,5 @@ function! LspStatus() abort
 endfunction
 
 let g:lightline.colorscheme = 'sonokai'
+" let g:lightline.colorscheme = 'modus-vivendi'
+
