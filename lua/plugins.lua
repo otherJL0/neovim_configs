@@ -2,7 +2,7 @@
 vim.cmd [[packadd packer.nvim]]
 
 
-return require('packer').startup(function()
+return require('packer').startup(function(use)
   -- Packer can manage itself as an optional plugin
   use {'wbthomason/packer.nvim', opt = true}
 
@@ -25,6 +25,14 @@ return require('packer').startup(function()
     'nvim-treesitter/nvim-tree-docs',
     'nvim-treesitter/playground',
     requires = {'nvim-treesitter/nvim-treesitter'}
+  }
+
+  use {
+    'nvim-treesitter/completion-treesitter',
+    requires = { 
+      'nvim-lua/completion-nvim',
+      'nvim-treesitter/nvim-treesitter'
+    }
   }
 
   -- Debug Adapter Protocol

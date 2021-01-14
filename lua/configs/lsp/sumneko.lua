@@ -1,7 +1,10 @@
 
 local sumneko_binary = "/home/jlopez/.local/share/vim-lsp-settings/servers/sumneko-lua-language-server"
 
+-- define an chain complete list
+
 require'lspconfig'.sumneko_lua.setup {
+  on_attach=require'completion'.on_attach;
   cmd = {sumneko_binary};
   settings = {
     Lua = {

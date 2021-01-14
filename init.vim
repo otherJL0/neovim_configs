@@ -21,4 +21,4 @@ source $HOME/.config/nvim/file_manager/chadtree.vim
 source $HOME/.config/nvim/vimwiki/vimwiki.vim
 source $HOME/.config/nvim/quickscope/quickscope.vim
 source $HOME/.config/nvim/chadtree/chadtree.vim
-
+source $HOME/.config/nvim/completion/completion.vim
