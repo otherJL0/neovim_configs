@@ -3,7 +3,6 @@ local util = require'lspconfig/util'
 local completion = require'completion'
 
 local _sumneko_lua = require'configs.lsp.sumneko'
-local _jdtls = require'configs.lsp.java'
 local _groovyls = require'configs.lsp.groovy'
 local _pyright = require'configs.lsp.pyright'
 local _global_attach = require'configs.lsp.global_attach'
@@ -27,4 +26,10 @@ lspconfig.sumneko_lua.setup{
 
 lspconfig.gopls.setup{
   on_attach = _global_attach.on_attach,
+}
+
+lspconfig.kotlin_language_server.setup{
+  on_attach = _global_attach.on_attach,
+  cmd = {"/home/jlopez/.local/bin/kotlin-language-server"},
+  root_dir = util.root_pattern("settings.gradle.kts", "settings.gradle", ".git")
 }

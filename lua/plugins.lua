@@ -110,4 +110,9 @@ return require('packer').startup(function(use)
       end
   }
 
+
+	use {'p00f/nvim-ts-rainbow'}
+  use 'voldikss/vim-floaterm'
+  use 'Yggdroot/indentLine'
+
 end)
