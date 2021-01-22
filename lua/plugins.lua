@@ -73,7 +73,6 @@ return require('packer').startup(function(use)
   use 'itchyny/lightline.vim'
   use 'sainnhe/sonokai'
   use 'romgrk/barbar.nvim'
-  use 'ms-jpq/chadtree'
 
   use {
     'wellle/targets.vim',
@@ -87,7 +86,6 @@ return require('packer').startup(function(use)
     'vimwiki/vimwiki',
     'tpope/vim-fugitive',
     'tpope/vim-endwise',
-    'cohama/lexima.vim',
   }
   use {
     'theniceboy/nvim-deus',

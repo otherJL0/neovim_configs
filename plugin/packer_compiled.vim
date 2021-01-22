@@ -6,6 +6,7 @@ if !has('nvim-0.5')
   echohl None
   finish
 endif
+try
 
 lua << END
 local plugins = {
@@ -36,17 +37,16 @@ local function handle_bufread(names)
   end
 end
 
-_packer_load = nil
-
+local packer_load = nil
 local function handle_after(name, before)
   local plugin = plugins[name]
   plugin.load_after[before] = nil
   if next(plugin.load_after) == nil then
-    _packer_load({name}, {})
+    packer_load({name}, {})
   end
 end
 
-_packer_load = function(names, cause)
+packer_load = function(names, cause)
   local some_unloaded = false
   for _, name in ipairs(names) do
     if not plugins[name].loaded then
@@ -140,6 +140,16 @@ _packer_load = function(names, cause)
   end
 end
 
+_packer_load_wrapper = function(names, cause)
+  success, err_msg = pcall(packer_load, names, cause)
+  if not success then
+    vim.cmd('echohl ErrorMsg')
+    vim.cmd('echomsg "Error in packer_compiled: ' .. vim.fn.escape(err_msg, '"') .. '"')
+    vim.cmd('echomsg "Please check your config for correctness"')
+    vim.cmd('echohl None')
+  end
+end
+
 -- Runtimepath customization
 
 -- Pre-load configuration
@@ -151,7 +161,7 @@ loadstring("\27LJ\2\0026\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0
 END
 
 function! s:load(names, cause) abort
-call luaeval('_packer_load(_A[1], _A[2])', [a:names, a:cause])
+  call luaeval('_packer_load_wrapper(_A[1], _A[2])', [a:names, a:cause])
 endfunction
 
 
@@ -166,3 +176,10 @@ augroup packer_load_aucmds
   " Event lazy-loads
   " Function lazy-loads
 augroup END
+
+catch
+  echohl ErrorMsg
+  echom "Error in packer_compiled: " .. v:exception
+  echom "Please check your config for correctness"
+  echohl None
+endtry
