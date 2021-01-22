@@ -112,15 +112,12 @@ return require('packer').startup(function(use)
 	use {'p00f/nvim-ts-rainbow'}
   use 'voldikss/vim-floaterm'
   use 'Yggdroot/indentLine'
-<<<<<<< HEAD
   use {'aklt/plantuml-syntax', 'weirongxu/plantuml-previewer.vim'}
   use 'tyru/open-browser.vim'
-=======
   use {
     'ms-jpq/chadtree',
     run = ':CHADdeps',
     branch = 'chad'
   }
->>>>>>> 19d4d8726a7caf0fbb77ac7c78889773d8888317
 
 end)
