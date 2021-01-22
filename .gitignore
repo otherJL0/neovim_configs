@@ -1,2 +1,4 @@
 .nvim.log
 .nvimlog
+.netrwhist
+*.orig
