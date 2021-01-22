@@ -5,6 +5,10 @@ set completeopt+=noinsert,menuone,preview
 " Avoid showing message extra message when using completion
 set shortmess+=c
 
+let g:completion_enable_auto_popup = 0
+imap <tab> <Plug>(completion_smart_tab)
+imap <s-tab> <Plug>(completion_smart_s_tab)
+
 let g:completion_confirm_key = "\<C-y>"
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy', 'all']
 
