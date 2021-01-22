@@ -34,3 +34,5 @@ let g:modus_faint_syntax = 1
 lua require('colorbuddy').colorscheme('modus-vivendi')
 
 lua require'nvim-treesitter.configs'.setup{rainbow={ enable = true}}
+
+let g:floaterm_keymap_toggle = '<F1>'
