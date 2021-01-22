@@ -112,5 +112,10 @@ return require('packer').startup(function(use)
 	use {'p00f/nvim-ts-rainbow'}
   use 'voldikss/vim-floaterm'
   use 'Yggdroot/indentLine'
+  use {
+    'ms-jpq/chadtree',
+    run = ':CHADdeps',
+    branch = 'chad'
+  }
 
 end)
