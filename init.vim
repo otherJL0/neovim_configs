@@ -23,6 +23,7 @@ source $HOME/.config/nvim/chadtree/chadtree.vim
 source $HOME/.config/nvim/completion/completion.vim
 source $HOME/.config/nvim/jdtls/jdtls.vim
 source $HOME/.config/nvim/lexima/lexima.vim
+source $HOME/.config/nvim/floaterm/floaterm.vim
 
 
 " source $HOME/.config/nvim/color/deus.vim

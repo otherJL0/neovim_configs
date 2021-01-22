@@ -114,5 +114,7 @@ return require('packer').startup(function(use)
 	use {'p00f/nvim-ts-rainbow'}
   use 'voldikss/vim-floaterm'
   use 'Yggdroot/indentLine'
+  use {'aklt/plantuml-syntax', 'weirongxu/plantuml-previewer.vim'}
+  use 'tyru/open-browser.vim'
 
 end)
