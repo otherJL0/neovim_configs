@@ -23,7 +23,12 @@ source $HOME/.config/nvim/chadtree/chadtree.vim
 source $HOME/.config/nvim/completion/completion.vim
 source $HOME/.config/nvim/jdtls/jdtls.vim
 source $HOME/.config/nvim/lexima/lexima.vim
+<<<<<<< HEAD
 source $HOME/.config/nvim/floaterm/floaterm.vim
+=======
+source $HOME/.config/nvim/async/async.vim
+
+>>>>>>> 19d4d8726a7caf0fbb77ac7c78889773d8888317
 
 
 " source $HOME/.config/nvim/color/deus.vim
@@ -33,3 +38,5 @@ let g:modus_faint_syntax = 1
 lua require('colorbuddy').colorscheme('modus-vivendi')
 
 lua require'nvim-treesitter.configs'.setup{rainbow={ enable = true}}
+
+let g:floaterm_keymap_toggle = '<F1>'

@@ -73,7 +73,6 @@ return require('packer').startup(function(use)
   use 'itchyny/lightline.vim'
   use 'sainnhe/sonokai'
   use 'romgrk/barbar.nvim'
-  use 'ms-jpq/chadtree'
 
   use {
     'wellle/targets.vim',
@@ -87,7 +86,6 @@ return require('packer').startup(function(use)
     'vimwiki/vimwiki',
     'tpope/vim-fugitive',
     'tpope/vim-endwise',
-    'cohama/lexima.vim',
   }
   use {
     'theniceboy/nvim-deus',
@@ -114,7 +112,15 @@ return require('packer').startup(function(use)
 	use {'p00f/nvim-ts-rainbow'}
   use 'voldikss/vim-floaterm'
   use 'Yggdroot/indentLine'
+<<<<<<< HEAD
   use {'aklt/plantuml-syntax', 'weirongxu/plantuml-previewer.vim'}
   use 'tyru/open-browser.vim'
+=======
+  use {
+    'ms-jpq/chadtree',
+    run = ':CHADdeps',
+    branch = 'chad'
+  }
+>>>>>>> 19d4d8726a7caf0fbb77ac7c78889773d8888317
 
 end)
