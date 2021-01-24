@@ -84,5 +84,6 @@ ts.setup {
         goto_previous_usage = "<a-#>",
       },
     },
-  }
+  },
+  rainbow = {enable = true },
 }
