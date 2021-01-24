@@ -17,6 +17,11 @@ return require('packer').startup(function(use)
     'nvim-lua/lsp-status.nvim',
   }
 
+  use {
+    'RishabhRD/nvim-lsputils',
+    requires = { 'RishabhRD/popfix' }
+  }
+
   -- Treesitter Plugins
   use {
     'nvim-treesitter/nvim-treesitter',
