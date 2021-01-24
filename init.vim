@@ -24,6 +24,7 @@ source $HOME/.config/nvim/completion/completion.vim
 source $HOME/.config/nvim/jdtls/jdtls.vim
 source $HOME/.config/nvim/lexima/lexima.vim
 source $HOME/.config/nvim/async/async.vim
+source $HOME/.config/nvim/signify/signify.vim
 
 
 " source $HOME/.config/nvim/color/deus.vim

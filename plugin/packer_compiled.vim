@@ -9,6 +9,16 @@ endif
 try
 
 lua << END
+  local package_path_str = "/home/jlopez/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/jlopez/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/jlopez/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/jlopez/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
+  local install_cpath_pattern = "/home/jlopez/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+  if not string.find(package.path, package_path_str, 1, true) then
+    package.path = package.path .. ';' .. package_path_str
+  end
+
+  if not string.find(package.cpath, install_cpath_pattern, 1, true) then
+    package.cpath = package.cpath .. ';' .. install_cpath_pattern
+  end
+
 local plugins = {
   ["packer.nvim"] = {
     loaded = false,
@@ -154,8 +164,6 @@ end
 
 -- Pre-load configuration
 -- Post-load configuration
--- Config for: gitsigns.nvim
-loadstring("\27LJ\2\0026\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0")()
 -- Conditional loads
 -- Load plugins in order defined by `after`
 END

@@ -103,15 +103,15 @@ return require('packer').startup(function(use)
   }
     use {'tjdevries/colorbuddy.nvim'}
 
-  use {
-      'lewis6991/gitsigns.nvim',
-      requires = {
-          'nvim-lua/plenary.nvim'
-        },
-      config = function()
-        require('gitsigns').setup()
-      end
-  }
+  --use {
+  --    'lewis6991/gitsigns.nvim',
+  --    requires = {
+  --        'nvim-lua/plenary.nvim'
+  --      },
+  --    config = function()
+  --      require('gitsigns').setup()
+  --    end
+  --}
 
 
 	use {'p00f/nvim-ts-rainbow'}
@@ -124,5 +124,7 @@ return require('packer').startup(function(use)
     run = ':CHADdeps',
     branch = 'chad'
   }
+
+  use 'kshenoy/vim-signature'
 
 end)
