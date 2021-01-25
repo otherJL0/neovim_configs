@@ -9,14 +9,11 @@ require('telescope').setup{
       '--column',
       '--smart-case'
     },
-    prompt_position = "bottom",
+    prompt_position = "top",
     prompt_prefix = ">",
     selection_strategy = "reset",
     sorting_strategy = "descending",
-    layout_strategy = "vertical",
-    layout_defaults = {
-      -- TODO add builtin options.
-    },
+    layout_strategy = "horizontal",
     file_sorter =  require'telescope.sorters'.get_fuzzy_file,
     file_ignore_patterns = {},
     generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
@@ -25,7 +22,7 @@ require('telescope').setup{
     width = 0.5,
     preview_cutoff = 80,
     results_height = 1,
-    results_width = 0.4,
+    results_width = 0.1,
     border = {},
     borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰'},
     color_devicons = false,

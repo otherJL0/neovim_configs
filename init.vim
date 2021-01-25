@@ -26,11 +26,19 @@ source $HOME/.config/nvim/lexima/lexima.vim
 source $HOME/.config/nvim/async/async.vim
 source $HOME/.config/nvim/signify/signify.vim
 
-
-" source $HOME/.config/nvim/color/deus.vim
-" lua require'boo-colorscheme'.use{}
-
 lua require('colorbuddy').colorscheme('gruvbuddy')
+lua require('colorizer').setup()
+
+
+lua << EOF
+ require'neuron'.setup {
+    virtual_titles = true,
+    mappings = true,
+    run = nil, -- function to run when in neuron dir
+    neuron_dir = "~/neuron", -- the directory of all of your notes, expanded by default (currently supports only one directory for notes, find a way to detect neuron.dhall to use any directory)
+    leader = "gz", -- the leader key to for all mappings, remember with 'go zettel'
+}
+EOF
 
 let g:floaterm_keymap_toggle = '<F1>'
 
