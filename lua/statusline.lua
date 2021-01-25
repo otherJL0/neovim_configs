@@ -5,6 +5,7 @@ local sections = require('el.sections')
 local subscribe = require('el.subscribe')
 local lsp_statusline = require('el.plugins.lsp_status')
 local helper = require('el.helper')
+local _lsp = require('lsp-status')
 
 
 local generator = function()
@@ -32,8 +33,10 @@ local generator = function()
         ' ',
         builtin.modified_flag
       },
+      _lsp.status(),
       lsp_statusline.current_function,
       lsp_statusline.server_progress,
+      sections.split,
       '[', builtin.line_with_width(3), ':',  builtin.column_with_width(2), ']',
       sections.collapse_builtin {
         '[',
@@ -44,6 +47,5 @@ local generator = function()
     }
 
 end
-
 
 require('el').setup({ generator = generator })
