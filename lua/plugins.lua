@@ -99,19 +99,17 @@ return require('packer').startup(function(use)
     use {
     'rockerBOO/boo-colorscheme-nvim',
     'ishan9299/modus-theme-vim',
+    'tjdevries/gruvbuddy.nvim',
+    'Th3Whit3Wolf/spacebuddy',
+    'Th3Whit3Wolf/onebuddy',
     requires = {'tjdevries/colorbuddy.nvim'}
   }
-    use {'tjdevries/colorbuddy.nvim'}
 
-  --use {
-  --    'lewis6991/gitsigns.nvim',
-  --    requires = {
-  --        'nvim-lua/plenary.nvim'
-  --      },
-  --    config = function()
-  --      require('gitsigns').setup()
-  --    end
-  --}
+  use {
+      'lewis6991/gitsigns.nvim',
+      'tjdevries/express_line.nvim',
+      requires = { 'nvim-lua/plenary.nvim' }
+  }
 
 
 	use {'p00f/nvim-ts-rainbow'}
