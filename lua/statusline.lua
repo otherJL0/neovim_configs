@@ -13,6 +13,8 @@ local generator = function()
       extensions.gen_mode {
         format_string = ' %s '
       },
+
+    ' ',
     
     subscribe.buf_autocmd(
       "el_git_branch",
@@ -21,6 +23,7 @@ local generator = function()
         return extensions.git_branch(window, buffer)
       end
     ),
+    ' ',
 
     helper.async_buf_setter(
       win_id,
@@ -32,11 +35,6 @@ local generator = function()
      sections.split,
 
    builtin.filetype,
-     
-       sections.maximum_width(
-        builtin.responsive_file(140, 90),
-        0.30
-      ),
       sections.collapse_builtin {
         ' ',
         builtin.modified_flag
