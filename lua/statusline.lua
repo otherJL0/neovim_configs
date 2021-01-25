@@ -9,46 +9,37 @@ local helper = require('el.helper')
 
 local generator = function()
     return {
-
+      -- LHS
       extensions.gen_mode {
         format_string = ' %s '
       },
-
-    ' ',
-    
-    subscribe.buf_autocmd(
-      "el_git_branch",
-      "BufEnter",
-      function(window, buffer)
-        return extensions.git_branch(window, buffer)
-      end
-    ),
-    ' ',
-
-    helper.async_buf_setter(
-      win_id,
-      'el_git_stat',
+      ' ',
+      subscribe.buf_autocmd(
+        "el_git_branch",
+        "BufEnter",
+        function(window, buffer)
+          return extensions.git_branch(window, buffer)
+          end
+      ),
+      ' ',
       extensions.git_changes,
-      5000
-    ),
 
-     sections.split,
+      sections.split,
 
-   builtin.filetype,
+      -- RHS
+      builtin.filetype,
       sections.collapse_builtin {
         ' ',
         builtin.modified_flag
       },
-
-   lsp_statusline.current_function,
-    lsp_statusline.server_progress,
-
-  '[', builtin.line_with_width(3), ':',  builtin.column_with_width(2), ']',
-  sections.collapse_builtin {
-    '[',
-    builtin.help_list,
-    builtin.readonly_list,
-    ']',
+      lsp_statusline.current_function,
+      lsp_statusline.server_progress,
+      '[', builtin.line_with_width(3), ':',  builtin.column_with_width(2), ']',
+      sections.collapse_builtin {
+        '[',
+        builtin.help_list,
+        builtin.readonly_list,
+        ']',
       },
     }
 
