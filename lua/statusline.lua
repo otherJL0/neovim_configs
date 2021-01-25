@@ -33,10 +33,11 @@ local generator = function()
         ' ',
         builtin.modified_flag
       },
-      _lsp.status(),
-      lsp_statusline.current_function,
-      lsp_statusline.server_progress,
-      sections.split,
+      -- _lsp.status(),
+      lsp_statusline.segment,
+      -- lsp_statusline.current_function,
+      -- lsp_statusline.server_progress,
+      -- sections.split,
       '[', builtin.line_with_width(3), ':',  builtin.column_with_width(2), ']',
       sections.collapse_builtin {
         '[',

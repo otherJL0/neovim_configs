@@ -129,4 +129,7 @@ return require('packer').startup(function(use)
   use 'mfussenegger/nvim-dap'
   use 'tpope/vim-commentary'
 
+  use 'norcalli/nvim-colorizer.lua'
+  use 'oberblastmeister/neuron.nvim'
+
 end)
