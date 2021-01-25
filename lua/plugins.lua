@@ -127,5 +127,6 @@ return require('packer').startup(function(use)
   use 'kshenoy/vim-signature'
   use 'tjdevries/train.nvim'
   use 'mfussenegger/nvim-dap'
+  use 'tpope/vim-commentary'
 
 end)

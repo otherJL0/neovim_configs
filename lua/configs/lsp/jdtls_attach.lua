@@ -56,6 +56,7 @@ function jdtls_attach.on_attach (client)
   vim.lsp.handlers['textDocument/implementation'] = require'lsputil.locations'.implementation_handler
   vim.lsp.handlers['textDocument/documentSymbol'] = require'lsputil.symbols'.document_handler
   vim.lsp.handlers['workspace/symbol'] = require'lsputil.symbols'.workspace_handler
+
 end
 
 return jdtls_attach
