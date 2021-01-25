@@ -40,7 +40,7 @@ local generator = function()
         builtin.help_list,
         builtin.readonly_list,
         ']',
-      },
+      }
     }
 
 end
