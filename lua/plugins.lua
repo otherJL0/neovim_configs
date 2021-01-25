@@ -75,7 +75,7 @@ return require('packer').startup(function(use)
 
   use 'windwp/nvim-autopairs'
   use 'mhinz/vim-signify'
-  use 'itchyny/lightline.vim'
+  -- use 'itchyny/lightline.vim'
   use 'sainnhe/sonokai'
   use 'romgrk/barbar.nvim'
 
@@ -96,6 +96,7 @@ return require('packer').startup(function(use)
     'theniceboy/nvim-deus',
   }
 
+    use 'tjdevries/colorbuddy.nvim'
     use {
     'rockerBOO/boo-colorscheme-nvim',
     'ishan9299/modus-theme-vim',
@@ -124,5 +125,6 @@ return require('packer').startup(function(use)
   }
 
   use 'kshenoy/vim-signature'
+  use 'tjdevries/train.nvim'
 
 end)

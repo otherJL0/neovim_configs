@@ -14,7 +14,7 @@ let bufferline.auto_hide = v:false
 let bufferline.icons = 'numbers'
 
 " Enable/disable close button
-let bufferline.closable = v:true
+let bufferline.closable = v:false
 
 " Enables/disable clickable tabs
 "  - left-click: go to buffer

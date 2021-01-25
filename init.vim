@@ -14,9 +14,7 @@ lua require('snippets/init')
 lua require'snippets'.use_suggested_mappings()
 
 source $HOME/.config/nvim/telescope/mappings.vim
-source $HOME/.config/nvim/status/lsp_status.vim
 source $HOME/.config/nvim/status/barbar.vim
-source $HOME/.config/nvim/status/lightline.vim
 source $HOME/.config/nvim/tabline/barbar.vim
 source $HOME/.config/nvim/file_manager/chadtree.vim
 source $HOME/.config/nvim/vimwiki/vimwiki.vim
@@ -35,3 +33,6 @@ source $HOME/.config/nvim/signify/signify.vim
 lua require('colorbuddy').colorscheme('gruvbuddy')
 
 let g:floaterm_keymap_toggle = '<F1>'
+
+set laststatus=2
+lua require('statusline')
