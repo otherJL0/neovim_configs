@@ -6,7 +6,10 @@ ts.setup {
 
   --Built In
   highlight = {enable = true, use_language_tree = true},
-  indent = {enable = true},
+  indent = {
+    enable = true,
+    disable = {"python"}
+  },
 
   incremental_selection = {
     enable = true,
