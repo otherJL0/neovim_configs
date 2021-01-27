@@ -11,6 +11,7 @@ lua require('configs/lsp/setup')
 lua require('configs/treesitter/setup')
 lua require('configs/telescope/setup')
 lua require('snippets/init')
+lua require('nvim-autopairs').setup()
 lua require'snippets'.use_suggested_mappings()
 
 source $HOME/.config/nvim/telescope/mappings.vim
