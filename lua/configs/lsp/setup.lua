@@ -33,3 +33,7 @@ lspconfig.kotlin_language_server.setup{
   cmd = {"/home/jlopez/.local/bin/kotlin-language-server"},
   root_dir = util.root_pattern("settings.gradle.kts", "settings.gradle", ".git")
 }
+
+lspconfig.gopls.setup{
+  on_attach = _global_attach.on_attach,
+}
