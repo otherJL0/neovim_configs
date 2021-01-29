@@ -96,14 +96,13 @@ return require('packer').startup(function(use)
     'theniceboy/nvim-deus',
   }
 
-    use 'tjdevries/colorbuddy.nvim'
+    use {'tjdevries/colorbuddy.nvim'}
     use {
     'rockerBOO/boo-colorscheme-nvim',
     'ishan9299/modus-theme-vim',
     'tjdevries/gruvbuddy.nvim',
     'Th3Whit3Wolf/spacebuddy',
     'Th3Whit3Wolf/onebuddy',
-    requires = {'tjdevries/colorbuddy.nvim'}
   }
 
   use {
@@ -118,11 +117,7 @@ return require('packer').startup(function(use)
   use 'Yggdroot/indentLine'
   use {'aklt/plantuml-syntax', 'weirongxu/plantuml-previewer.vim'}
   use 'tyru/open-browser.vim'
-  use {
-    'ms-jpq/chadtree',
-    run = ':CHADdeps',
-    branch = 'chad'
-  }
+  use { 'ms-jpq/chadtree' }
 
   use 'kshenoy/vim-signature'
   use 'tjdevries/train.nvim'
