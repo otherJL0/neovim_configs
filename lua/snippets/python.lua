@@ -2,17 +2,22 @@ local _python = {}
 local U = require'snippets.utils'
 
 local _main = [[
-def main():
-\t# TODO
+${0}
 
 
-if __name__ == "__main__"
-\tmain()
+if __name__ == "__main__":
+    main()
+]]
+
+local _def = [[
+def ${1}(${2}):
+    ${0}
 ]]
 
 function _python.snippets()
   return {
-    main = _main
+    main = _main,
+    def = _def
   }
 end
 

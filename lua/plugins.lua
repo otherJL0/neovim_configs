@@ -29,7 +29,7 @@ return require('packer').startup(function(use)
     'nvim-treesitter/nvim-treesitter-refactor',
     'nvim-treesitter/nvim-tree-docs',
     'nvim-treesitter/playground',
-    requires = {'nvim-treesitter/nvim-treesitter'}
+    requires = {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   }
 
   use {
@@ -117,7 +117,7 @@ return require('packer').startup(function(use)
   use 'Yggdroot/indentLine'
   use {'aklt/plantuml-syntax', 'weirongxu/plantuml-previewer.vim'}
   use 'tyru/open-browser.vim'
-  use { 'ms-jpq/chadtree' }
+  use { 'ms-jpq/chadtree', run = ':CHADdeps' }
 
   use 'kshenoy/vim-signature'
   use 'tjdevries/train.nvim'
@@ -125,5 +125,23 @@ return require('packer').startup(function(use)
   use 'tpope/vim-commentary'
 
   use 'norcalli/nvim-colorizer.lua'
+
+  use 'rhysd/git-messenger.vim'
+  use 'rhysd/committia.vim'
+  use 'lambdalisue/gina.vim'
+  use 'fatih/vim-go'
+  use 'vigoux/architext.nvim'
+
+  use 'tami5/sql.nvim'
+  use {
+    'zenbro/mirror.vim',
+    'neomake/neomake',
+    'mhartington/formatter.nvim'
+  }
+
+  use {
+    'glepnir/lspsaga.nvim',
+    requires = 'neovim/nvim-lspconfig'
+  }
 
 end)
