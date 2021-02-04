@@ -4,8 +4,9 @@ local completion = require'completion'
 
 local _sumneko_lua = require'configs.lsp.sumneko'
 local _groovyls = require'configs.lsp.groovy'
-local _pyright = require'configs.lsp.pyright'
+--local _pyright = require'configs.lsp.pyright'
 local _global_attach = require'configs.lsp.global_attach'
+local _python = require('ft/python')
 
 lspconfig.groovyls.setup{
   on_attach = _global_attach.on_attach,
@@ -14,8 +15,8 @@ lspconfig.groovyls.setup{
 
 lspconfig.pyright.setup{
   on_attach = _global_attach.on_attach,
-  root_dir = _pyright.root_dir(),
-  settings = _pyright.settings()
+  root_dir = _python.lsp_root_dir(),
+  settings = _python.lsp_settings(),
 }
 
 lspconfig.sumneko_lua.setup{
@@ -36,4 +37,17 @@ lspconfig.kotlin_language_server.setup{
 
 lspconfig.gopls.setup{
   on_attach = _global_attach.on_attach,
+}
+
+lspconfig.efm.setup{
+  on_attach = _global_attach.on_attach,
+  init_options = {documentFormatting = true},
+  filetypes = {"python"},
+  settings = {
+    rootMarkers = {".git/"},
+    languages = {
+      ["="] = {},
+      python = {_python.black(), _python.isort(), _python.flake8(), _python.mypy()};
+    }
+  }
 }

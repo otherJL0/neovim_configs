@@ -18,10 +18,15 @@ function pyright.settings()
   return {
       python = {
         analysis = {
+          autoImportCompletions = true;
           autoSearchPaths = true;
+          diagnosticMode ="workspace";
+          logLevel = "Trace";
+          typeCheckingMode = "strict";
           useLibraryCodeForTypes = true;
         };
       };
     }
 end
+
 return pyright

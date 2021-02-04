@@ -141,7 +141,11 @@ return require('packer').startup(function(use)
 
   use {
     'glepnir/lspsaga.nvim',
+    'liuchengxu/vista.vim',
     requires = 'neovim/nvim-lspconfig'
   }
+  use 'kosayoda/nvim-lightbulb'
+  use 'hkupty/iron.nvim'
 
+  use '~/git/colorschemes/solarbuddy.nvim'
 end)

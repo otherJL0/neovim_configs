@@ -15,6 +15,6 @@ nnoremap <leader>gb <cmd>Telescope git_branches<cr>
 
 nnoremap <leader>ref <cmd>Telescope lsp_references<cr>
 "nnoremap <leader>lca Telescope lsp_code_actions<cr>
-nnoremap <Leader>ca :lua require'telescope.builtin'.lsp_code_actions(require('telescope.themes').get_dropdown({initial_mode='normal'}))<cr>
+"nnoremap <Leader>ca :lua require'telescope.builtin'.lsp_code_actions(require('telescope.themes').get_dropdown({initial_mode='normal'}))<cr>
 
 autocmd User TelescopePreviewerLoaded setlocal number
