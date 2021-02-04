@@ -31,12 +31,13 @@ source $HOME/.config/nvim/metals/metals.vim
 source $HOME/.config/nvim/lexima/lexima.vim
 source $HOME/.config/nvim/async/async.vim
 source $HOME/.config/nvim/signify/signify.vim
+source /home/jlopez/.config/nvim/color/sonokai.vim
 
 "lua require('colorbuddy').colorscheme('gruvbuddy')
-set termguicolors
 lua require('colorizer').setup()
-lua require('colorbuddy').colorscheme('solarized_dark_high_contrast')
+"lua require('colorbuddy').colorscheme('solarized_dark_high_contrast')
 
+au ColorScheme * hi Normal ctermbg=None
 
 let g:floaterm_keymap_toggle = '<F1>'
 
