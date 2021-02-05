@@ -11,6 +11,7 @@ let g:sonokai_disable_italic_comment = 0
 let g:sonokai_transparent_background = 0
 
 let g:sonokai_diagnostic_line_hightlight = 1
-"let g:sonokai_current_word = 'bold'
+let g:sonokai_diagnostic_text_hightlight = 1
+let g:sonokai_current_word = 'bold'
 
 colorscheme sonokai

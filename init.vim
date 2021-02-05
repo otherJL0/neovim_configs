@@ -33,9 +33,9 @@ source $HOME/.config/nvim/async/async.vim
 source $HOME/.config/nvim/signify/signify.vim
 source /home/jlopez/.config/nvim/color/sonokai.vim
 
-"lua require('colorbuddy').colorscheme('gruvbuddy')
+" lua require('colorbuddy').colorscheme('gruvbuddy')
 lua require('colorizer').setup()
-"lua require('colorbuddy').colorscheme('solarized_dark_high_contrast')
+" lua require('colorbuddy').colorscheme('solarized_dark_high_contrast')
 
 au ColorScheme * hi Normal ctermbg=None
 
