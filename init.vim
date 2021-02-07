@@ -12,14 +12,6 @@ lua require('snippets').use_suggested_mappings()
 lua require('lspsaga').init_lsp_saga()
 lua require('configs/lsp/metals')
 
-" lua require('colorbuddy').colorscheme('gruvbuddy')
-"lua require('colorizer').setup()
-" lua require('colorbuddy').colorscheme('solarized_dark_high_contrast')
-
-au ColorScheme * hi Normal ctermbg=None
-
-let g:floaterm_keymap_toggle = '<F1>'
-
 set laststatus=2
 lua require('statusline')
 
