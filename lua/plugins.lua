@@ -83,7 +83,6 @@ return require('packer').startup(function(use)
     'wellle/targets.vim',
     'tpope/vim-surround',
     'machakann/vim-sandwich',
-    'unblevable/quick-scope',
     'tpope/vim-obsession',
     'simnalamburt/vim-mundo',
     'chrisbra/csv.vim',
@@ -146,4 +145,5 @@ return require('packer').startup(function(use)
   }
   use 'kosayoda/nvim-lightbulb'
   use 'hkupty/iron.nvim'
+  use 'tiagofumo/vim-nerdtree-syntax-highlight'
 end)
