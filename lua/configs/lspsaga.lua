@@ -7,9 +7,9 @@ saga.init_lsp_saga{
     open = 'o',
     vsplit = 'v',
     split = 's',
-    quit = '<esc>',
-    scroll_down = '<C-n>',
-    scroll_up = '<C-p>'
+    quit = 'q',
+    scroll_down = 'j',
+    scroll_up = 'k'
   },
   -- -- -- 1: thin border | 2: rounded border | 3: thick border
   border_style = 2,

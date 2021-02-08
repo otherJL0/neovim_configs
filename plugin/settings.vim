@@ -8,9 +8,8 @@ set encoding=utf-8                      " The encoding displayed
 set pumheight=10                        " Makes popup menu smaller
 set fileencoding=utf-8                  " The encoding written to file
 set ruler              			            " Show the cursor position all the time
-set cmdheight=2                         " More space for displaying messages
 set iskeyword+=-                      	" treat dash separated words as a word text object"
-" set mouse=a                             " Enable your mouse
+set iskeyword+=_                      	" treat dash separated words as a word text object"
 " set splitbelow                          " Horizontal splits will automatically be below
 " set splitright                          " Vertical splits will automatically be to the right
 set t_Co=256                            " Support 256 colors
@@ -22,7 +21,9 @@ set expandtab                           " Converts tabs to spaces
 set smartindent                         " Makes indenting smart
 set autoindent                          " Good auto indent
 set laststatus=0                        " Always display the status line
+set relativenumber
 set number                              " Line numbers
+set noerrorbells
 set cursorline                          " Enable highlighting of the current line
 "set background=dark                     " tell vim what the background color looks like
 set showtabline=2                       " Always show tabs
@@ -32,7 +33,9 @@ set timeoutlen=500                      " By default timeoutlen is 1000 ms
 set formatoptions-=cro                  " Stop newline continution of comments
 " set clipboard=unnamedplus               " Copy paste between vim and everything else
 "set autochdir                           " Your working directory will always be the same as your working directory
-set relativenumber
+set scrolloff=8
+set colorcolumn=80
+
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 
@@ -46,3 +49,7 @@ augroup LuaHighlight
   autocmd!
   autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
 augroup END
+
+
+set undodir=~/.vim/undodir
+set undofile

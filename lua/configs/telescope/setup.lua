@@ -1,5 +1,11 @@
+local actions = require('telescope.actions')
 require('telescope').setup{
   defaults = {
+    mappings = {
+      i = {
+        ["q"] = actions.close
+      }
+    },
     vimgrep_arguments = {
       'rg',
       '--color=never',
