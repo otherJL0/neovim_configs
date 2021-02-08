@@ -146,6 +146,4 @@ return require('packer').startup(function(use)
   }
   use 'kosayoda/nvim-lightbulb'
   use 'hkupty/iron.nvim'
-
-  use '~/git/colorschemes/solarbuddy.nvim'
 end)
