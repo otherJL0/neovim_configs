@@ -2,7 +2,7 @@
 local ts = require'nvim-treesitter.configs'
 
 ts.setup {
-  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
 
   --Built In
   highlight = {enable = true, use_language_tree = true},
@@ -62,10 +62,10 @@ ts.setup {
     },
     lsp_interop = {
       enable = true,
-      peek_definition_code = {
-        ["df"] = "@function.outer",
-        ["dF"] = "@class.outer",
-      },
+      -- peek_definition_code = {
+      --   ["df"] = "@function.outer",
+      --   ["dF"] = "@class.outer",
+      -- },
     }
   },
 
