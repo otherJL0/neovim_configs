@@ -2,7 +2,9 @@ RELOAD = require('plenary.reload').reload_module
 
 
 RELOAD('el')
+local _el = require('el')
 require('el').reset_windows()
+_el.reset_windows()
 local builtin = require('el.builtin')
 local extensions = require('el.extensions')
 local sections = require('el.sections')
@@ -10,8 +12,10 @@ local subscribe = require('el.subscribe')
 local lsp_statusline = require('el.plugins.lsp_status')
 local helper = require('el.helper')
 local _lsp = require('lsp-status')
+--local _status = {}
 
 
+--local _status.generator = function()
 local generator = function()
     return {
       -- LHS
@@ -53,4 +57,4 @@ local generator = function()
 
 end
 
-require('el').setup({ generator = generator })
+_el.setup({ generator = generator })

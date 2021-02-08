@@ -35,7 +35,7 @@ let bufferline.auto_hide = v:false
 " Enable/disable icons
 " if set to 'numbers', will show buffer index in the tabline
 " if set to 'both', will show buffer index and icons in the tabline
-let bufferline.icons = "numbers"
+let bufferline.icons = v:false
 
 " Enable/disable close button
 let bufferline.closable = v:false

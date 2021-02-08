@@ -10,10 +10,11 @@ lua require('snippets/init')
 lua require('nvim-autopairs').setup()
 lua require('snippets').use_suggested_mappings()
 lua require('lspsaga').init_lsp_saga()
+" lua require('configs/lspsaga')
 lua require('configs/lsp/metals')
+lua require('configs/status/statusline')
 
 set laststatus=2
-lua require('statusline')
 
 set undofile
 set undodir=~/.local/share/nvim/undo/
