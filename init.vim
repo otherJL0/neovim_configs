@@ -14,9 +14,4 @@ lua require('configs/lspsaga')
 lua require('configs/lsp/metals')
 lua require('configs/status/statusline')
 
-set laststatus=2
-
-set undofile
-set undodir=~/.local/share/nvim/undo/
-
 autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()

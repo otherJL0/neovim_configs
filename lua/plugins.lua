@@ -11,11 +11,11 @@ return require('packer').startup(function(use)
   use {
     'neovim/nvim-lspconfig',
     'mfussenegger/nvim-jdtls',
-    'scalameta/nvim-metals',
     'nvim-lua/completion-nvim',
     'norcalli/snippets.nvim',
     'nvim-lua/lsp-status.nvim',
   }
+  use 'scalameta/nvim-metals'
 
   use {
     'RishabhRD/nvim-lsputils',
@@ -59,6 +59,10 @@ return require('packer').startup(function(use)
     'nvim-telescope/telescope-project.nvim',
     'nvim-telescope/telescope-packer.nvim',
     requires = { 'nvim-telescope/telescope.nvim' }
+  }
+
+  use {
+    'nvim-telescope/telescope-cheat.nvim'
   }
 
   -- Dadbod SQL plugins

@@ -1,7 +1,3 @@
-" set leader key
-let g:mapleader = "\<Space>"
-
-syntax enable                           " Enables syntax highlighing
 set hidden                              " Required to keep multiple buffers open multiple buffers
 set nowrap                              " Display long lines as just one line
 set encoding=utf-8                      " The encoding displayed
@@ -21,8 +17,8 @@ set expandtab                           " Converts tabs to spaces
 set smartindent                         " Makes indenting smart
 set autoindent                          " Good auto indent
 set laststatus=0                        " Always display the status line
-set relativenumber
 set number                              " Line numbers
+set relativenumber                              " Line numbers
 set noerrorbells
 set cursorline                          " Enable highlighting of the current line
 "set background=dark                     " tell vim what the background color looks like
@@ -37,19 +33,16 @@ set scrolloff=8
 set colorcolumn=80
 
 
-au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 
 set incsearch smartcase hlsearch
-
 " Live substitution
 set inccommand=split
-
-" Highlight yanked text
-augroup LuaHighlight
-  autocmd!
-  autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
-augroup END
-
-
 set undodir=~/.vim/undodir
 set undofile
+set shortmess=a
+set shortmess+=F
+set backspace=indent,eol,start
+set showmatch
+set autoread
+set wildmenu
+set wildmode=list,full

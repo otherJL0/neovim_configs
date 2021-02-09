@@ -17,7 +17,7 @@ nnoremap <silent> <C-b> <cmd>lua require('lspsaga.hover').smart_scroll_hover(-1)
 nnoremap <silent> gs <cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>
 
 " rename
-nnoremap <silent>gr <cmd>lua require('lspsaga.rename').rename()<CR>
+nnoremap <silent>R <cmd>lua require('lspsaga.rename').rename()<CR>
 
 " preview definition
 nnoremap <silent> gd <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
