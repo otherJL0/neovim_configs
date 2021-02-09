@@ -84,7 +84,7 @@ return require('packer').startup(function(use)
   use 'romgrk/barbar.nvim'
 
   use {
-    'wellle/targets.vim',
+    -- 'wellle/targets.vim',
     'tpope/vim-surround',
     'machakann/vim-sandwich',
     'tpope/vim-obsession',
