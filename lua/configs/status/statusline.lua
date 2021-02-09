@@ -11,45 +11,64 @@ local lsp_statusline = require('el.plugins.lsp_status')
 local helper = require('el.helper')
 local _lsp = require('lsp-status')
 
-local generator = function()
+
+local git_icon = subscribe.buf_autocmd("el_file_icon", "BufRead", function(_, bufnr)
+  local icon = extensions.file_icon(_, bufnr)
+  if icon then
+    return icon .. ' '
+  end
+    return ''
+end)
+
+local git_branch = subscribe.buf_autocmd(
+  "el_git_branch",
+  "BufEnter",
+  function(window, buffer)
+        local branch = extensions.git_branch(window, buffer)
+        if branch then
+
+          return ' ' .. '' .. ' ' .. branch
+        end
+      end
+)
+
+local git_changes = subscribe.buf_autocmd(
+  "el_git_changes",
+  "BufWritePost",
+  function(window, buffer)
+      return extensions.git_changes(window, buffer)
+      end
+)
+
+require('el').setup {
+  generator = function(_, _)
     return {
-      -- LHS
       extensions.gen_mode {
         format_string = ' %s '
       },
-      ' ',
-      subscribe.buf_autocmd(
-        "el_git_branch",
-        "BufEnter",
-        function(window, buffer)
-          return extensions.git_branch(window, buffer)
-          end
-      ),
-      ' ',
-      extensions.git_changes,
-
+      git_branch,
       sections.split,
-
-      -- RHS
-      builtin.filetype,
+      git_icon,
+      sections.maximum_width(
+        builtin.responsive_file(140, 90),
+        0.30
+      ),
       sections.collapse_builtin {
         ' ',
         builtin.modified_flag
       },
-      -- _lsp.status(),
-      lsp_statusline.segment,
-      -- lsp_statusline.current_function,
-      -- lsp_statusline.server_progress,
-      -- sections.split,
+      sections.split,
+      -- helper.buf_var('vista_nearest_method_or_function'),
+      lsp_statusline.current_function,
+      lsp_statusline.server_progress,
+      git_changes,
       '[', builtin.line_with_width(3), ':',  builtin.column_with_width(2), ']',
       sections.collapse_builtin {
         '[',
         builtin.help_list,
         builtin.readonly_list,
         ']',
-      }
+      },
+      builtin.filetype,
     }
-
-end
-
-require('el').setup{ generator = generator }
+  end
