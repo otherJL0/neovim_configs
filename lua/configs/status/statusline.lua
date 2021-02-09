@@ -72,3 +72,4 @@ require('el').setup {
       builtin.filetype,
     }
   end
+}
