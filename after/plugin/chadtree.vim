@@ -16,4 +16,4 @@ let g:chadtree_settings = {
       \}
 " let g:chadtree_settings = {"view.window_options.relativenumber": v:true}
 
-" autocmd VimEnter * CHADopen --nofocus
+autocmd VimEnter * CHADopen --nofocus

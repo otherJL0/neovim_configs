@@ -11,7 +11,6 @@ local lsp_statusline = require('el.plugins.lsp_status')
 local helper = require('el.helper')
 local _lsp = require('lsp-status')
 
-
 local generator = function()
     return {
       -- LHS
