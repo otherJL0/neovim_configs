@@ -59,8 +59,10 @@ require('el').setup {
       },
       sections.split,
       -- helper.buf_var('vista_nearest_method_or_function'),
-      lsp_statusline.current_function,
-      lsp_statusline.server_progress,
+      lsp_statusline.segment,
+      -- lsp_statusline.current_function,
+      -- lsp_statusline.server_progress,
+      -- lsp_statusline.
       git_changes,
       '[', builtin.line_with_width(3), ':',  builtin.column_with_width(2), ']',
       sections.collapse_builtin {

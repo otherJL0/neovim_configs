@@ -6,3 +6,6 @@ map <leader><leader> :
 
 " Clear highlights
 noremap <silent><C-l> :nohlsearch<cr>
+
+noremap ZZ :wqa!<cr>
+noremap ZQ :qa!<cr>

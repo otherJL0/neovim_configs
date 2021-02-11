@@ -12,5 +12,5 @@ saga.init_lsp_saga{
     scroll_up = 'k'
   },
   -- -- -- 1: thin border | 2: rounded border | 3: thick border
-  border_style = 2,
+  border_style = 1,
 }
