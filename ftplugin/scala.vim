@@ -1,0 +1,11 @@
+autocmd FileType scala iabbr <buffer> unit Unit
+autocmd FileType scala iabbr <buffer> int Int
+autocmd FileType scala iabbr <buffer> string String
+autocmd FileType scala iabbr <buffer> bool Boolean
+autocmd FileType scala iabbr <buffer> boolean Boolean
+autocmd FileType scala iabbr <buffer> double Double
+autocmd FileType scala iabbr <buffer> short Short
+autocmd FileType scala iabbr <buffer> long Long
+autocmd FileType scala iabbr <buffer> float Float
+autocmd FileType scala iabbr <buffer> char Char
+autocmd FileType scala iabbr <buffer> byte Byte
