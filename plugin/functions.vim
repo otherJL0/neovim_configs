@@ -41,3 +41,5 @@ augroup AutoRelativeLineNums
   au InsertEnter * set norelativenumber
   au InsertLeave * set relativenumber
 augroup END
+
+autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
