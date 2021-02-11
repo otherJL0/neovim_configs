@@ -46,3 +46,5 @@ set showmatch
 set autoread
 set wildmenu
 set wildmode=list,full
+
+set noswapfile

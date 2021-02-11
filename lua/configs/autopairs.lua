@@ -12,7 +12,6 @@ local _disable_filetype = { "TelescopePrompt", "vim" }
 local _break_line_filetype = nil -- mean all file type
 local _html_break_line_filetype = {'html' , 'vue' , 'typescriptreact' , 'svelte' , 'javascriptreact'}
 local _ignored_next_char = "%w"
-local
 
 -- Set values
 autopairs.setup({
