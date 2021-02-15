@@ -93,7 +93,7 @@ return require('packer').startup(function(use)
     'SidOfc/mkdx',
     'vimwiki/vimwiki',
     'tpope/vim-fugitive',
-    'tpope/vim-endwise',
+    -- 'tpope/vim-endwise',
   }
   use {
     'theniceboy/nvim-deus',
