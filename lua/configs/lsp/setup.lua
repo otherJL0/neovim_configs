@@ -74,3 +74,10 @@ lspconfig.clojure_lsp.setup{
   filetypes = {"clojure", "edn"},
   root_dir = util.root_pattern("project.clj", "deps.edn", "README.md")
 }
+
+lspconfig.codeqlls.setup{
+  on_attach = _global_attach.on_attach,
+  filetypes = {"ql"},
+  log_level = 2,
+  root_dir = util.root_pattern(".git", "README.md"),
+}

@@ -47,8 +47,12 @@ require('el').setup {
         format_string = ' %s '
       },
       git_branch,
+      git_changes,
+
+      ---
       sections.split,
-      git_icon,
+      ---
+
       sections.maximum_width(
         builtin.responsive_file(140, 90),
         0.30
@@ -59,12 +63,11 @@ require('el').setup {
       },
       sections.split,
       -- helper.buf_var('vista_nearest_method_or_function'),
-      lsp_statusline.segment,
       -- lsp_statusline.current_function,
       -- lsp_statusline.server_progress,
       -- lsp_statusline.
-      git_changes,
-      '[', builtin.line_with_width(3), ':',  builtin.column_with_width(2), ']',
+      '[', 'line:',builtin.line_with_width(3),']',
+      '[', 'col:',  builtin.column_with_width(3), ']',
       sections.collapse_builtin {
         '[',
         builtin.help_list,
@@ -72,6 +75,7 @@ require('el').setup {
         ']',
       },
       builtin.filetype,
+      lsp_statusline.segment,
     }
   end
 }
