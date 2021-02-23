@@ -22,7 +22,7 @@ function pyright.settings()
           autoSearchPaths = true;
           diagnosticMode ="workspace";
           logLevel = "Trace";
-          typeCheckingMode = "strict";
+          typeCheckingMode = "basic";
           useLibraryCodeForTypes = true;
         };
       };
