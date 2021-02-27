@@ -150,4 +150,7 @@ return require('packer').startup(function(use)
   use 'kosayoda/nvim-lightbulb'
   use 'hkupty/iron.nvim'
   use 'tiagofumo/vim-nerdtree-syntax-highlight'
+  use 'phaazon/hop.nvim'
+  use 'gennaro-tedesco/nvim-peekup'
+  use 'tjdevries/astronauta.nvim'
 end)

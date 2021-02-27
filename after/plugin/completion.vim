@@ -12,7 +12,7 @@ imap <s-tab> <Plug>(completion_smart_s_tab)
 " let g:completion_confirm_key = "\<C-y>"
 " let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy', 'all']
 
-let g:completion_trigger_keyword_length = 4 " default = 1
+let g:completion_trigger_keyword_length = 3 " default = 1
 
 
 " Setup snippet support
