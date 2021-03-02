@@ -14,5 +14,6 @@ lua require('snippets').use_suggested_mappings()
 lua require('configs/lspsaga')
 lua require('configs/lsp/metals')
 lua require('configs/status/statusline')
+lua require('dap-python').setup('~/.miniconda3/bin/python')
 
 autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()
