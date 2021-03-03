@@ -42,3 +42,9 @@ nnoremap <Leader>Pr :AsyncTask project-run<cr>
 nnoremap <Leader>Pb :AsyncTask project-build<cr>
 
 nnoremap <Leader>Gr :AsyncTask gradle<cr>
+
+nnoremap <silent><f5> :AsyncTask file-run<cr>
+nnoremap <silent><f9> :AsyncTask file-build<cr>
+
+nnoremap <silent><f6> :AsyncTask project-run<cr>
+nnoremap <silent><f7> :AsyncTask project-build<cr>
