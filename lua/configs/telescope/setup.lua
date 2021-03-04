@@ -41,6 +41,18 @@ require('telescope').setup{
 
     -- Developer configurations: Not meant for general override
     buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker
+  },
+  extensions = {
+    frecency = {
+      show_scores = true,
+      show_unindex = true,
+      ignore_patters = {".git/*", "*/tmp/*", "*build/*"},
+      workspaces = {
+        ["conf"] = "/home/jlopez/.config",
+        ["data"] = "/home/jlopez/.local/share",
+        ["wiki"] = "/home/jlopez/wiki",
+      }
+    }
   }
 }
 
