@@ -13,7 +13,7 @@ ${0}
 ]]
 
 local _img=[[
-```{img} ${1}
+```{image} ${1}
 :alt: ${1}
 :scale: 100%
 :align: center
