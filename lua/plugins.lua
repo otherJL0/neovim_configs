@@ -154,6 +154,9 @@ return require('packer').startup(function(use)
   use 'gennaro-tedesco/nvim-peekup'
   use 'tjdevries/astronauta.nvim'
 
+  use 'kevinhwang91/nvim-hlslens'
+  use 'kevinhwang91/nvim-bqf'
+
   use {
   "nvim-telescope/telescope-frecency.nvim",
   config = function()
