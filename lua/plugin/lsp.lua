@@ -19,11 +19,11 @@ lspconfig.pyright.setup{
   settings = _python.lsp_settings(),
 }
 
-lspconfig.sumneko_lua.setup{
+require('nlua.lsp.nvim').setup(require('lspconfig'), {
   on_attach = _global_attach.on_attach,
   cmd = _sumneko_lua.cmd(),
-  settints = _sumneko_lua.settings()
-}
+  settings = _sumneko_lua.settings()
+})
 
 lspconfig.gopls.setup{
   on_attach = _global_attach.on_attach,

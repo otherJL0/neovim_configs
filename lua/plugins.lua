@@ -163,4 +163,8 @@ return require('packer').startup(function(use)
     require"telescope".load_extension("frecency")
   end
 }
+
+  use 'tjdevries/nlua.nvim'
+  use 'tjdevries/manillua.nvim'
+
 end)

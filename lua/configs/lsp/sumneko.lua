@@ -1,13 +1,14 @@
 sumneko = {}
 
-local sumneko_binary = "/home/jlopez/.local/share/vim-lsp-settings/servers/sumneko-lua-language-server"
+local sumneko_root_path = "/home/jlopez/.local/share/vim-lsp-settings/servers/lua-language-server"
+local sumneko_binary = sumneko_root_path.."/bin/Linux/lua-language-server"
 
 function sumneko.on_attach()
   return require'completion'.on_attach
 end
 
 function sumneko.cmd()
-  return {sumneko_binary}
+  return {sumneko_binary, "-E", sumneko_root_path.."/main.lua"}
 end
 
 function sumneko.settings()
