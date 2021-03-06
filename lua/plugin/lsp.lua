@@ -106,3 +106,58 @@ lspconfig.vimls.setup{
   },
   root_dir = util.root_pattern(".git", "README.md", "init.vim", "init.lua"),
 }
+
+lspconfig.terraformls.setup{
+  cmd = {"terraform-ls", "serve"},
+  on_attach = _global_attach.on_attach,
+  filetypes = {"terraform", "hcl"},
+  root_dir = util.root_pattern(".terraform", ".git")
+}
+
+lspconfig.yamlls.setup{
+  cmd = {"yaml-language-server", "--stdio"},
+  on_attach = _global_attach.on_attach,
+  filetypes = {"yaml", "yml"},
+  root_dir = util.root_pattern(".git", vim.fn.getcwd())
+}
+
+lspconfig.sqls.setup{
+  cmd = {"sqls"},
+  on_attach = _global_attach.on_attach,
+  filetypes = {"sql"},
+  root_dir = util.root_pattern(".git", vim.fn.getcwd())
+}
+
+lspconfig.jsonls.setup{
+  cmd = {"vscode-json-languageserver", "--stdio"},
+  on_attach = _global_attach.on_attach,
+  filetypes = {"json"},
+  init_options = {
+      provideFormatter = true
+    },
+  root_dir = util.root_pattern(".git", vim.fn.getcwd())
+}
+
+lspconfig.graphql.setup{
+  cmd = {"graphql-lsp", "server", "-m", "stream"},
+  on_attach = _global_attach.on_attach,
+  filetypes = {"graphql"},
+  root_dir = util.root_pattern(".git", ".graphqlrc")
+}
+
+lspconfig.dockerls.setup{
+  cmd = {"docker-langserver", "--stdio"},
+  on_attach = _global_attach.on_attach,
+  filetypes = {"Dockerfile", "dockerfile"},
+  root_dir = util.root_pattern("Dockerfile")
+}
+
+lspconfig.bashls.setup{
+  cmd = { "bash-language-server", "start" },
+  on_attach = _global_attach.on_attach,
+  cmd_env = {
+    GLOB_PATTERN = "*@(.sh|.inc|.bash|.command)"
+  },
+  filetypes = { "sh" },
+  root_dir = util.root_pattern(".bashrc", ".git")
+}
