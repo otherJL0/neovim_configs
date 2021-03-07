@@ -26,7 +26,7 @@ let g:completion_trigger_keyword_length = 3 " default = 1
 
 
 " Setup snippet support
-let g:completion_enable_snippet = 'snippets.vim'
+let g:completion_enable_snippet = 'snippets.nvim'
 
 " " Configure the completion chains
 " let g:completion_auto_change_source = 1

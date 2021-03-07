@@ -4,6 +4,7 @@ vim.g.dap_virtual_text = true
 -- vim.g.dap_virtual_text = 'all frames'
 
 local dap = require('dap')
+local nnoremap = vim.keymap.nnoremap
 
 dap.adapters.python = {
   type = 'executable';
@@ -23,3 +24,14 @@ dap.configurations.python = {
     pythonPath = '/home/jlopez/.miniconda3/bin/python'
   },
 }
+
+  nnoremap { '<leader>b', dap.toggle_breakpoint}
+  nnoremap { '<leader>c', dap.continue}
+  nnoremap { '<leader>dr', dap.repl.open}
+  -- nnoremap { '<silent> <F5> ', dap.continue()}
+  -- nnoremap { '<silent> <F10> ', dap.step_over()}
+  -- nnoremap { '<silent> <F11> ', dap.step_into()}
+  -- nnoremap { '<silent> <F12> ', dap.step_out()}
+  -- nnoremap { '<leader>B', dap.set_breakpoint(vim.fn.input('Breakpoint condition: '))}
+  -- nnoremap { '<leader>lp', dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))}
+  -- nnoremap { '<leader>dl', dap.repl.run_last()}
