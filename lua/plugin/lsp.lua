@@ -1,6 +1,5 @@
 local lspconfig = require'lspconfig'
 local util = require'lspconfig/util'
-local completion = require'completion'
 
 local _sumneko_lua = require'configs.lsp.sumneko'
 local _groovyls = require'configs.lsp.groovy'
@@ -124,6 +123,7 @@ lspconfig.yamlls.setup{
 lspconfig.sqls.setup{
   cmd = {"sqls"},
   on_attach = _global_attach.on_attach,
+  -- on_attach = _global_attach.on_attach,
   filetypes = {"sql"},
   root_dir = util.root_pattern(".git", vim.fn.getcwd())
 }
@@ -173,3 +173,11 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     update_in_insert = true,
   }
 )
+
+lspconfig.sqls.setup{
+    on_attach = function(client)
+        client.resolved_capabilities.execute_command = true
+
+        require'sqls'.setup{ picker = 'telescope' }
+    end
+}

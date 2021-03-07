@@ -2,7 +2,7 @@ local nvim_status  = require('lsp-status')
 
 local status = {}
 
-  
+
 local nvim_status  = require('lsp-status')
 
 local status = {}

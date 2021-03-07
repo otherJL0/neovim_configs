@@ -43,7 +43,6 @@ return require('packer').startup(function(use)
   -- Debug Adapter Protocol
   use {
     'theHamsta/nvim-dap-virtual-text',
-    'mfussenegger/nvim-dap-python',
     'nvim-telescope/telescope-dap.nvim',
     requires = {'mfussenegger/nvim-dap'}
   }
@@ -78,7 +77,7 @@ return require('packer').startup(function(use)
   }
 
   use 'windwp/nvim-autopairs'
-  use 'mhinz/vim-signify'
+  -- use 'mhinz/vim-signify'
   -- use 'itchyny/lightline.vim'
   use 'sainnhe/sonokai'
   use 'romgrk/barbar.nvim'
@@ -117,7 +116,7 @@ return require('packer').startup(function(use)
 
 	use {'p00f/nvim-ts-rainbow'}
   use 'voldikss/vim-floaterm'
-  use 'Yggdroot/indentLine'
+  -- use 'Yggdroot/indentLine'
   use {'aklt/plantuml-syntax', 'weirongxu/plantuml-previewer.vim'}
   use 'tyru/open-browser.vim'
   use { 'ms-jpq/chadtree', run = ':CHADdeps' }
@@ -168,6 +167,9 @@ return require('packer').startup(function(use)
   use 'tjdevries/manillua.nvim'
   use 'hashivim/vim-terraform'
   use 'nvim-lua/lsp_extensions.nvim'
-  use 'sakhnik/nvim-gdb'
-
+  use 'glepnir/indent-guides.nvim'
+  use 'onsails/lspkind-nvim'
+  use 'ray-x/lsp_signature.nvim'
+  use 'nanotee/sqls.nvim'
+  use 'notomo/cmdbuf.nvim'
 end)

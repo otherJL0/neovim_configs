@@ -1,6 +1,5 @@
 RELOAD = require('plenary.reload').reload_module
 
-
 RELOAD('el')
 require('el').reset_windows()
 local builtin = require('el.builtin')
@@ -10,6 +9,8 @@ local subscribe = require('el.subscribe')
 local lsp_statusline = require('el.plugins.lsp_status')
 local helper = require('el.helper')
 local _lsp = require('lsp-status')
+local ws_errors = require('lsp_extensions.workspace.diagnostic').get_count(0, 'Error')
+local ws_hints = require('lsp_extensions.workspace.diagnostic').get_count(0, 'Hint')
 
 
 local git_icon = subscribe.buf_autocmd("el_file_icon", "BufRead", function(_, bufnr)
@@ -63,7 +64,7 @@ require('el').setup {
       },
       sections.split,
       -- helper.buf_var('vista_nearest_method_or_function'),
-      -- lsp_statusline.current_function,
+      -- lsp_statuslina.current_function,
       -- lsp_statusline.server_progress,
       -- lsp_statusline.
       '[', 'line:',builtin.line_with_width(3),']',
