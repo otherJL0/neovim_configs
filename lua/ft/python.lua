@@ -1,5 +1,4 @@
 local _python = {}
-local lspconfig = require('lspconfig')
 local util = require('lspconfig/util')
 
 -- LSP settings
@@ -18,12 +17,12 @@ function _python.lsp_settings()
   return {
       python = {
         analysis = {
-          autoImportCompletions = true;
-          autoSearchPaths = true;
-          diagnosticMode ="workspace";
-          logLevel = "Trace";
-          typeCheckingMode = "strict";
-          useLibraryCodeForTypes = true;
+          autoImportCompletions = true,
+          autoSearchPaths = true,
+          diagnosticMode ="workspace",
+          logLevel = "Trace",
+          typeCheckingMode = "strict",
+          useLibraryCodeForTypes = true,
         };
       };
     }
