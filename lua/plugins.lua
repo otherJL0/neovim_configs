@@ -166,5 +166,8 @@ return require('packer').startup(function(use)
 
   use 'tjdevries/nlua.nvim'
   use 'tjdevries/manillua.nvim'
+  use 'hashivim/vim-terraform'
+  use 'nvim-lua/lsp_extensions.nvim'
+  use 'sakhnik/nvim-gdb'
 
 end)

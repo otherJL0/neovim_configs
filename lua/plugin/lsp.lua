@@ -110,7 +110,7 @@ lspconfig.vimls.setup{
 lspconfig.terraformls.setup{
   cmd = {"terraform-ls", "serve"},
   on_attach = _global_attach.on_attach,
-  filetypes = {"terraform", "hcl"},
+  filetypes = {"terraform", "hcl", "tf"},
   root_dir = util.root_pattern(".terraform", ".git")
 }
 
@@ -161,3 +161,15 @@ lspconfig.bashls.setup{
   filetypes = { "sh" },
   root_dir = util.root_pattern(".bashrc", ".git")
 }
+
+lspconfig.rust_analyzer.setup{
+  on_attach = _global_attach.on_attach
+}
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    virtual_text = true,
+    signs = true,
+    update_in_insert = true,
+  }
+)
