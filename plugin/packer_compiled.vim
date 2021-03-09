@@ -23,17 +23,22 @@ if not string.find(package.cpath, install_cpath_pattern, 1, true) then
 end
 
 local function try_loadstring(s, component, name)
-  local success, err = pcall(loadstring(s))
+  local success, result = pcall(loadstring(s))
   if not success then
     print('Error running ' .. component .. ' for ' .. name)
-    error(err)
+    error(result)
   end
+  return result
 end
 
 _G.packer_plugins = {
   ["architext.nvim"] = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/architext.nvim"
+  },
+  ["astronauta.nvim"] = {
+    loaded = true,
+    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/astronauta.nvim"
   },
   ["asyncrun.vim"] = {
     loaded = true,
@@ -54,6 +59,10 @@ _G.packer_plugins = {
   chadtree = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/chadtree"
+  },
+  ["cmdbuf.nvim"] = {
+    loaded = true,
+    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/cmdbuf.nvim"
   },
   ["colorbuddy.nvim"] = {
     loaded = true,
@@ -99,9 +108,13 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/gruvbuddy.nvim"
   },
-  indentLine = {
+  ["hop.nvim"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/indentLine"
+    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/hop.nvim"
+  },
+  ["indent-guides.nvim"] = {
+    loaded = true,
+    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/indent-guides.nvim"
   },
   ["iron.nvim"] = {
     loaded = true,
@@ -111,9 +124,25 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/lsp-status.nvim"
   },
+  ["lsp_extensions.nvim"] = {
+    loaded = true,
+    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/lsp_extensions.nvim"
+  },
+  ["lsp_signature.nvim"] = {
+    loaded = true,
+    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim"
+  },
+  ["lspkind-nvim"] = {
+    loaded = true,
+    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
+  },
   ["lspsaga.nvim"] = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
+  },
+  ["manillua.nvim"] = {
+    loaded = true,
+    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/manillua.nvim"
   },
   ["mirror.vim"] = {
     loaded = true,
@@ -131,9 +160,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/neomake"
   },
+  ["nlua.nvim"] = {
+    loaded = true,
+    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nlua.nvim"
+  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
+  },
+  ["nvim-bqf"] = {
+    loaded = true,
+    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nvim-bqf"
   },
   ["nvim-colorizer.lua"] = {
     loaded = true,
@@ -143,10 +180,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nvim-dap"
   },
-  ["nvim-dap-python"] = {
-    loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nvim-dap-python"
-  },
   ["nvim-dap-virtual-text"] = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nvim-dap-virtual-text"
@@ -154,6 +187,10 @@ _G.packer_plugins = {
   ["nvim-deus"] = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nvim-deus"
+  },
+  ["nvim-hlslens"] = {
+    loaded = true,
+    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nvim-hlslens"
   },
   ["nvim-jdtls"] = {
     loaded = true,
@@ -174,6 +211,10 @@ _G.packer_plugins = {
   ["nvim-metals"] = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nvim-metals"
+  },
+  ["nvim-peekup"] = {
+    loaded = true,
+    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nvim-peekup"
   },
   ["nvim-tree-docs"] = {
     loaded = true,
@@ -205,6 +246,7 @@ _G.packer_plugins = {
   },
   ["packer.nvim"] = {
     loaded = false,
+    needs_bufread = false,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/opt/packer.nvim"
   },
   ["plantuml-previewer.vim"] = {
@@ -231,17 +273,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/popup.nvim"
   },
-  ["quick-scope"] = {
-    loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/quick-scope"
-  },
   ["snippets.nvim"] = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/snippets.nvim"
-  },
-  ["solarbuddy.nvim"] = {
-    loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/solarbuddy.nvim"
   },
   sonokai = {
     loaded = true,
@@ -255,13 +289,22 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/sql.nvim"
   },
-  ["targets.vim"] = {
+  ["sqls.nvim"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/targets.vim"
+    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/sqls.nvim"
+  },
+  ["telescope-cheat.nvim"] = {
+    loaded = true,
+    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/telescope-cheat.nvim"
   },
   ["telescope-dap.nvim"] = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/telescope-dap.nvim"
+  },
+  ["telescope-frecency.nvim"] = {
+    config = { "\27LJ\2\2M\0\0\2\0\4\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0'\1\3\0B\0\2\1K\0\1\0\rfrecency\19load_extension\14telescope\frequire\0" },
+    loaded = true,
+    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/telescope-frecency.nvim"
   },
   ["telescope-packer.nvim"] = {
     loaded = true,
@@ -295,10 +338,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/vim-dadbod-ui"
   },
-  ["vim-endwise"] = {
-    loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/vim-endwise"
-  },
   ["vim-floaterm"] = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/vim-floaterm"
@@ -314,11 +353,16 @@ _G.packer_plugins = {
   ["vim-lsp-settings"] = {
     commands = { "LspServerInstall" },
     loaded = false,
+    needs_bufread = false,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/opt/vim-lsp-settings"
   },
   ["vim-mundo"] = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/vim-mundo"
+  },
+  ["vim-nerdtree-syntax-highlight"] = {
+    loaded = true,
+    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/vim-nerdtree-syntax-highlight"
   },
   ["vim-obsession"] = {
     loaded = true,
@@ -332,13 +376,13 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/vim-signature"
   },
-  ["vim-signify"] = {
-    loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/vim-signify"
-  },
   ["vim-surround"] = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/vim-surround"
+  },
+  ["vim-terraform"] = {
+    loaded = true,
+    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/vim-terraform"
   },
   vimwiki = {
     loaded = true,
@@ -350,6 +394,8 @@ _G.packer_plugins = {
   }
 }
 
+-- Config for: telescope-frecency.nvim
+try_loadstring("\27LJ\2\2M\0\0\2\0\4\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0'\1\3\0B\0\2\1K\0\1\0\rfrecency\19load_extension\14telescope\frequire\0", "config", "telescope-frecency.nvim")
 
 -- Command lazy-loads
 vim.cmd [[command! -nargs=* -range -bang -complete=file LspServerInstall lua require("packer.load")({'vim-lsp-settings'}, { cmd = "LspServerInstall", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
