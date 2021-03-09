@@ -13,4 +13,5 @@ snippets.snippets = {
   java = _java.snippets(),
   python = _python.snippets(),
   markdown = _markdown.snippets(),
+  terraform = require('snippets.terraform')
 }
