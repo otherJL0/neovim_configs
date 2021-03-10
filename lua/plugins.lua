@@ -116,7 +116,6 @@ return require('packer').startup(function(use)
 
 	use {'p00f/nvim-ts-rainbow'}
   use 'voldikss/vim-floaterm'
-  -- use 'Yggdroot/indentLine'
   use {'aklt/plantuml-syntax', 'weirongxu/plantuml-previewer.vim'}
   use 'tyru/open-browser.vim'
   use { 'ms-jpq/chadtree', run = ':CHADdeps' }
@@ -124,7 +123,6 @@ return require('packer').startup(function(use)
   use 'kshenoy/vim-signature'
   use 'tjdevries/train.nvim'
   use 'mfussenegger/nvim-dap'
-  use 'tpope/vim-commentary'
 
   use 'norcalli/nvim-colorizer.lua'
 
@@ -167,9 +165,12 @@ return require('packer').startup(function(use)
   use 'tjdevries/manillua.nvim'
   use 'hashivim/vim-terraform'
   use 'nvim-lua/lsp_extensions.nvim'
-  use 'glepnir/indent-guides.nvim'
+  -- use 'glepnir/indent-guides.nvim'
   use 'onsails/lspkind-nvim'
   use 'ray-x/lsp_signature.nvim'
   use 'nanotee/sqls.nvim'
   use 'notomo/cmdbuf.nvim'
+  use 'romgrk/nvim-treesitter-context'
+  use 'b3nj5m1n/kommentary'
+  use {'lukas-reineke/indent-blankline.nvim', branch = "lua"}
 end)
