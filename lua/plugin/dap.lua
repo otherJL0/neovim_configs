@@ -25,6 +25,31 @@ dap.configurations.python = {
   },
 }
 
+
+dap.configurations.scala = {
+  {
+     type = 'scala',
+     request = 'launch',
+     name = 'Run',
+     console = 'integratedTerminal',
+     metalsRunType = 'run'
+  },
+  {
+     type = 'scala',
+     request = 'launch',
+     name = 'Test File',
+     console = 'integratedTerminal',
+     metalsRunType = 'testFile'
+  },
+  {
+     type = 'scala',
+     request = 'launch',
+     name = 'Test Target',
+     console = 'integratedTerminal',
+     runType = 'testTarget'
+  }
+}
+
   nnoremap { '<leader>b', dap.toggle_breakpoint}
   nnoremap { '<leader>c', dap.continue}
   nnoremap { '<leader>dr', dap.repl.open}

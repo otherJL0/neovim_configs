@@ -7,6 +7,10 @@ metals_config.settings = {
   showInferredType = true,
 }
 
+metals_config.on_attach = function(client, bufnr)
+  require('metals').setup_dap()
+end
+
 function _metals.custom_init()
   return metals_config
 end

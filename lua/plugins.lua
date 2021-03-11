@@ -77,13 +77,10 @@ return require('packer').startup(function(use)
   }
 
   use 'windwp/nvim-autopairs'
-  -- use 'mhinz/vim-signify'
-  -- use 'itchyny/lightline.vim'
   use 'sainnhe/sonokai'
   use 'romgrk/barbar.nvim'
 
   use {
-    -- 'wellle/targets.vim',
     'tpope/vim-surround',
     'machakann/vim-sandwich',
     'tpope/vim-obsession',
@@ -165,7 +162,6 @@ return require('packer').startup(function(use)
   use 'tjdevries/manillua.nvim'
   use 'hashivim/vim-terraform'
   use 'nvim-lua/lsp_extensions.nvim'
-  -- use 'glepnir/indent-guides.nvim'
   use 'onsails/lspkind-nvim'
   use 'ray-x/lsp_signature.nvim'
   use 'nanotee/sqls.nvim'
@@ -173,4 +169,12 @@ return require('packer').startup(function(use)
   use 'romgrk/nvim-treesitter-context'
   use 'b3nj5m1n/kommentary'
   use {'lukas-reineke/indent-blankline.nvim', branch = "lua"}
+  use 'Iron-E/nvim-libmodal'
+
+  use 'ido-nvim/core'
+
+  -- Fennel
+  use 'bakpakin/fennel.vim'
+  use 'Olical/aniseed'
+  use 'Olical/conjure'
 end)
