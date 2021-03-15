@@ -3,10 +3,13 @@ vim.g.dap_virtual_text = true
 -- request variable values for all frames (experimental)
 -- vim.g.dap_virtual_text = 'all frames'
 
+
 local dap = require('dap')
 local nnoremap = vim.keymap.nnoremap
 
-dap.adapters.python = {
+require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
+
+--[[ dap.adapters.python = {
   type = 'executable';
   command = '/home/jlopez/.miniconda3/bin/python';
   args = { '-m', 'debugpy.adapter' };
@@ -23,7 +26,7 @@ dap.configurations.python = {
     program = "${file}"; -- This configuration will launch the current file if used.
     pythonPath = '/home/jlopez/.miniconda3/bin/python'
   },
-}
+} ]]
 
 
 dap.configurations.scala = {

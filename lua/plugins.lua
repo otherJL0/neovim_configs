@@ -177,4 +177,5 @@ return require('packer').startup(function(use)
   use 'bakpakin/fennel.vim'
   use 'Olical/aniseed'
   use 'Olical/conjure'
+  use 'mfussenegger/nvim-dap-python'
 end)
