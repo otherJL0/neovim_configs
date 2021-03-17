@@ -22,14 +22,14 @@ return require('packer').startup(function(use)
     requires = { 'RishabhRD/popfix' }
   }
 
+  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', commit = "11ede1c0d2ab30ca1b637e31892a12e042a73965"}
   -- Treesitter Plugins
   use {
-    'nvim-treesitter/nvim-treesitter',
     'nvim-treesitter/nvim-treesitter-textobjects',
     'nvim-treesitter/nvim-treesitter-refactor',
     'nvim-treesitter/nvim-tree-docs',
     'nvim-treesitter/playground',
-    requires = {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+    requires = {'nvim-treesitter/nvim-treesitter'}
   }
 
   use {
