@@ -6,6 +6,7 @@ local _groovyls = require 'configs.lsp.groovy'
 -- local _pyright = require'configs.lsp.pyright'
 local _global_attach = require 'configs.lsp.global_attach'
 local _python = require('ft/python')
+local _rust = require('configs.lsp.rust')
 
 vim.fn.sign_define("LspDiagnosticsSignError", {text = "", numhl = "LspDiagnosticsDefaultError"})
 vim.fn.sign_define("LspDiagnosticsSignWarning", {text = "", numhl = "LspDiagnosticsDefaultWarning"})
@@ -163,7 +164,13 @@ lspconfig.bashls.setup {
     root_dir = util.root_pattern(".bashrc", ".git")
 }
 
-lspconfig.rust_analyzer.setup {on_attach = _global_attach.on_attach}
+-- lspconfig.rust_analyzer.setup {on_attach = _global_attach.on_attach}
+lspconfig.rust_analyzer.setup({
+    on_attach=_global_attach.on_attach,
+    settings = {
+        ["rust-analyzer"] = _rust.settings(),
+    }
+})
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics,
                                                                    {virtual_text = true, signs = true, update_in_insert = true})
