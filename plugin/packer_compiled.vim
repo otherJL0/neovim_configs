@@ -32,6 +32,10 @@ local function try_loadstring(s, component, name)
 end
 
 _G.packer_plugins = {
+  aniseed = {
+    loaded = true,
+    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/aniseed"
+  },
   ["architext.nvim"] = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/architext.nvim"
@@ -80,6 +84,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/completion-treesitter"
   },
+  conjure = {
+    loaded = true,
+    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/conjure"
+  },
+  core = {
+    loaded = true,
+    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/core"
+  },
   ["csv.vim"] = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/csv.vim"
@@ -87,6 +99,10 @@ _G.packer_plugins = {
   ["express_line.nvim"] = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/express_line.nvim"
+  },
+  ["fennel.vim"] = {
+    loaded = true,
+    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/fennel.vim"
   },
   ["formatter.nvim"] = {
     loaded = true,
@@ -112,13 +128,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/hop.nvim"
   },
-  ["indent-guides.nvim"] = {
+  ["indent-blankline.nvim"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/indent-guides.nvim"
+    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
   },
   ["iron.nvim"] = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/iron.nvim"
+  },
+  kommentary = {
+    loaded = true,
+    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/kommentary"
   },
   ["lsp-status.nvim"] = {
     loaded = true,
@@ -180,6 +200,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nvim-dap"
   },
+  ["nvim-dap-python"] = {
+    loaded = true,
+    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nvim-dap-python"
+  },
   ["nvim-dap-virtual-text"] = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nvim-dap-virtual-text"
@@ -195,6 +219,10 @@ _G.packer_plugins = {
   ["nvim-jdtls"] = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nvim-jdtls"
+  },
+  ["nvim-libmodal"] = {
+    loaded = true,
+    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nvim-libmodal"
   },
   ["nvim-lightbulb"] = {
     loaded = true,
@@ -223,6 +251,10 @@ _G.packer_plugins = {
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+  },
+  ["nvim-treesitter-context"] = {
+    loaded = true,
+    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context"
   },
   ["nvim-treesitter-refactor"] = {
     loaded = true,
@@ -321,10 +353,6 @@ _G.packer_plugins = {
   ["train.nvim"] = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/train.nvim"
-  },
-  ["vim-commentary"] = {
-    loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/vim-commentary"
   },
   ["vim-dadbod"] = {
     loaded = true,

@@ -2,7 +2,7 @@
 local ts = require'nvim-treesitter.configs'
 
 ts.setup {
-  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  -- ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
 
   --Built In
   highlight = {enable = true, use_language_tree = true},
