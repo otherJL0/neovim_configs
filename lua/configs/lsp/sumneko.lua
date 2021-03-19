@@ -1,6 +1,6 @@
 sumneko = {}
 
-local sumneko_root_path = "/home/jlopez/.local/share/vim-lsp-settings/servers/lua-language-server"
+local sumneko_root_path = "/home/jlopez/.local/share/lua-language-server"
 local sumneko_binary = sumneko_root_path.."/bin/Linux/lua-language-server"
 
 function sumneko.on_attach()
