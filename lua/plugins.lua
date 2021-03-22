@@ -22,8 +22,8 @@ return require('packer').startup(function(use)
     requires = { 'RishabhRD/popfix' }
   }
 
-  use {'nvim-treesitter/nvim-treesitter', commit = "11ede1c0d2ab30ca1b637e31892a12e042a73965"}
-  -- use {'nvim-treesitter/nvim-treesitter'}
+  -- use {'nvim-treesitter/nvim-treesitter', commit = "11ede1c0d2ab30ca1b637e31892a12e042a73965"}
+  use {'nvim-treesitter/nvim-treesitter'}
   -- Treesitter Plugins
   use {
     'nvim-treesitter/nvim-treesitter-textobjects',
