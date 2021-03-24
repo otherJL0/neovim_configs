@@ -22,7 +22,6 @@ return require('packer').startup(function(use)
     requires = { 'RishabhRD/popfix' }
   }
 
-  -- use {'nvim-treesitter/nvim-treesitter', commit = "11ede1c0d2ab30ca1b637e31892a12e042a73965"}
   use {'nvim-treesitter/nvim-treesitter'}
   -- Treesitter Plugins
   use {
@@ -179,4 +178,7 @@ return require('packer').startup(function(use)
   use 'Olical/aniseed'
   use 'Olical/conjure'
   use 'mfussenegger/nvim-dap-python'
+
+  use 'wsdjeg/luarefvim'
+  use 'rafcamlet/nvim-luapad'
 end)
