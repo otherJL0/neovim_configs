@@ -181,4 +181,6 @@ return require('packer').startup(function(use)
 
   use 'wsdjeg/luarefvim'
   use 'rafcamlet/nvim-luapad'
+
+  use 'untitled-ai/jupyter_ascending'
 end)

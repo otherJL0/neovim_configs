@@ -5,3 +5,6 @@ lua require('lsp_signature').on_attach()
 lua require('snippets').use_suggested_mappings()
 
 autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()
+
+nmap <space><space>x <Plug>JupyterExecute
+nmap <space><space>X <Plug>JupyterExecuteAll
