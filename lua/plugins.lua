@@ -115,7 +115,7 @@ return require('packer').startup(function(use)
   use 'voldikss/vim-floaterm'
   use {'aklt/plantuml-syntax', 'weirongxu/plantuml-previewer.vim'}
   use 'tyru/open-browser.vim'
-  use { 'ms-jpq/chadtree', run = ':CHADdeps' }
+  use { 'ms-jpq/chadtree', branch='chad', run = 'python3 -m chadtree deps' }
 
   use 'kshenoy/vim-signature'
   use 'tjdevries/train.nvim'
