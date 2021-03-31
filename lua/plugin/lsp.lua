@@ -79,12 +79,12 @@ lspconfig.cmake.setup {
     cmd = {"cmake-language-server"},
     filetypes = {"cmake"},
     init_options = {buildDirectory = "build"},
-    root_dir = util.root_pattern("compile_commands.json", "build", "makefile", "README.md")
+    root_dir = util.root_pattern(".git","compile_commands.json", "build", "makefile", "README.md")
 }
 
 lspconfig.clangd.setup {
     on_attach = _global_attach.on_attach,
-    cmd = {"clangd-13", "--background-index"},
+    cmd = {"clangd", "--background-index"},
     filetypes = {"c", "cpp", "cu", "h", "hpp", "c++", "h++"},
     root_dir = util.root_pattern("compile_commands.json", "compile_flags.txt", "build", "README.md", "makefile")
 }

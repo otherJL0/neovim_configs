@@ -183,4 +183,5 @@ return require('packer').startup(function(use)
   use 'rafcamlet/nvim-luapad'
 
   use 'untitled-ai/jupyter_ascending'
+  use 'fedorenchik/qt-support.vim'
 end)
