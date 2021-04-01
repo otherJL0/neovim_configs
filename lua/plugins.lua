@@ -184,4 +184,6 @@ return require('packer').startup(function(use)
 
   use 'untitled-ai/jupyter_ascending'
   use 'fedorenchik/qt-support.vim'
+  use 'preservim/tagbar'
+  use 'windwp/nvim-ts-autotag'
 end)
