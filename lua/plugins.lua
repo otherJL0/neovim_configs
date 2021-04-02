@@ -186,4 +186,5 @@ return require('packer').startup(function(use)
   use 'fedorenchik/qt-support.vim'
   use 'preservim/tagbar'
   use 'windwp/nvim-ts-autotag'
+  use 'junegunn/vader.vim'
 end)
