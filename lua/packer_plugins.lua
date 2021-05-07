@@ -30,6 +30,9 @@ return require('packer').startup {
       requires = 'nvim-treesitter/nvim-treesitter'
     }
 
+    -- Snippets
+    use 'norcalli/snippets.nvim'
+
     -- Git Plugins
     -- Customization
     use 'folke/tokyonight.nvim'
