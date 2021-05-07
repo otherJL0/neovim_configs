@@ -29,6 +29,10 @@ return require('packer').startup {
       'nvim-treesitter/nvim-tree-docs',
       requires = 'nvim-treesitter/nvim-treesitter'
     }
+
+    -- Git Plugins
+    -- Customization
+    use 'folke/tokyonight.nvim'
   end,
   config = {
     display = {
