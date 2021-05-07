@@ -15,6 +15,19 @@ return require('packer').startup {
     use 'nvim-lua/completion-nvim'
     use 'nvim-treesitter/nvim-treesitter'
     use 'tjdevries/astronauta.nvim'
+
+    -- Useful Plugins
+    use 'tami5/sql.nvim'
+    use 'windwp/nvim-autopairs'
+
+    -- Treesitter Plugins
+    use {
+      'nvim-treesitter/playground',
+      'nvim-treesitter/nvim-treesitter-refactor',
+      'nvim-treesitter/nvim-treesitter-textobjects',
+      'nvim-treesitter/nvim-tree-docs',
+      requires = 'nvim-treesitter/nvim-treesitter'
+    }
   end,
   config = {
     display = {
