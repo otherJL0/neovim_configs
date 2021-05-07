@@ -21,7 +21,7 @@ else
 
     -- Vim Options
     require('config.options')
-    
+
     -- Sane Completion
     require('config.completion')
 

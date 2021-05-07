@@ -1,6 +1,27 @@
-return {
-  luaformat = {
-    formatCommand = "lua-format -i", 
-    formatStdin = true
-  }
+local options = {
+    ["use-tab"] = true,
+    ["keep-simple-control-block-one-line"] = true,
+    ["keep-simple-function-one-line"] = true,
+    ["align-args"] = true,
+    ["break-after-functioncall-lp"] = true,
+    ["break-before-functioncall-rp"] = true,
+    ["align-parameter"] = true,
+    ["chop-down-parameter"] = true,
+    ["break-after-functiondef-lp"] = true,
+    ["break-before-functiondef-rp"] = true,
+    ["align-table-field"] = true,
+    ["break-after-table-lb"] = true,
+    ["break-before-table-rb"] = true,
+    ["chop-down-table"] = true,
+    ["chop-down-kv-table"] = true,
+    ["extra-sep-at-table-end"] = true,
+    ["break-after-operator"] = true,
+    ["double-quote-to-single-quote"] = true,
+    ["single-quote-to-double-quote"] = true,
+    ["spaces-inside-functiondef-parens"] = true,
+    ["spaces-inside-functioncall-parens"] = true,
+    ["spaces-inside-table-braces"] = true,
+    ["spaces-around-equals-in-field"] = true,
+    ["line-breaks-after-function-body"] = true
 }
+return {luaformat = {formatCommand = "lua-format -i", formatStdin = true}}
