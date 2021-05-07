@@ -22,4 +22,7 @@ else
     -- Vim Options
     require('config.options')
 
+    -- LSP
+    require('config.lsp')
+
 end

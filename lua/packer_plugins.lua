@@ -15,6 +15,7 @@ return require('packer').startup {
     use 'nvim-lua/completion-nvim'
     use 'nvim-treesitter/nvim-treesitter'
     use 'tjdevries/astronauta.nvim'
+    use 'tjdevries/nlua.nvim'
 
     -- Useful Plugins
     use 'tami5/sql.nvim'
