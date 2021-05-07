@@ -15,4 +15,11 @@ if fn.empty(fn.glob(install_path)) > 0 then
 else
     -- All other logic depends on Packer being present
     require('packer_plugins')
+
+    -- Force loading of astronauta first
+    vim.cmd [[runtim plugin/astronauta.vim]]
+
+    -- Vim Options
+    require('config.options')
+
 end
