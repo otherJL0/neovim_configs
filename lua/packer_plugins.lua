@@ -10,7 +10,7 @@ return require('packer').startup {
     use 'wbthomas/packer.nvim'
 
     -- Essential Plugins
-    use 'nvim-lua/plenary.nvim'
+    -- use 'nvim-lua/plenary.nvim'
     use 'neovim/nvim-lspconfig'
     use 'nvim-lua/completion-nvim'
     use 'nvim-treesitter/nvim-treesitter'
@@ -36,6 +36,17 @@ return require('packer').startup {
     -- Git Plugins
     -- Customization
     use 'folke/tokyonight.nvim'
+
+    -- Telescope
+    use {
+      'nvim-telescope/telescope.nvim',
+      requires = {
+        {
+          'nvim-lua/popup.nvim',
+          'nvim-lua/plenary.nvim'
+        }
+      }
+    }
   end,
   config = {
     display = {
