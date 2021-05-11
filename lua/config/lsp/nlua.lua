@@ -1,6 +1,7 @@
 local nnoremap = vim.keymap.nnoremap
 local buf = vim.lsp.buf
 local diagnostic = vim.lsp.diagnostic
+local lsp_status = require('lsp-status')
 
 local chain_complete_list = {
   default = {
@@ -20,6 +21,7 @@ function nlua_attach(client)
     matching_stategy_list = {'exact', 'fuzzy'},
     chain_complete_list = chain_complete_list,
   })
+  lsp_status.on_attach(client)
 
   -- Mappings.
   -- nnoremap { 'gD', buf.declaration() }
