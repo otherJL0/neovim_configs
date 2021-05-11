@@ -36,6 +36,8 @@ return require('packer').startup {
     -- Git Plugins
     -- Customization
     use 'folke/tokyonight.nvim'
+    use 'tjdevries/colorbuddy.nvim'
+    use 'tjdevries/gruvbuddy.nvim'
 
     -- Telescope
     use {
