@@ -18,6 +18,7 @@ return require('packer').startup {
         use 'nvim-lua/lsp_extensions.nvim'
         use 'tjdevries/express_line.nvim'
         use 'glepnir/lspsaga.nvim'
+        use 'mfussenegger/nvim-dap'
 
         -- Useful Plugins
         use 'tami5/sql.nvim'
