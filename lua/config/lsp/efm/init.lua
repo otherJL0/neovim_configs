@@ -24,6 +24,7 @@ end
 local formatters = {}
 formatters.lua = require('config.lsp.efm.lua')
 formatters.python = require('config.lsp.efm.python')
+
 require('lspconfig').efm.setup {
     init_options = {documentFormatting = true},
     on_attach = efm_attach,
@@ -32,10 +33,8 @@ require('lspconfig').efm.setup {
         languages = {
             lua = {formatters.lua.luaformat},
             python = {
-              formatters.python.black,
-              formatters.python.isort,
-              formatters.flake8,
-              formatters.mypy,
+                formatters.python.black, formatters.python.isort,
+                formatters.flake8, formatters.mypy
             }
         }
     }
