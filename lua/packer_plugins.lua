@@ -48,6 +48,8 @@ return require('packer').startup {
             'nvim-telescope/telescope.nvim',
             requires = {{'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'}}
         }
+
+        use "folke/trouble.nvim"
     end,
     config = {display = {open_fn = require('packer.util').float}}
 }
