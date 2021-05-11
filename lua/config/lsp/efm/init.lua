@@ -28,6 +28,7 @@ formatters.python = require('config.lsp.efm.python')
 require('lspconfig').efm.setup {
     init_options = {documentFormatting = true},
     on_attach = efm_attach,
+    filetypes = {"lua", "python"},
     settings = {
         rootMarkers = {".git/"},
         languages = {

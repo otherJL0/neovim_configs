@@ -43,6 +43,7 @@ return require('packer').startup {
         use 'tjdevries/colorbuddy.nvim'
         use 'tjdevries/gruvbuddy.nvim'
         use 'b3nj5m1n/kommentary'
+        use 'kyazdani42/nvim-web-devicons'
 
         -- Telescope
         use {
