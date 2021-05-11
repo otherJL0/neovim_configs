@@ -3,3 +3,4 @@
 .netrwhist
 *.orig
 plugin/packer_compiled.vim
+*log
