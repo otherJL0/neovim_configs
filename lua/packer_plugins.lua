@@ -35,7 +35,7 @@ return require('packer').startup {
         use 'norcalli/snippets.nvim'
 
         -- Git Plugins
-        use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
+        use 'lewis6991/gitsigns.nvim'
         -- Customization
         use 'folke/tokyonight.nvim'
         use 'tjdevries/colorbuddy.nvim'
