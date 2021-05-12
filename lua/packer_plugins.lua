@@ -52,6 +52,13 @@ return require('packer').startup {
             requires = {{'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'}}
         }
 
+        -- SQL
+        use 'tpope/vim-dadbod'
+        use 'kristijanhusak/vim-dadbod-completion'
+        use 'kristijanhusak/vim-dadbod-ui'
+        use 'nanotee/sqls.nvim'
+
+
         use "folke/trouble.nvim"
     end,
     config = {display = {open_fn = require('packer.util').float}}
