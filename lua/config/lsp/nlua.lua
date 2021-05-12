@@ -1,8 +1,3 @@
-local nnoremap = vim.keymap.nnoremap
-local buf = vim.lsp.buf
-local diagnostic = vim.lsp.diagnostic
-local lsp_status = require('lsp-status')
-
 local chain_complete_list = {
     default = {
         {complete_items = {'lsp', 'snippet'}},
@@ -19,7 +14,8 @@ function nlua_attach(client)
         matching_stategy_list = {'exact', 'fuzzy'},
         chain_complete_list = chain_complete_list
     })
-    lsp_status.on_attach(client)
+    require('lsp-status').on_attach(client)
+    require('lsp_signature').on_attach(client)
 
     -- Set autocommands conditional on server_capabilities
     if client.resolved_capabilities.document_highlight then

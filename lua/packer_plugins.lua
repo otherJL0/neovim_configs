@@ -19,6 +19,7 @@ return require('packer').startup {
         use 'tjdevries/express_line.nvim'
         use 'glepnir/lspsaga.nvim'
         use 'mfussenegger/nvim-dap'
+        use {"ray-x/lsp_signature.nvim"}
 
         -- Useful Plugins
         use 'tami5/sql.nvim'
