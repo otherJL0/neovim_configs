@@ -1,18 +1,8 @@
-local chain_complete_list = {
-    default = {
-        {complete_items = {'lsp', 'snippet'}},
-        {complete_items = {'path'}, triggered_only = {'/'}},
-        {complete_items = {'buffers'}}
-    },
-    string = {{complete_items = {'path'}, triggered_only = {'/'}}},
-    comment = {}
-}
-
-function nlua_attach(client)
+local nlua_attach = function(client)
     -- require('completion').on_attach({
-        -- sorting = 'alphabet',
-        -- matching_stategy_list = {'exact', 'fuzzy'},
-        -- chain_complete_list = chain_complete_list
+    -- sorting = 'alphabet',
+    -- matching_stategy_list = {'exact', 'fuzzy'},
+    -- chain_complete_list = chain_complete_list
     -- })
     require('completion').on_attach(client)
     require('lsp-status').on_attach(client)
@@ -40,6 +30,6 @@ require('nlua.lsp.nvim').setup(require('lspconfig'), {
     globals = {
         -- Colorbuddy
         "Color", "c", "Group", "g", "s"
-    },
+    }
 })
 
