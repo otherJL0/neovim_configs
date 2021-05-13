@@ -13,7 +13,7 @@ return require('packer').startup {
         use 'nvim-lua/completion-nvim'
         use 'nvim-treesitter/nvim-treesitter'
         use 'tjdevries/astronauta.nvim'
-        use 'tjdevries/nlua.nvim'
+        use 'OtherwiseJLo/nlua.nvim'
         use 'nvim-lua/lsp-status.nvim'
         use 'nvim-lua/lsp_extensions.nvim'
         use 'tjdevries/express_line.nvim'

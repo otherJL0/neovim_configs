@@ -34,10 +34,11 @@ end
 
 require('nlua.lsp.nvim').setup(require('lspconfig'), {
     on_attach = nlua_attach,
+
     -- Include globals you want to tell the LSP are real :)
     globals = {
         -- Colorbuddy
         "Color", "c", "Group", "g", "s"
-    }
+    },
 })
 
