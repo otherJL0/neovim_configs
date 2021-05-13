@@ -21,6 +21,8 @@ return require('packer').startup {
         use 'mfussenegger/nvim-dap'
         use {"ray-x/lsp_signature.nvim"}
         use 'liuchengxu/vista.vim'
+        -- Lua
+        use "folke/which-key.nvim"
 
         -- Useful Plugins
         use 'tami5/sql.nvim'
@@ -59,6 +61,7 @@ return require('packer').startup {
         use 'kristijanhusak/vim-dadbod-ui'
         use 'nanotee/sqls.nvim'
 
+        use 'unblevable/quick-scope'
 
         use "folke/trouble.nvim"
     end,

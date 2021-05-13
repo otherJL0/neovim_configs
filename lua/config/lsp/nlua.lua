@@ -9,11 +9,12 @@ local chain_complete_list = {
 }
 
 function nlua_attach(client)
-    require('completion').on_attach({
-        sorting = 'alphabet',
-        matching_stategy_list = {'exact', 'fuzzy'},
-        chain_complete_list = chain_complete_list
-    })
+    -- require('completion').on_attach({
+        -- sorting = 'alphabet',
+        -- matching_stategy_list = {'exact', 'fuzzy'},
+        -- chain_complete_list = chain_complete_list
+    -- })
+    require('completion').on_attach(client)
     require('lsp-status').on_attach(client)
     require('lsp_signature').on_attach(client)
 
