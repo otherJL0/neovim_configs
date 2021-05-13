@@ -64,6 +64,15 @@ return require('packer').startup {
         use 'unblevable/quick-scope'
 
         use "folke/trouble.nvim"
+        use 'gennaro-tedesco/nvim-jqx'
+        use 'kevinhwang91/nvim-bqf'
+        use 'kevinhwang91/nvim-hlslens'
+        use 'windwp/nvim-ts-autotag'
+        use 'monaqa/dial.nvim'
+        use 'jbyuki/one-small-step-for-vimkind'
+        use 'romgrk/barbar.nvim'
+        use 'rafcamlet/nvim-luapad'
+
     end,
     config = {display = {open_fn = require('packer.util').float}}
 }
