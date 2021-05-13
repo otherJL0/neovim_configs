@@ -24,19 +24,21 @@ end
 local formatters = {}
 formatters.lua = require('config.lsp.efm.lua')
 formatters.python = require('config.lsp.efm.python')
+formatters.go = require('config.lsp.efm.go')
 
 require('lspconfig').efm.setup {
     init_options = {documentFormatting = true},
     on_attach = efm_attach,
-    filetypes = {"lua", "python"},
+    filetypes = {"lua", "python", "go"},
     settings = {
         rootMarkers = {".git/"},
         languages = {
             lua = {formatters.lua.luaformat},
             python = {
                 formatters.python.black, formatters.python.isort,
-                formatters.flake8, formatters.mypy
-            }
+                formatters.python.flake8, formatters.python.mypy
+            },
+            go = {formatters.go.gofmt, formatters.go.golines}
         }
     }
 }
