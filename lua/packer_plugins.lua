@@ -20,6 +20,7 @@ return require('packer').startup {
         use 'glepnir/lspsaga.nvim'
         use 'mfussenegger/nvim-dap'
         use {"ray-x/lsp_signature.nvim"}
+        use 'liuchengxu/vista.vim'
 
         -- Useful Plugins
         use 'tami5/sql.nvim'
