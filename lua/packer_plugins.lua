@@ -72,6 +72,7 @@ return require('packer').startup {
         use 'jbyuki/one-small-step-for-vimkind'
         use 'romgrk/barbar.nvim'
         use 'rafcamlet/nvim-luapad'
+        use 'f-person/git-blame.nvim'
 
     end,
     config = {display = {open_fn = require('packer.util').float}}
