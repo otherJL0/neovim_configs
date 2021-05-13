@@ -41,6 +41,7 @@ end
 require('telescope').setup {
     defaults = {
         prompt_position = "top",
+        layout_strategy = "vertical",
         mappings = {i = {["<esc>"] = actions.close, ["<C-F>"] = actions.close}}
     }
 }
