@@ -73,6 +73,8 @@ return require('packer').startup {
         use 'romgrk/barbar.nvim'
         use 'rafcamlet/nvim-luapad'
         use 'f-person/git-blame.nvim'
+        use 'sindrets/diffview.nvim'
+        use 'tpope/vim-fugitive'
 
     end,
     config = {display = {open_fn = require('packer.util').float}}
