@@ -1,6 +1,11 @@
+local nnoremap = vim.keymap.nnoremap
+
 local pyright_attach = function(client)
     require('completion').on_attach(client)
     require('lsp_signature').on_attach(client)
+    require('lsp-status').on_attach(client)
+
+    nnoremap {"<C-K>", vim.lsp.buf.hover}
     if client.resolved_capabilities.document_highlight then
         vim.api.nvim_exec([[
       hi LspReferenceRead cterm=bold ctermbg=red guibg=LightYellow
