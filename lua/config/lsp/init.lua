@@ -1,4 +1,8 @@
-require('config.lsp.nlua')
+local cwd = vim.api.nvim_eval("getcwd()")
+local nvim_dir = ".config/nvim"
+if string.find(cwd, nvim_dir) then
+  require('config.lsp.nlua')
+end
 require('config.lsp.pyright')
 require('config.lsp.efm')
 require('config.lsp.yaml')
