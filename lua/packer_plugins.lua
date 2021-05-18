@@ -76,6 +76,7 @@ return require('packer').startup {
     use 'sindrets/diffview.nvim'
     use 'tpope/vim-fugitive'
     use 'tmux-plugins/vim-tmux'
+    use { 'rcarriga/nvim-dap-ui', requires = { 'mfussenegger/nvim-dap' } }
 
   end,
   config = { display = { open_fn = require('packer.util').float } },
