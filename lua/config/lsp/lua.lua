@@ -36,7 +36,7 @@ local lua_attach = function(client)
   end
 end
 
-require('lspconfig').sumneko_lua {
+require('lspconfig').sumneko_lua.setup {
   cmd = { sumneko_binary, '-E', sumneko_root_path .. '/main.lua' },
 
   on_attach = lua_attach,
