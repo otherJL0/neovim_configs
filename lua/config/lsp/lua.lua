@@ -11,7 +11,7 @@ else
 end
 
 local cache_dir = vim.fn.stdpath('cache')
-local sumneko_root_path = cache_dir .. '/nvim/nlua/sumneko_lua/lua-language-server'
+local sumneko_root_path = cache_dir .. '/nlua/sumneko_lua/lua-language-server'
 local sumneko_binary = sumneko_root_path .. '/bin/' .. system_name ..
                            '/lua-language-server'
 
