@@ -57,7 +57,14 @@ dap.adapters.go = function(callback, config)
 
   -- callback({type = "server", host = "127.0.0.1", port = port})
 end
+--
 -- https://github.com/go-delve/delve/blob/master/Documentation/usage/dlv_dap.md
+
+dap.adapters.go = {
+  type = 'executable',
+  command = 'dlv',
+  args = {'dap', '--headless'}
+}
 dap.configurations.go = {
   { type = 'go', name = 'Debug', request = 'launch', program = '${file}' },
 }
