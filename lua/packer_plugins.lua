@@ -75,6 +75,7 @@ return require('packer').startup {
     use 'f-person/git-blame.nvim'
     use 'sindrets/diffview.nvim'
     use 'tpope/vim-fugitive'
+    use 'tmux-plugins/vim-tmux'
 
   end,
   config = { display = { open_fn = require('packer.util').float } },
