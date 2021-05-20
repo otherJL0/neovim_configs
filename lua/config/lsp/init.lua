@@ -1,6 +1,3 @@
-require('config.lsp.nlua')
-require('config.lsp.efm')
-
 local nnoremap = vim.keymap.nnoremap
 local nvim_command = vim.api.nvim_command
 
@@ -17,7 +14,6 @@ vim.lsp.handlers['textDocument/formatting'] =
       end
     end
 
-local lsp_servers = { 'pyright', 'gopls' }
 local lspconfig = require('lspconfig')
 
 local list_workspace_folders = function()
@@ -68,9 +64,45 @@ local load_config = function(lsp_server)
   return configs
 end
 
+local lsp_servers = { 'pyright', 'gopls'}
 for _, lsp in ipairs(lsp_servers) do
   local lsp_settings = load_config(lsp)
   lspconfig[lsp].setup { lsp_settings }
   lspconfig[lsp].setup { on_attach = on_attach }
 end
 
+
+
+-- Custom LSP setups
+-- local sumneko_lua = require('config.lsp.nlua')
+-- ls
+local sumneko_root_path = vim.fn.stdpath('cache') .. '/lua-language-server'
+local sumneko_binary = sumneko_root_path .. '/bin/' .. jit.os .. '/lua-language-server'
+lspconfig.sumneko_lua.setup(
+require('lua-dev').setup(
+{
+      library = {
+        vimruntime = true, -- runtime path
+        types = true, -- full signature, docs and completion of vim.api, vim.treesitter, vim.lsp and others
+        plugins = true, -- installed opt or start plugins in packpath
+      },
+      -- pass any additional options that will be merged in the final lsp config
+      lspconfig = {
+        cmd = { sumneko_binary, '-E', sumneko_root_path .. '/main.lua' },
+        on_attach = on_attach,
+        settings = {
+          Lua = {
+            runtime = { version = 'LuaJIT', path = vim.split(package.path, ':') },
+
+            completion = { keyworkSnippet = 'Disable' },
+
+            diagnostics = { enable = true },
+
+          },
+        },
+      },
+    }
+)
+)
+
+require('config.lsp.efm')
