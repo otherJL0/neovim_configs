@@ -1,5 +1,6 @@
 local nnoremap = vim.keymap.nnoremap
 local nvim_command = vim.api.nvim_command
+local lspconfig = require('lspconfig')
 
 vim.lsp.handlers['textDocument/formatting'] =
     function(err, _, result, _, bufnr)
@@ -13,12 +14,6 @@ vim.lsp.handlers['textDocument/formatting'] =
         end
       end
     end
-
-local lspconfig = require('lspconfig')
-
-local list_workspace_folders = function()
-  print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-end
 
 vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 local on_attach = function(client)
@@ -38,7 +33,7 @@ local on_attach = function(client)
   nnoremap { 'gi', vim.lsp.buf.implementation }
   nnoremap { ' wa', vim.lsp.buf.add_workspace_folder }
   nnoremap { ' wr', vim.lsp.buf.remove_workspace_folder }
-  nnoremap { ' wl', list_workspace_folders }
+  nnoremap { ' wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end }
   nnoremap { ' K', vim.lsp.buf.type_definition }
   nnoremap { ' e', vim.lsp.diagnostic.show_line_diagnostics }
   nnoremap { ' R', vim.lsp.buf.rename }
@@ -64,7 +59,7 @@ local load_config = function(lsp_server)
   return configs
 end
 
-local lsp_servers = { 'pyright', 'gopls'}
+local lsp_servers = { 'pyright', 'gopls', 'bashls', 'vimls', 'dockerls'}
 for _, lsp in ipairs(lsp_servers) do
   local lsp_settings = load_config(lsp)
   lspconfig[lsp].setup { lsp_settings }
@@ -74,8 +69,6 @@ end
 
 
 -- Custom LSP setups
--- local sumneko_lua = require('config.lsp.nlua')
--- ls
 local sumneko_root_path = vim.fn.stdpath('cache') .. '/lua-language-server'
 local sumneko_binary = sumneko_root_path .. '/bin/' .. jit.os .. '/lua-language-server'
 lspconfig.sumneko_lua.setup(
