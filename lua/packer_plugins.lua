@@ -17,9 +17,7 @@ return require('packer').startup {
     use 'nvim-lua/lsp-status.nvim'
     use 'nvim-lua/lsp_extensions.nvim'
     use 'tjdevries/express_line.nvim'
-    use 'glepnir/lspsaga.nvim'
     use 'mfussenegger/nvim-dap'
-    use { 'ray-x/lsp_signature.nvim' }
     use 'liuchengxu/vista.vim'
     -- Lua
     use 'folke/which-key.nvim'
@@ -77,6 +75,9 @@ return require('packer').startup {
     use 'tpope/vim-fugitive'
     use 'tmux-plugins/vim-tmux'
     use { 'rcarriga/nvim-dap-ui', requires = { 'mfussenegger/nvim-dap' } }
+    use 'rafamadriz/neon'
+
+    use 'folke/lua-dev.nvim'
 
   end,
   config = { display = { open_fn = require('packer.util').float } },

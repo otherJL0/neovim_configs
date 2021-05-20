@@ -6,7 +6,6 @@ local sql_attach = function(client)
     client.resolved_capabilities.execute_command = true
     require('completion').on_attach({chain_complete_list = chain_complete_list})
     require('lsp-status').on_attach(client)
-    require('lsp_signature').on_attach(client)
     require('sqls').setup {picker = 'telescope'}
 end
 

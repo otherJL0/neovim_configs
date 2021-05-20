@@ -1,7 +1,6 @@
 local go_attach = function(client)
   require('completion').on_attach(client)
   require('lsp-status').on_attach(client)
-  require('lsp_signature').on_attach(client)
 
   -- Set autocommands conditional on server_capabilities
   if client.resolved_capabilities.document_highlight then

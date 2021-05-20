@@ -1,10 +1,4 @@
-local cwd = vim.api.nvim_eval('getcwd()')
-local nvim_config = vim.fn.stdpath('config')
-if cwd == nvim_config then
-  require('config.lsp.nlua')
-else
-  require('config.lsp.lua')
-end
+require('config.lsp.nlua')
 require('config.lsp.pyright')
 require('config.lsp.efm')
 require('config.lsp.yaml')

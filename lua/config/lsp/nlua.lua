@@ -6,7 +6,6 @@ local nlua_attach = function(client)
   -- })
   require('completion').on_attach(client)
   require('lsp-status').on_attach(client)
-  require('lsp_signature').on_attach(client)
 
   -- Set autocommands conditional on server_capabilities
   if client.resolved_capabilities.document_highlight then
@@ -25,18 +24,32 @@ local nlua_attach = function(client)
   end
 end
 
-require('nlua.lsp.nvim').setup(
-    require('lspconfig'), {
-      on_attach = nlua_attach,
+local sumneko_root_path = vim.fn.stdpath('cache') .. '/lua-language-server'
+local sumneko_binary = sumneko_root_path .. '/bin/' .. jit.os .. '/lua-language-server'
 
-      -- Include globals you want to tell the LSP are real :)
-      globals = {
-        -- Colorbuddy
-        'Color',
-        'c',
-        'Group',
-        'g',
-        's',
+local luadev = require('lua-dev').setup(
+                   {
+      library = {
+        vimruntime = true, -- runtime path
+        types = true, -- full signature, docs and completion of vim.api, vim.treesitter, vim.lsp and others
+        plugins = true, -- installed opt or start plugins in packpath
+      },
+      -- pass any additional options that will be merged in the final lsp config
+      lspconfig = {
+        cmd = { sumneko_binary, '-E', sumneko_root_path .. '/main.lua' },
+        on_attach = nlua_attach,
+        settings = {
+          Lua = {
+            runtime = { version = 'LuaJIT', path = vim.split(package.path, ':') },
+
+            completion = { keyworkSnippet = 'Disable' },
+
+            diagnostics = { enable = true },
+
+          },
+        },
       },
     }
-)
+               )
+
+require('lspconfig').sumneko_lua.setup(luadev)
