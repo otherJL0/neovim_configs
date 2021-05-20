@@ -59,7 +59,7 @@ local load_config = function(lsp_server)
   return configs
 end
 
-local lsp_servers = { 'pyright', 'gopls', 'bashls', 'vimls', 'dockerls'}
+local lsp_servers = { 'pyright', 'gopls', 'bashls', 'vimls', 'dockerls', 'jsonls'}
 for _, lsp in ipairs(lsp_servers) do
   local lsp_settings = load_config(lsp)
   lspconfig[lsp].setup { lsp_settings }
