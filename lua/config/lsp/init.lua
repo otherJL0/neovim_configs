@@ -17,6 +17,7 @@ vim.lsp.handlers['textDocument/formatting'] =
 
 vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 local on_attach = function(client)
+  vim.api.nvim_set_current_dir(client.config.root_dir)
 
   require('completion').on_attach(client)
   require('lsp-status').on_attach(client)
