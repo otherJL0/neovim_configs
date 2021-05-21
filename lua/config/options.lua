@@ -1,17 +1,33 @@
 local opt = vim.opt
 local nnoremap = vim.keymap.nnoremap
 
-
 -- Y yank until the end of line
-nnoremap {'Y', 'y$' }
+nnoremap { 'Y', 'y$' }
+
+-- Make current buffer more obvious
+vim.api.nvim_exec(
+    [[
+augroup BgHighlight
+  autocmd!
+  autocmd WinEnter * set cursorcolumn
+  autocmd WinEnter * set cursorline
+  autocmd WinEnter * set relativenumber
+  autocmd WinLeave * set nocursorcolumn
+  autocmd WinLeave * set nocursorline
+  autocmd WinLeave * set norelativenumber
+augroup END
+]], false
+)
 
 -- Highlight on yank
-vim.api.nvim_exec([[
+vim.api.nvim_exec(
+    [[
   augroup YankHighlight
     autocmd!
     autocmd TextYankPost * silent! lua vim.highlight.on_yank()
   augroup end
-]], false)
+]], false
+)
 
 -- Ignore compiled files
 opt.wildignore = '__pycache__'
@@ -27,8 +43,8 @@ opt.wildmode = opt.wildmode + { 'longest', 'full' }
 
 opt.wildoptions = 'pum'
 
-opt.showmode = false
-opt.showcmd = true
+-- opt.showmode = false
+-- opt.showcmd = true
 opt.cmdheight = 1 -- Height of the command bar
 opt.incsearch = true -- Makes search act like search in modern browsers
 opt.showmatch = true -- show matching brackets when text indicator is over them
@@ -37,8 +53,7 @@ opt.number = true -- But show the actual number for the line we're on
 opt.ignorecase = true -- Ignore case when searching...
 opt.smartcase = true -- ... unless there is a capital letter in the query
 opt.hidden = true -- I like having buffers stay around
-opt.cursorline = true -- Highlight the current line
-opt.equalalways = false -- I don't like my windows changing all the time
+opt.equalalways = true -- I don't like my windows changing all the time
 opt.splitright = true -- Prefer windows splitting to the right
 opt.splitbelow = true -- Prefer windows splitting to the bottom
 opt.updatetime = 1000 -- Make updates happen faster
@@ -59,6 +74,13 @@ opt.breakindent = true
 opt.showbreak = string.rep(' ', 3) -- Make it so that long lines wrap smartly
 opt.linebreak = true
 
+vim.cmd [[set undofile]]
+-- Always keep sign column on
+opt.signcolumn = 'yes'
+
+vim.cmd [[set cursorcolumn]]
+vim.cmd [[set cursorline]]
+
 opt.foldmethod = 'marker'
 opt.foldlevel = 0
 opt.modelines = 1
@@ -71,6 +93,7 @@ opt.inccommand = 'nosplit'
 opt.swapfile = false -- Living on the edge
 opt.shada = { '!', '\'1000', '<50', 's10', 'h' }
 
+-- Only allow mouse in normal mode
 opt.mouse = 'n'
 
 -- Helpful related items:

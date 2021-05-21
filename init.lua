@@ -16,7 +16,7 @@ else
   require('packer_plugins')
 
   -- Force loading of astronauta first
-  vim.cmd [[runtim plugin/astronauta.vim]]
+  vim.cmd [[runtime plugin/astronauta.vim]]
 
   -- Vim Options
   require('config.options')
