@@ -78,6 +78,7 @@ return require('packer').startup {
     use 'rafamadriz/neon'
 
     use 'folke/lua-dev.nvim'
+    use 'vimwiki/vimwiki'
 
   end,
   config = { display = { open_fn = require('packer.util').float } },
