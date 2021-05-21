@@ -1,5 +1,6 @@
+-- TokyoNight Theme
 -- 	The theme comes in three styles, storm, a darker variant night and day.
-vim.g.tokyonight_style = "night"
+vim.g.tokyonight_style = 'night'
 
 -- 	Configure the colors used when opening a :terminal in Neovim
 vim.g.tokyonight_terminal_colors = true
@@ -23,16 +24,32 @@ vim.g.tokyonight_transparent = false
 vim.g.tokyonight_hide_inactive_statusline = true
 
 -- Set a darker background on sidebar-like windows. For example: ["qf", "vista_kind", "terminal", "packer"]
-vim.g.tokyonight_sidebars = {
-    "qf", "vista_kind", "terminal", "packer", "trouble"
-}
+vim.g.tokyonight_sidebars = { 'qf', 'vista_kind', 'terminal', 'packer', 'trouble' }
 -- 	Sidebar like windows like NvimTree get a darker background
 vim.g.tokyonight_dark_sidebar = true
 
 -- 	Float windows like the lsp diagnostics windows get a darker background.
 vim.g.tokyonight_dark_float = true
+vim.cmd [[colorscheme tokyonight]]
 
 -- 	You can override specific color groups to use other groups or a hex color
 -- vim.g.tokyonight_colors = {} 
 
-vim.cmd [[colorscheme tokyonight]]
+-- Neon colorscheme
+-- There's three options to choose from, default, dark and light
+vim.g.neon_style = 'dark'
+
+-- Italic text for comments
+vim.g.neon_italic_comment = true
+-- Applies to conditionals and keywords like for, do, while, loops etc.
+vim.g.neon_italic_keyword = false
+-- true and false
+vim.g.neon_italic_boolean = true
+-- Applies to function (calls and definitions), method (calls and definitions) and built-in functions.
+vim.g.neon_italic_function = true
+-- Applies to variable names that are defined by the languages, like this or self. And any variable name that does not have another highlight group.
+vim.g.neon_italic_variable = false
+-- Applies to error and warning messages, functions (calls and definitions), lsp virtual text, etc.
+vim.g.neon_bold = true
+
+-- vim.cmd [[colorscheme neon]]
