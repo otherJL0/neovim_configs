@@ -1,6 +1,6 @@
 local npairs = require('nvim-autopairs')
 
-npairs.setup({ check_ts = true, ts_config = {} })
+npairs.setup({ check_ts = true, ts_config = { go = { 'body' } } })
 
 require('nvim-treesitter.configs').setup {
 
