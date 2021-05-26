@@ -22,8 +22,8 @@ local on_attach = function(client)
   require('completion').on_attach(client)
   require('lsp-status').on_attach(client)
 
-  nnoremap { 'K', vim.lsp.buf.hover }
-  nnoremap { '<C-K>', vim.lsp.buf.signature_help }
+  -- nnoremap { 'K', vim.lsp.buf.hover }
+  nnoremap { 'K', vim.lsp.buf.signature_help }
   nnoremap { ' ca', vim.lsp.buf.code_action }
   nnoremap { 'gr', vim.lsp.buf.references }
   nnoremap { 'gD', vim.lsp.buf.declaration }
