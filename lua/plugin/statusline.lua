@@ -54,15 +54,30 @@ require('el').setup {
       ']',
       sections.collapse_builtin { '[', builtin.help_list, builtin.readonly_list, ']' },
       builtin.filetype,
-      '[ParentNode:',
-      function() return ts_utils.get_node_at_cursor():type() end,
-      '][PreviousNode:',
-      function()
-        return
-            ts_utils.get_previous_node(ts_utils.get_node_at_cursor(), false, false):type()
-      end,
+      -- '[ParentNode:',
+      -- function() return ts_utils.get_node_at_cursor():parent():type() end,
+      -- '][PrevTT:',
+      -- function()
+      --   return
+      --       ts_utils.get_previous_node(ts_utils.get_node_at_cursor(), true, true):type()
+      -- end,
+      -- '][PrevTF:',
+      -- function()
+      --   return
+      --       ts_utils.get_previous_node(ts_utils.get_node_at_cursor(), true, false):type()
+      -- end,
+      -- '][PrevFT:',
+      -- function()
+      --   return
+      --       ts_utils.get_previous_node(ts_utils.get_node_at_cursor(), false, true):type()
+      -- end,
+      -- '][PrevFF:',
+      -- function()
+      --   return
+      --       ts_utils.get_previous_node(ts_utils.get_node_at_cursor(), false, false):type()
+      -- end,
       '][CurrentNode:',
-      function() return ts_utils.get_node_at_cursor():parent():type() end,
+      function() return ts_utils.get_node_at_cursor():type() end,
       ']',
       lsp_statusline.segment,
     }
