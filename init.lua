@@ -24,6 +24,9 @@ else
   -- Sane Completion
   require('config.completion')
 
+  -- Snippets
+  require('config.snippets')
+
   -- LSP
   require('config.lsp')
 
