@@ -1,6 +1,6 @@
 local snippets = require('snippets')
 
-snippets.use_suggested_mappings(true)
+snippets.use_suggested_mappings()
 local snippet_languages = { 'lua', 'go', 'python' }
 
 local _snip = {}
