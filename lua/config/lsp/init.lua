@@ -71,7 +71,7 @@ local lsp_servers = {
   'dockerls',
   'jsonls',
   'zeta_note',
-  'tsserver',
+  'denols',
 }
 for _, lsp in ipairs(lsp_servers) do
   local lsp_settings = load_config(lsp)
