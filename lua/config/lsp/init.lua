@@ -4,7 +4,9 @@ local lspconfig = require('lspconfig')
 
 vim.lsp.handlers['textDocument/formatting'] =
     function(err, _, result, _, bufnr)
-      if err ~= nil or result == nil then return end
+      if err ~= nil or result == nil then
+        return
+      end
       if not vim.api.nvim_buf_get_option(bufnr, 'modified') then
         local view = vim.fn.winsaveview()
         vim.lsp.util.apply_text_edits(result, bufnr)
@@ -36,7 +38,9 @@ local on_attach = function(client)
   nnoremap { ' wr', vim.lsp.buf.remove_workspace_folder }
   nnoremap {
     ' wl',
-    function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end,
+    function()
+      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    end,
   }
   nnoremap { ' K', vim.lsp.buf.type_definition }
   nnoremap { ' e', vim.lsp.diagnostic.show_line_diagnostics }
@@ -73,6 +77,7 @@ local lsp_servers = {
   'zeta_note',
   -- 'denols',
   'tsserver',
+  'clangd',
 }
 for _, lsp in ipairs(lsp_servers) do
   local lsp_settings = load_config(lsp)
@@ -83,31 +88,28 @@ end
 -- Custom LSP setups
 local sumneko_root_path = vim.fn.stdpath('cache') .. '/lua-language-server'
 local sumneko_binary = sumneko_root_path .. '/bin/' .. jit.os .. '/lua-language-server'
-lspconfig.sumneko_lua.setup(
-    require('lua-dev').setup(
-        {
-          library = {
-            vimruntime = true, -- runtime path
-            types = true, -- full signature, docs and completion of vim.api, vim.treesitter, vim.lsp and others
-            plugins = true, -- installed opt or start plugins in packpath
+lspconfig.sumneko_lua.setup(require('lua-dev').setup(
+                                {
+      library = {
+        vimruntime = true, -- runtime path
+        types = true, -- full signature, docs and completion of vim.api, vim.treesitter, vim.lsp and others
+        plugins = true, -- installed opt or start plugins in packpath
+      },
+      -- pass any additional options that will be merged in the final lsp config
+      lspconfig = {
+        cmd = { sumneko_binary, '-E', sumneko_root_path .. '/main.lua' },
+        on_attach = on_attach,
+        settings = {
+          Lua = {
+            runtime = { version = 'LuaJIT', path = vim.split(package.path, ':') },
+
+            completion = { keyworkSnippet = 'Disable' },
+
+            diagnostics = { enable = true },
+
           },
-          -- pass any additional options that will be merged in the final lsp config
-          lspconfig = {
-            cmd = { sumneko_binary, '-E', sumneko_root_path .. '/main.lua' },
-            on_attach = on_attach,
-            settings = {
-              Lua = {
-                runtime = { version = 'LuaJIT', path = vim.split(package.path, ':') },
-
-                completion = { keyworkSnippet = 'Disable' },
-
-                diagnostics = { enable = true },
-
-              },
-            },
-          },
-        }
-    )
-)
+        },
+      },
+    }))
 
 require('config.lsp.efm')
