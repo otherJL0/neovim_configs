@@ -79,6 +79,7 @@ local lsp_servers = {
   'tsserver',
   'clangd',
   'sorbet',
+  'rome',
 }
 for _, lsp in ipairs(lsp_servers) do
   local lsp_settings = load_config(lsp)
