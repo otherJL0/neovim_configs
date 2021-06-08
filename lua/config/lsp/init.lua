@@ -76,7 +76,7 @@ local lsp_servers = {
   'jsonls',
   'zeta_note',
   -- 'denols',
-  'tsserver',
+  -- 'tsserver',
   'clangd',
   'sorbet',
   'rome',
