@@ -7,6 +7,7 @@ npairs.setup({ check_ts = true, ts_config = { go = { 'body' } } })
 -- Treesitter config
 require('nvim-treesitter.configs').setup {
   autopairs = { enable = true },
+  autotag = { enable = true },
 
   ensure_installed = 'maintained',
 
