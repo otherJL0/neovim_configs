@@ -17,15 +17,6 @@ local center_list = themes.get_dropdown({
   previewer = false,
 })
 
--- Settings for with preview option
-local with_preview = {
-  winblend = 10,
-  show_line = false,
-  results_title = false,
-  preview_title = false,
-  layout_config = { preview_width = 0.5 },
-}
-
 -- Find in neovim config with center theme
 finders.registers = function()
   local opts = vim.deepcopy(center_list)
@@ -37,13 +28,6 @@ finders.file_browser = function()
   local opts = vim.deepcopy(center_list)
 
   require'telescope.builtin'.file_browser(opts)
-end
-
--- Find files with_preview settings
-local fd = function()
-  local opts = vim.deepcopy(with_preview)
-  opts.prompt_prefix = 'FD>'
-  require'telescope.builtin'.fd(opts)
 end
 
 require('telescope').setup {
@@ -83,10 +67,6 @@ end
 
 local ivy_lsp_implementations = function()
   builtin.lsp_implementations(themes.get_ivy({}))
-end
-
-local ivy_file_browser = function()
-  builtin.file_browser(themes.get_dropdown({ preview_cutoff = 10 }))
 end
 
 local ivy_git_bcommits = function()
