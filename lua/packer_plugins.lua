@@ -32,6 +32,7 @@ return require('packer').startup {
       'nvim-treesitter/nvim-treesitter-refactor',
       'nvim-treesitter/nvim-treesitter-textobjects',
       'nvim-treesitter/nvim-tree-docs',
+      'nvim-treesitter/completion-treesitter',
       requires = 'nvim-treesitter/nvim-treesitter',
     }
 
