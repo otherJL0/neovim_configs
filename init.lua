@@ -19,6 +19,7 @@ else
 
   -- Vim Options
   require('config.options')
+  require('config.treesitter')
 
   -- Sane Completion
   require('config.completion')
