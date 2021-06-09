@@ -9,6 +9,7 @@ local themes = require('telescope.themes')
 
 -- Dropdown list theme using a builtin theme definitions :
 local center_list = themes.get_dropdown({
+  -- initial_mode = 'normal',
   winblend = 10,
   width = 0.5,
   prompt = ' ',
@@ -30,6 +31,12 @@ finders.registers = function()
   local opts = vim.deepcopy(center_list)
 
   require'telescope.builtin'.registers(opts)
+end
+-- Find in neovim config with center theme
+finders.file_browser = function()
+  local opts = vim.deepcopy(center_list)
+
+  require'telescope.builtin'.file_browser(opts)
 end
 
 -- Find files with_preview settings
@@ -79,7 +86,7 @@ local ivy_lsp_implementations = function()
 end
 
 local ivy_file_browser = function()
-  builtin.file_browser(themes.get_ivy({}))
+  builtin.file_browser(themes.get_dropdown({ preview_cutoff = 10 }))
 end
 
 local ivy_git_bcommits = function()
@@ -108,4 +115,4 @@ nnoremap { ' gbu', ivy_git_bcommits }
 nnoremap { ' gbr', ivy_git_branches }
 nnoremap { ' g?', ivy_git_status }
 nnoremap { ' Ghis', ivy_git_commits }
-nnoremap { ' v', ivy_file_browser }
+nnoremap { ' v', finders.file_browser }
