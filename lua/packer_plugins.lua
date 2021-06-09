@@ -63,7 +63,7 @@ return require('packer').startup {
 
     use 'folke/trouble.nvim'
     use 'gennaro-tedesco/nvim-jqx'
-    use 'kevinhwang91/nvim-bqf'
+    -- use 'kevinhwang91/nvim-bqf'
     use 'kevinhwang91/nvim-hlslens'
     use 'windwp/nvim-ts-autotag'
     use 'monaqa/dial.nvim'

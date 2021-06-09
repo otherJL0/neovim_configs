@@ -8,15 +8,13 @@ local finders = {}
 local themes = require('telescope.themes')
 
 -- Dropdown list theme using a builtin theme definitions :
-local center_list = themes.get_dropdown(
-                        {
-      winblend = 10,
-      width = 0.5,
-      prompt = ' ',
-      results_height = 15,
-      previewer = false,
-    }
-                    )
+local center_list = themes.get_dropdown({
+  winblend = 10,
+  width = 0.5,
+  prompt = ' ',
+  results_height = 15,
+  previewer = false,
+})
 
 -- Settings for with preview option
 local with_preview = {
@@ -80,10 +78,23 @@ local ivy_lsp_implementations = function()
   builtin.lsp_implementations(themes.get_ivy({}))
 end
 
-local ivy_git_bcommits = function() builtin.git_bcommits(themes.get_ivy({})) end
-local ivy_git_branches = function() builtin.git_branches(themes.get_ivy({})) end
-local ivy_git_status = function() builtin.git_status(themes.get_ivy({})) end
-local ivy_git_commits = function() builtin.git_commits(themes.get_ivy({})) end
+local ivy_file_browser = function()
+  builtin.file_browser(themes.get_ivy({}))
+end
+
+local ivy_git_bcommits = function()
+  builtin.git_bcommits(themes.get_ivy({}))
+end
+local ivy_git_branches = function()
+  builtin.git_branches(themes.get_ivy({}))
+end
+local ivy_git_status = function()
+  builtin.git_status(themes.get_ivy({}))
+end
+local ivy_git_commits = function()
+
+  builtin.git_commits(themes.get_ivy({}))
+end
 
 -- nnoremap { '<C-F>', builtin.find_files }
 nnoremap { '<C-F>', ivy_find_files }
@@ -97,3 +108,4 @@ nnoremap { ' gbu', ivy_git_bcommits }
 nnoremap { ' gbr', ivy_git_branches }
 nnoremap { ' g?', ivy_git_status }
 nnoremap { ' Ghis', ivy_git_commits }
+nnoremap { ' v', ivy_file_browser }
