@@ -1,8 +1,9 @@
--- local npairs = require('nvim-autopairs')
+local npairs = require('nvim-autopairs')
+npairs.setup({ check_ts = true, ts_config = { go = { 'body' } } })
 
--- npairs.setup({ check_ts = true, ts_config = { go = { 'body' } } })
-
+-- Treesitter config
 require('nvim-treesitter.configs').setup {
+  autopairs = { enable = true },
 
   ensure_installed = 'maintained',
 
@@ -115,3 +116,25 @@ require('nvim-treesitter.configs').setup {
   -- autopair setup
   -- autopairs = { enable = true },
 }
+
+_G.MUtils = {}
+
+vim.g.completion_confirm_key = ''
+
+MUtils.completion_confirm = function()
+  if vim.fn.pumvisible() ~= 0 then
+    if vim.fn.complete_info()['selected'] ~= -1 then
+      require'completion'.confirmCompletion()
+      return npairs.esc('<c-y>')
+    else
+      vim.api.nvim_select_popupmenu_item(0, false, false, {})
+      require'completion'.confirmCompletion()
+      return npairs.esc('<c-n><c-y>')
+    end
+  else
+    return npairs.autopairs_cr()
+  end
+end
+
+vim.api.nvim_set_keymap('i', '<CR>', 'v:lua.MUtils.completion_confirm()',
+                        { expr = true, noremap = true })
