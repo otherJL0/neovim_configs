@@ -83,6 +83,10 @@ local ivy_git_commits = function()
   builtin.git_commits(themes.get_ivy({}))
 end
 
+local dropdown_buffers = function()
+  builtin.buffers(themes.get_dropdown({}))
+end
+
 -- nnoremap { '<C-F>', builtin.find_files }
 nnoremap { '<C-F>', ivy_find_files }
 -- nnoremap { '<C-G>', builtin.live_grep }
@@ -96,3 +100,4 @@ nnoremap { ' gbr', ivy_git_branches }
 nnoremap { ' g?', ivy_git_status }
 nnoremap { ' Ghis', ivy_git_commits }
 nnoremap { ' v', finders.file_browser }
+nnoremap { ' V', dropdown_buffers }
