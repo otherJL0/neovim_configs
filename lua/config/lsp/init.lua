@@ -68,13 +68,14 @@ local load_config = function(lsp_server)
 end
 
 local lsp_servers = {
-  'pyright',
+  -- 'pyright',
+  'pylsp',
   'gopls',
   'bashls',
   'vimls',
   'dockerls',
   'jsonls',
-  'zeta_note',
+  -- 'zeta_note',
   -- 'denols',
   -- 'tsserver',
   'clangd',
