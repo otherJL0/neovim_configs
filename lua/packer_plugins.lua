@@ -79,6 +79,7 @@ return require('packer').startup {
 
     use 'folke/lua-dev.nvim'
     use 'vimwiki/vimwiki'
+    use 'scalameta/nvim-metals'
   end,
   config = { display = { open_fn = require('packer.util').float } },
 }
