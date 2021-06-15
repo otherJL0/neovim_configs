@@ -116,17 +116,9 @@ lspconfig.sumneko_lua.setup(require('lua-dev').setup(
     }))
 
 require('config.lsp.efm')
-local metals_config = require('metals').bare_config
-metals_config.settings = {
-  showImplicitArguments = true,
-  showImplicitConversionsAndClasses = true,
-  showInferredType = true,
-  superMethodLensesEnabled = true,
-}
-metals_config.init_options.statusBarProvider = 'on'
 
 -- Setup custom lsp servers
 vim.cmd [[augroup lsp]]
 vim.cmd [[au!]]
-vim.cmd [[au FileType scala,sbt lua require("metals").initialize_or_attach(metals_config)]]
+vim.cmd [[au FileType scala,sbt lua require("metals").initialize_or_attach(require('config.lsp.metals'))]]
 vim.cmd [[augroup end]]
