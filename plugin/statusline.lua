@@ -40,7 +40,20 @@ require('el').setup {
       -- Middle --
       ------------
       sections.split,
-      sections.maximum_width(builtin.responsive_file(140, 90), 0.30),
+      '[Buf:',
+      function()
+        return vim.api.nvim_get_current_buf()
+      end,
+      '][Win:',
+      function()
+        return vim.api.nvim_get_current_win()
+      end,
+      '][Tab:',
+      function()
+        return vim.api.nvim_get_current_tabpage()
+      end,
+      ']',
+      -- sections.maximum_width(builtin.responsive_file(140, 90), 0.30),
       sections.collapse_builtin { ' ', builtin.modified_flag },
 
       -----------
@@ -48,9 +61,15 @@ require('el').setup {
       -----------
       sections.split,
       '[',
+      builtin.column_with_width(1),
+      ':',
       builtin.line_with_width(3),
       ':',
-      builtin.column_with_width(1),
+      function()
+        local fraction = math.floor(100 * vim.api.nvim_win_get_cursor(0)[1] /
+                                        vim.api.nvim_buf_line_count(0))
+        return string.format('%d%%%%', fraction)
+      end,
       ']',
       sections.collapse_builtin { '[', builtin.help_list, builtin.readonly_list, ']' },
       builtin.filetype,
