@@ -20,6 +20,18 @@ vim.lsp.handlers['textDocument/formatting'] =
 vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 local on_attach = function(client)
   vim.api.nvim_set_current_dir(client.config.root_dir)
+  -- cscope settings
+  if vim.fn.has('cscope') == 1 then
+    vim.opt.csto = 0
+    vim.opt.cscopequickfix = { 's+', 'g+', 'd+', 'c+', 't+', 'e+', 'f+', 'i+', 'a+' }
+    vim.opt.cscopetag = true
+    vim.opt.cscoperelative = true
+    vim.opt.cst = true
+
+    if vim.fn.filereadable('cscope.out') == 1 then
+      vim.cmd [[silent cs add cscope.out]]
+    end
+  end
 
   require('completion').on_attach(client)
   require('lsp-status').on_attach(client)
@@ -117,7 +129,7 @@ lspconfig.sumneko_lua.setup(require('lua-dev').setup(
 
 require('config.lsp.efm')
 
--- Setup custom lsp servers
+-- Scala Metals
 vim.cmd [[augroup lsp]]
 vim.cmd [[au!]]
 vim.cmd [[au FileType scala,sbt lua require("metals").initialize_or_attach(require('config.lsp.metals'))]]
