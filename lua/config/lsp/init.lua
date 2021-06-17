@@ -89,10 +89,10 @@ local lsp_servers = {
   'jsonls',
   -- 'zeta_note',
   -- 'denols',
-  -- 'tsserver',
+  'tsserver',
   'clangd',
   'sorbet',
-  'rome',
+  -- 'rome',
 }
 for _, lsp in ipairs(lsp_servers) do
   local lsp_settings = load_config(lsp)
