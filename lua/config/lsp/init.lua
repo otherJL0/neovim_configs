@@ -134,3 +134,10 @@ vim.cmd [[augroup lsp]]
 vim.cmd [[au!]]
 vim.cmd [[au FileType scala,sbt lua require("metals").initialize_or_attach(require('config.lsp.metals'))]]
 vim.cmd [[augroup end]]
+
+-- JDTSL config
+vim.cmd [[augroup lsp]]
+vim.cmd [[au!]]
+vim.cmd [[au FileType java lua require('jdtls').start_or_attach({cmd = {vim.fn.stdpath('config') .. '/scripts/jdtls.sh'}})]]
+vim.cmd [[augroup end]]
+
