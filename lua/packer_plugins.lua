@@ -81,6 +81,7 @@ return require('packer').startup {
     use 'vimwiki/vimwiki'
     use 'scalameta/nvim-metals'
     use 'mfussenegger/nvim-jdtls'
+    use 'glacambre/firenvim'
   end,
   config = { display = { open_fn = require('packer.util').float } },
 }
