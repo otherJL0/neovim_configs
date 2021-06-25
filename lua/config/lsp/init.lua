@@ -129,15 +129,44 @@ lspconfig.sumneko_lua.setup(require('lua-dev').setup(
 
 require('config.lsp.efm')
 
--- Scala Metals
-vim.cmd [[augroup lsp]]
-vim.cmd [[au!]]
-vim.cmd [[au FileType scala,sbt lua require("metals").initialize_or_attach(require('config.lsp.metals'))]]
-vim.cmd [[augroup end]]
-
 -- JDTSL config
 vim.cmd [[augroup lsp]]
 vim.cmd [[au!]]
 vim.cmd [[au FileType java lua require('jdtls').start_or_attach({cmd = {vim.fn.stdpath('config') .. '/scripts/jdtls.sh'}})]]
 vim.cmd [[augroup end]]
 
+-- LSP
+vim.cmd([[augroup lsp]])
+vim.cmd([[autocmd!]])
+vim.cmd([[autocmd FileType scala setlocal omnifunc=v:lua.vim.lsp.omnifunc]])
+vim.cmd(
+    [[autocmd FileType scala,sbt lua require("metals").initialize_or_attach(metals_config)]])
+vim.cmd([[augroup end]])
+
+-- Need for symbol highlights to work correctly
+vim.cmd([[hi! link LspReferenceText CursorColumn]])
+vim.cmd([[hi! link LspReferenceRead CursorColumn]])
+vim.cmd([[hi! link LspReferenceWrite CursorColumn]])
+----------------------------------
+-- LSP Setup ---------------------
+----------------------------------
+metals_config = require('metals').bare_config
+
+-- Example of settings
+metals_config.settings = {
+  showImplicitArguments = true,
+  showImplicitConversionsAndClasses = true,
+  showInferredType = true,
+  superMethodLensesEnabled = true,
+}
+
+-- Example of how to ovewrite a handler
+metals_config.handlers['textDocument/publishDiagnostics'] =
+    vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics,
+                 { virtual_text = { prefix = '' } })
+
+-- I *highly* recommend setting statusBarProvider to true, however if you do,
+-- you *have* to have a setting to display this in your statusline or else
+-- you'll not see any messages from metals. There is more info in the help
+-- docs about this
+metals_config.init_options.statusBarProvider = 'on'
