@@ -170,3 +170,4 @@ metals_config.handlers['textDocument/publishDiagnostics'] =
 -- you'll not see any messages from metals. There is more info in the help
 -- docs about this
 metals_config.init_options.statusBarProvider = 'on'
+metals_config.on_attach = on_attach
