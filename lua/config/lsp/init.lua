@@ -171,3 +171,5 @@ metals_config.handlers['textDocument/publishDiagnostics'] =
 -- docs about this
 metals_config.init_options.statusBarProvider = 'on'
 metals_config.on_attach = on_attach
+
+vim.cmd [[set path+=src/**]]
