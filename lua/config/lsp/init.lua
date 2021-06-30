@@ -33,6 +33,8 @@ local on_attach = function(client)
     end
   end
 
+  vim.api.nvim_buf_set_option(0, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
   require('completion').on_attach(client)
   require('lsp-status').on_attach(client)
 

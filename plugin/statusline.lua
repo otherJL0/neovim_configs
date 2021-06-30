@@ -4,6 +4,10 @@ vim.cmd [[packadd express_line.nvim]]
 
 RELOAD('el')
 require('el').reset_windows()
+if vim.env.TMUX then
+  local tmux_socket_path = vim.split(vim.env.TMUX, ',', true)[1]
+  vim.g.tmux_socket_channel = vim.fn.sockconnect('pipe', tmux_socket_path)
+end
 
 local builtin = require('el.builtin')
 local extensions = require('el.extensions')
@@ -35,7 +39,11 @@ require('el').setup {
       git_branch,
       ' ',
       git_changes,
-
+      function()
+        if vim.g.tmux_socket_channel then
+          return vim.g.tmux_socket_channel
+        end
+      end,
       ------------
       -- Middle --
       ------------
@@ -51,6 +59,11 @@ require('el').setup {
       '][Tab:',
       function()
         return vim.api.nvim_get_current_tabpage()
+      end,
+      ']',
+      '[',
+      function()
+        return vim.fn.sockconnect('pipe', vim.env.TMUX)
       end,
       ']',
       -- sections.maximum_width(builtin.responsive_file(140, 90), 0.30),
