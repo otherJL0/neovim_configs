@@ -132,13 +132,13 @@ lspconfig.sumneko_lua.setup(require('lua-dev').setup(
 require('config.lsp.efm')
 
 -- JDTSL config
-vim.cmd [[augroup lsp]]
+vim.cmd [[augroup jdtls]]
 vim.cmd [[au!]]
 vim.cmd [[au FileType java lua require('jdtls').start_or_attach({cmd = {vim.fn.stdpath('config') .. '/scripts/jdtls.sh'}})]]
 vim.cmd [[augroup end]]
 
 -- LSP
-vim.cmd([[augroup lsp]])
+vim.cmd([[augroup metals]])
 vim.cmd([[autocmd!]])
 vim.cmd([[autocmd FileType scala setlocal omnifunc=v:lua.vim.lsp.omnifunc]])
 vim.cmd(
