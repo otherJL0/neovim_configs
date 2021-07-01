@@ -31,7 +31,7 @@ finders.file_browser = function()
 end
 
 require('telescope').setup {
-  defaults = {
+  config = {
     prompt_position = 'top',
     layout_strategy = 'horizontal',
     mappings = {
