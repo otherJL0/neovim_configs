@@ -67,13 +67,17 @@ function Elastic:search(query)
       local lines = vim.fn.json_decode(self.results)
       local to_print = vim.fn.json_encode(lines)
       vim.api.nvim_buf_set_lines(float_buffer, 0, 0, false, { to_print })
+      vim.api.nvim_buf_set_option(float_buffer, 'buftype', 'nofile')
+      vim.api.nvim_buf_set_option(float_buffer, 'swapfile', false)
+      vim.api.nvim_buf_set_option(float_buffer, 'buflisted', false)
       vim.api.nvim_buf_set_option(float_buffer, 'filetype', 'json')
       -- vim.api.nvim_buf_call(float_buffer, vim.cmd('%! jq .'))
-      local float_win = vim.api.nvim_open_win(float_buffer, true, win_config)
+      -- local float_win = vim.api.nvim_open_win(float_buffer, true, win_config)
+      vim.cmd('vsplit')
+      vim.api.nvim_win_set_buf(0, float_buffer)
       vim.api.nvim_buf_call(float_buffer, vim.cmd('JqxList'))
     end,
   }
-  vim.notify(cmd)
   vim.fn.jobstart(cmd, opts)
 end
 
