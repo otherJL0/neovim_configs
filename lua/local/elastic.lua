@@ -40,10 +40,14 @@ end
 
 function Elastic:search(query)
   self.results = ''
+  if not query then
+    query = { query = { match_all = vim.emtpy_dict() } }
+  end
+
   local flags = {
     ['-XGET'] = string.format('%s/_search', vim.env.ELASTIC_URL),
     ['-H'] = [['Content-Type: application/json']],
-    ['-d'] = string.format([['{ "query" : { %s } }']], query),
+    ['-d'] = vim.fn.json_encode(query),
   }
   local cmd = 'curl'
   for flag, value in pairs(flags) do
@@ -64,7 +68,9 @@ function Elastic:search(query)
       local to_print = vim.fn.json_encode(lines)
       vim.api.nvim_buf_set_lines(float_buffer, 0, 0, false, { to_print })
       vim.api.nvim_buf_set_option(float_buffer, 'filetype', 'json')
-      local float_win = vim.api.nvim_open_win(float_buffer, false, win_config)
+      -- vim.api.nvim_buf_call(float_buffer, vim.cmd('%! jq .'))
+      local float_win = vim.api.nvim_open_win(float_buffer, true, win_config)
+      vim.api.nvim_buf_call(float_buffer, vim.cmd('JqxList'))
     end,
   }
   vim.notify(cmd)
