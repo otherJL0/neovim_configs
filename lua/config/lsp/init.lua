@@ -82,8 +82,8 @@ local load_config = function(lsp_server)
 end
 
 local lsp_servers = {
-  'pyright',
-  -- 'pylsp',
+  -- 'pyright',
+  'pylsp',
   'gopls',
   'bashls',
   'vimls',
