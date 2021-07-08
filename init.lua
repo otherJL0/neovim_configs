@@ -36,10 +36,6 @@ else
 
 end
 
-if vim.fn.has('mac') == 1 then
+if vim.env.CONDA_PYTHON_EXE then
   vim.g.python3_host_prog = vim.env.CONDA_PYTHON_EXE
-elseif vim.fn.has('unix') == 1 then
-  vim.g.python_host_prog = ''
-elseif vim.fn.has('win32') == 1 then
-  system_name = 'Windows'
 end
