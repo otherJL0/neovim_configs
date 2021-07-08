@@ -17,7 +17,7 @@ nnoremap g> :BufferNext<CR>
 " nnoremap <silent>    <A-8> :BufferGoto 8<CR>
 " nnoremap <silent>    <A-9> :BufferLast<CR>
 " Close buffer
-nnoremap gQ :BufferClose<CR>
+" nnoremap gQ :BufferClose<CR>
 " Wipeout buffer
 "                          :BufferWipeout<CR>
 " Close commands
@@ -25,10 +25,10 @@ nnoremap gQ :BufferClose<CR>
 "                          :BufferCloseBuffersLeft<CR>
 "                          :BufferCloseBuffersRight<CR>
 " Magic buffer-picking mode
-nnoremap <silent> <C-s>    :BufferPick<CR>
+" nnoremap <silent> <C-s>    :BufferPick<CR>
 " Sort automatically by...
-nnoremap <silent> <Space>bd :BufferOrderByDirectory<CR>
-nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>
+" nnoremap <silent> <Space>bd :BufferOrderByDirectory<CR>
+" nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>
 
 " Other:
 " :BarbarEnable - enables barbar (enabled by default)
