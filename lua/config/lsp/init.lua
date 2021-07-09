@@ -19,6 +19,7 @@ vim.lsp.handlers['textDocument/formatting'] =
 
 vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 local on_attach = function(client)
+  vim.lsp.set_log_level(0)
   vim.api.nvim_set_current_dir(client.config.root_dir)
   -- cscope settings
   if vim.fn.has('cscope') == 1 then
