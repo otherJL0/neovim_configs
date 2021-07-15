@@ -58,3 +58,5 @@ end
 
 vim.api.nvim_set_keymap('i', '<CR>', 'v:lua.MUtils.completion_confirm()',
                         { expr = true, noremap = true })
+
+-- vim.api.nvim_set_keymap('n', ' jj', 'v:lua.vim.notify('success'), {expr = true, noremap = true})

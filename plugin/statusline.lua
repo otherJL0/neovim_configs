@@ -6,12 +6,12 @@ RELOAD('el')
 require('el').reset_windows()
 local tmux = require('local.tmux')
 
-
 local builtin = require('el.builtin')
 local extensions = require('el.extensions')
 local sections = require('el.sections')
 local subscribe = require('el.subscribe')
 local lsp_statusline = require('el.plugins.lsp_status')
+local ts_utils = require 'nvim-treesitter.ts_utils'
 
 local git_branch = subscribe.buf_autocmd('el_git_branch', 'BufEnter',
                                          function(window, buffer)
@@ -77,6 +77,14 @@ require('el').setup {
       -- Right --
       -----------
       sections.split,
+      '[',
+      function()
+        -- local node = ts_utils.get_node_at_cursor()
+        -- local buf = vim.api.nvim_get_current_buf()
+        -- return ts_utils.get_node_text(node, buf)
+        return 'WIP'
+      end,
+      ']',
       '[',
       builtin.column_with_width(1),
       ':',
