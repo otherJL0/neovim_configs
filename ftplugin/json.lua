@@ -5,21 +5,20 @@ local function get_json_full_path()
   local cur_node = ts_utils.get_node_at_cursor()
   local parent_node = cur_node:parent():parent()
 
-  local full_path = {}
-  local count = 0
-  while true do
-    count = count + 1
+  local full_path = ts_utils.get_node_text(cur_node)[1]:gsub('"', '')
+  local start_pos, _, _ = cur_node:start()
+  local prev_node = ''
+  while start_pos ~= 0 do
     local node_name = ts_utils.get_node_text(cur_node)
-    if cur_node:type():find("pair") then
-      local key = vim.split(node_name[1], ":")[1]
-      vim.notify(vim.inspect(key))
+    if cur_node:type() == 'pair' then
+      local key = ts_utils.get_node_text(cur_node:child(0))[1]:gsub('"', '')
+      if prev_node_type == 'object' then
+        full_path = string.format('%s.%s', key, full_path)
+      end
     end
-    -- vim.notify(vim.inspect(full_path))
+    prev_node_type = cur_node:type()
     cur_node = cur_node:parent()
-    local start_pos, _, _ = cur_node:start()
-    if start_pos == 0 then
-      break
-    end
+    start_pos, _, _ = cur_node:start()
   end
 
   vim.notify(vim.inspect(full_path))
