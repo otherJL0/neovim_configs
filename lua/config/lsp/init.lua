@@ -18,7 +18,7 @@ vim.lsp.handlers['textDocument/formatting'] =
     end
 
 vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
-local on_attach = function(client)
+local function on_attach(client)
   vim.lsp.set_log_level(0)
   vim.api.nvim_set_current_dir(client.config.root_dir)
   -- cscope settings
@@ -106,29 +106,28 @@ end
 -- Custom LSP setups
 local sumneko_root_path = vim.fn.stdpath('cache') .. '/lua-language-server'
 local sumneko_binary = sumneko_root_path .. '/bin/' .. jit.os .. '/lua-language-server'
-lspconfig.sumneko_lua.setup(require('lua-dev').setup(
-                                {
-      library = {
-        vimruntime = true, -- runtime path
-        types = true, -- full signature, docs and completion of vim.api, vim.treesitter, vim.lsp and others
-        plugins = true, -- installed opt or start plugins in packpath
+lspconfig.sumneko_lua.setup(require('lua-dev').setup({
+  library = {
+    vimruntime = true, -- runtime path
+    types = true, -- full signature, docs and completion of vim.api, vim.treesitter, vim.lsp and others
+    plugins = true, -- installed opt or start plugins in packpath
+  },
+  -- pass any additional options that will be merged in the final lsp config
+  lspconfig = {
+    cmd = { sumneko_binary, '-E', sumneko_root_path .. '/main.lua' },
+    on_attach = on_attach,
+    settings = {
+      Lua = {
+        runtime = { version = 'LuaJIT', path = vim.split(package.path, ':') },
+
+        completion = { keyworkSnippet = 'Disable' },
+
+        diagnostics = { enable = true },
+
       },
-      -- pass any additional options that will be merged in the final lsp config
-      lspconfig = {
-        cmd = { sumneko_binary, '-E', sumneko_root_path .. '/main.lua' },
-        on_attach = on_attach,
-        settings = {
-          Lua = {
-            runtime = { version = 'LuaJIT', path = vim.split(package.path, ':') },
-
-            completion = { keyworkSnippet = 'Disable' },
-
-            diagnostics = { enable = true },
-
-          },
-        },
-      },
-    }))
+    },
+  },
+}))
 
 require('config.lsp.efm')
 
@@ -164,9 +163,12 @@ metals_config.settings = {
 }
 
 -- Example of how to ovewrite a handler
-metals_config.handlers['textDocument/publishDiagnostics'] =
-    vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics,
-                 { virtual_text = { prefix = '' } })
+metals_config.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp
+                                                                             .diagnostic
+                                                                             .on_publish_diagnostics,
+                                                                         {
+  virtual_text = { prefix = '' },
+})
 
 -- I *highly* recommend setting statusBarProvider to true, however if you do,
 -- you *have* to have a setting to display this in your statusline or else
@@ -176,3 +178,46 @@ metals_config.init_options.statusBarProvider = 'on'
 metals_config.on_attach = on_attach
 
 vim.cmd [[set path+=src/**]]
+
+local flutter_tools = require('flutter_tools')
+
+-- alternatively you can override the default configs
+flutter_tools.setup {
+  ui = {
+    -- the border type to use for all floating windows, the same options/formats
+    -- used for ":h nvim_open_win" e.g. "single" | "shadow" | {<table-of-eight-chars>}
+    border = 'rounded',
+  },
+  debugger = { -- integrate with nvim dap + install dart code debugger
+    enabled = true,
+  },
+  -- flutter_path = "<full/path/if/needed>", -- <-- this takes priority over the lookup
+  flutter_lookup_cmd = nil, -- example "dirname $(which flutter)" or "asdf where flutter"
+  widget_guides = { enabled = true },
+  closing_tags = {
+    highlight = 'ErrorMsg', -- highlight for the closing tag
+    prefix = '>', -- character to use for close tag e.g. > Widget
+    enabled = true, -- set to false to disable
+  },
+  dev_log = {
+    open_cmd = 'tabedit', -- command to use to open the log buffer
+  },
+  dev_tools = {
+    autostart = true, -- autostart devtools server if not detected
+    auto_open_browser = true, -- Automatically opens devtools in the browser
+  },
+  outline = {
+    open_cmd = '30vnew', -- command to use to open the outline buffer
+  },
+  lsp = {
+    on_attach = on_attach,
+    -- capabilities = my_custom_capabilities -- e.g. lsp_status capabilities
+    --- OR you can specify a function to deactivate or change or control how the config is created
+    settings = {
+      showTodos = true,
+      completeFunctionCalls = true,
+      -- analysisExcludedFolders = {<path-to-flutter-sdk-packages>}
+    },
+  },
+}
+
