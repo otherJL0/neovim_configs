@@ -1,15 +1,15 @@
 local nnoremap = vim.keymap.nnoremap
 local ts_utils = require('nvim-treesitter.ts_utils')
+local uv = vim.loop
 
 local function get_json_full_path()
+  local start_timestamp = uv.now()
   local cur_node = ts_utils.get_node_at_cursor()
   local prev_node = ts_utils.get_node_at_cursor()
-  local parent_node = cur_node:parent():parent()
 
   local full_path = ts_utils.get_node_text(cur_node)[1]:gsub('"', '')
   local start_pos, _, _ = cur_node:start()
   while start_pos ~= 0 do
-    local node_name = ts_utils.get_node_text(cur_node)
     if cur_node:type() == 'pair' then
       local child_node = cur_node:child(0)
       local key = ts_utils.get_node_text(child_node)[1]:gsub('"', '')
@@ -36,6 +36,8 @@ local function get_json_full_path()
   end
 
   vim.notify(vim.inspect(full_path))
+  vim.notify('Total time')
+  vim.notify(string.format('%d', 1000 * (uv.now() - start_timestamp)))
 end
 
 nnoremap { '  k', get_json_full_path }
