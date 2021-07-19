@@ -210,6 +210,11 @@ flutter_tools.setup {
     open_cmd = '30vnew', -- command to use to open the outline buffer
   },
   lsp = {
+    cmd = {
+      'dart',
+      vim.env.DART_HOME .. '/snapshots/analysis_server.dart.snapshot',
+      '--lsp',
+    },
     on_attach = on_attach,
     -- capabilities = my_custom_capabilities -- e.g. lsp_status capabilities
     --- OR you can specify a function to deactivate or change or control how the config is created
