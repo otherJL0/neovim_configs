@@ -29,7 +29,7 @@ else
   require('config.completion')
 
   -- Snippets
-  require('config.snippets')
+  -- require('config.snippets')
 
   -- LSP
   require('config.lsp')

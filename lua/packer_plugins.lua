@@ -8,9 +8,9 @@ return require('packer').startup {
     -- use 'wbthomas/packer.nvim'
 
     -- Essential Plugins
-    -- use 'nvim-lua/plenary.nvim'
+    use 'nvim-lua/plenary.nvim'
     use 'neovim/nvim-lspconfig'
-    use 'nvim-lua/completion-nvim'
+    use 'hrsh7th/nvim-compe'
     use 'nvim-treesitter/nvim-treesitter'
     use 'tjdevries/astronauta.nvim'
     use 'OtherwiseJLo/nlua.nvim'
@@ -32,12 +32,11 @@ return require('packer').startup {
       'nvim-treesitter/nvim-treesitter-refactor',
       'nvim-treesitter/nvim-treesitter-textobjects',
       'nvim-treesitter/nvim-tree-docs',
-      'nvim-treesitter/completion-treesitter',
       requires = 'nvim-treesitter/nvim-treesitter',
     }
 
     -- Snippets
-    use 'norcalli/snippets.nvim'
+    use 'L3MON4D3/LuaSnip'
 
     -- Git Plugins
     use 'lewis6991/gitsigns.nvim'
@@ -55,9 +54,6 @@ return require('packer').startup {
     }
 
     -- SQL
-    use 'tpope/vim-dadbod'
-    use 'kristijanhusak/vim-dadbod-completion'
-    use 'kristijanhusak/vim-dadbod-ui'
     use 'nanotee/sqls.nvim'
 
     use 'unblevable/quick-scope'

@@ -12,7 +12,6 @@ vim.lsp.handlers["textDocument/formatting"] =
     end
 
 local yaml_attach = function(client)
-    require('completion').attach(client)
     if client.resolved_capabilities.document_highlight then
         vim.api.nvim_exec([[
       hi LspReferenceRead cterm=bold ctermbg=red guibg=LightYellow

@@ -16,7 +16,6 @@ local sumneko_binary = sumneko_root_path .. '/bin/' .. system_name ..
                            '/lua-language-server'
 
 local lua_attach = function(client)
-  require('completion').on_attach(client)
   require('lsp-status').on_attach(client)
   nnoremap { '<C-K>', vim.lsp.buf.hover }
   if client.resolved_capabilities.document_highlight then
