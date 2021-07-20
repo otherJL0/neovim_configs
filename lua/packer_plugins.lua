@@ -1,11 +1,7 @@
-vim.cmd [[packadd vimball]]
-
--- function has(x) return vim.fn.has(x) == 1 end
-
 return require('packer').startup {
   function(use)
     -- Packer itself
-    -- use 'wbthomas/packer.nvim'
+    use 'wbthomas/packer.nvim'
 
     -- Essential Plugins
     use 'nvim-lua/plenary.nvim'
@@ -13,7 +9,6 @@ return require('packer').startup {
     use 'hrsh7th/nvim-compe'
     use 'nvim-treesitter/nvim-treesitter'
     use 'tjdevries/astronauta.nvim'
-    use 'OtherwiseJLo/nlua.nvim'
     use 'nvim-lua/lsp-status.nvim'
     use 'nvim-lua/lsp_extensions.nvim'
     use 'tjdevries/express_line.nvim'
@@ -42,8 +37,6 @@ return require('packer').startup {
     use 'lewis6991/gitsigns.nvim'
     -- Customization
     use 'folke/tokyonight.nvim'
-    use 'tjdevries/colorbuddy.nvim'
-    use 'tjdevries/gruvbuddy.nvim'
     use 'b3nj5m1n/kommentary'
     use 'kyazdani42/nvim-web-devicons'
 
@@ -70,13 +63,10 @@ return require('packer').startup {
     use 'sindrets/diffview.nvim'
     use 'tpope/vim-fugitive'
     use 'tmux-plugins/vim-tmux'
-    use 'rafamadriz/neon'
 
     use 'folke/lua-dev.nvim'
-    use 'vimwiki/vimwiki'
     use 'scalameta/nvim-metals'
     use 'mfussenegger/nvim-jdtls'
-    use 'glacambre/firenvim'
     use {
       'folke/twilight.nvim',
       config = function()

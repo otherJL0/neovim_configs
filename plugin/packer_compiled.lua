@@ -81,10 +81,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/barbar.nvim"
   },
-  ["colorbuddy.nvim"] = {
-    loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/colorbuddy.nvim"
-  },
   ["dial.nvim"] = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/dial.nvim"
@@ -97,10 +93,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/express_line.nvim"
   },
-  firenvim = {
-    loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/firenvim"
-  },
   ["flutter-tools.nvim"] = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/flutter-tools.nvim"
@@ -112,10 +104,6 @@ _G.packer_plugins = {
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
-  },
-  ["gruvbuddy.nvim"] = {
-    loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/gruvbuddy.nvim"
   },
   kommentary = {
     loaded = true,
@@ -133,17 +121,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/lua-dev.nvim"
   },
-  neon = {
-    loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/neon"
-  },
   neorg = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/neorg"
-  },
-  ["nlua.nvim"] = {
-    loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nlua.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -209,6 +189,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/one-small-step-for-vimkind"
   },
+  ["packer.nvim"] = {
+    loaded = true,
+    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/packer.nvim"
+  },
   playground = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/playground"
@@ -257,10 +241,6 @@ _G.packer_plugins = {
   ["vim-tmux"] = {
     loaded = true,
     path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/vim-tmux"
-  },
-  vimwiki = {
-    loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/vimwiki"
   },
   ["vista.vim"] = {
     loaded = true,
