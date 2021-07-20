@@ -14,16 +14,6 @@ require('nvim-autopairs.completion.compe').setup({
   map_complete = true, -- it will auto insert `(` after select function or method item
 })
 
-local function prequire(...)
-  local status, lib = pcall(require, ...)
-  if (status) then
-    return lib
-  end
-  return nil
-end
-
-local luasnip = prequire('luasnip')
-
 local t = function(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
@@ -40,8 +30,8 @@ end
 _G.tab_complete = function()
   if vim.fn.pumvisible() == 1 then
     return t '<C-n>'
-  elseif luasnip and luasnip.expand_or_jumpable() then
-    return t '<Plug>luasnip-expand-or-jump'
+  elseif require('luasnip').expand_or_jumpable() then
+    return t '<cmd>lua require\'luasnip\'.jump(1)<Cr>'
   elseif check_back_space() then
     return t '<Tab>'
   else
@@ -51,8 +41,8 @@ end
 _G.s_tab_complete = function()
   if vim.fn.pumvisible() == 1 then
     return t '<C-p>'
-  elseif luasnip and luasnip.jumpable(-1) then
-    return t '<Plug>luasnip-jump-prev'
+  elseif require('luasnip').jumpable(-1) then
+    return t '<cmd>lua require\'luasnip\'.jump(-1)<CR>'
   else
     return t '<S-Tab>'
   end
