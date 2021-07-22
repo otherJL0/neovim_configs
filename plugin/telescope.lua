@@ -1,5 +1,6 @@
 local builtin = require('telescope.builtin')
 local actions = require('telescope.actions')
+local sqls = require('sqls.pickers')
 local nnoremap = vim.keymap.nnoremap
 local inoremap = vim.keymap.inoremap
 -- local finders = require('config.telescope.finders')
@@ -101,3 +102,4 @@ nnoremap { ' g?', ivy_git_status }
 nnoremap { ' Ghis', ivy_git_commits }
 nnoremap { ' v', finders.file_browser }
 nnoremap { ' V', dropdown_buffers }
+nnoremap { ' sql', sqls.telescope }
