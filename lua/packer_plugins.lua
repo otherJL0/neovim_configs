@@ -59,7 +59,6 @@ return require('packer').startup {
     use 'jbyuki/one-small-step-for-vimkind'
     use 'romgrk/barbar.nvim'
     use 'rafcamlet/nvim-luapad'
-    use 'f-person/git-blame.nvim'
     use 'sindrets/diffview.nvim'
     use 'tpope/vim-fugitive'
     use 'tmux-plugins/vim-tmux'

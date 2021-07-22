@@ -60,7 +60,7 @@ require('gitsigns').setup {
     ['x ih'] = ':<C-U>lua require"gitsigns".select_hunk()<CR>',
   },
   watch_index = { interval = 1000 },
-  current_line_blame = false,
+  current_line_blame = true,
   sign_priority = 6,
   update_debounce = 100,
   status_formatter = nil, -- Use default
