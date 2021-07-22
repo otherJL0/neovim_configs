@@ -78,6 +78,8 @@ return require('packer').startup {
     }
     use { 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim' }
     use 'vhyrro/neorg'
+    -- load private plugin
+    use '~/projects/moonbase.nvim'
   end,
   config = { display = { open_fn = require('packer.util').float } },
 }
