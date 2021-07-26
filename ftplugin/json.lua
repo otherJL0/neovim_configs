@@ -1,6 +1,5 @@
 local nnoremap = vim.keymap.nnoremap
 local ts_utils = require('nvim-treesitter.ts_utils')
-local uv = vim.loop
 
 local function get_json_full_path()
   local cur_node = ts_utils.get_node_at_cursor()
