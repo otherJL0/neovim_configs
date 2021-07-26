@@ -3,7 +3,6 @@ local ts_utils = require('nvim-treesitter.ts_utils')
 local uv = vim.loop
 
 local function get_json_full_path()
-  local start_timestamp = uv.now()
   local cur_node = ts_utils.get_node_at_cursor()
   local prev_node = ts_utils.get_node_at_cursor()
 
@@ -36,8 +35,6 @@ local function get_json_full_path()
   end
 
   vim.notify(vim.inspect(full_path))
-  vim.notify('Total time')
-  vim.notify(string.format('%d', 1000 * (uv.now() - start_timestamp)))
 end
 
 nnoremap { '  k', get_json_full_path }
