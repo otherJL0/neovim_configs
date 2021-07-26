@@ -7,7 +7,7 @@ return require('packer').startup {
     use 'nvim-lua/plenary.nvim'
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/nvim-compe'
-    use 'nvim-treesitter/nvim-treesitter'
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use 'tjdevries/astronauta.nvim'
     use 'nvim-lua/lsp-status.nvim'
     use 'nvim-lua/lsp_extensions.nvim'

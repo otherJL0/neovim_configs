@@ -44,8 +44,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/jlopez/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/jlopez/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/jlopez/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/jlopez/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/jlopez/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "/Users/jlopez/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/Users/jlopez/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/Users/jlopez/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/Users/jlopez/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/jlopez/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -71,184 +71,184 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   LuaSnip = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/LuaSnip"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/LuaSnip"
   },
   ["astronauta.nvim"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/astronauta.nvim"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/astronauta.nvim"
   },
   ["barbar.nvim"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/barbar.nvim"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/barbar.nvim"
   },
   ["dial.nvim"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/dial.nvim"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/dial.nvim"
   },
   ["diffview.nvim"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/diffview.nvim"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/diffview.nvim"
   },
   ["express_line.nvim"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/express_line.nvim"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/express_line.nvim"
   },
   ["flutter-tools.nvim"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/flutter-tools.nvim"
-  },
-  ["git-blame.nvim"] = {
-    loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/git-blame.nvim"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/flutter-tools.nvim"
   },
   ["gitsigns.nvim"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
   },
   kommentary = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/kommentary"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/kommentary"
   },
   ["lsp-status.nvim"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/lsp-status.nvim"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/lsp-status.nvim"
   },
   ["lsp_extensions.nvim"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/lsp_extensions.nvim"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/lsp_extensions.nvim"
   },
   ["lua-dev.nvim"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/lua-dev.nvim"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/lua-dev.nvim"
+  },
+  ["moonbase.nvim"] = {
+    loaded = true,
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/moonbase.nvim"
   },
   neorg = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/neorg"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/neorg"
   },
   ["nvim-autopairs"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
   },
   ["nvim-compe"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nvim-compe"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/nvim-compe"
   },
   ["nvim-dap"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nvim-dap"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/nvim-dap"
   },
   ["nvim-hlslens"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nvim-hlslens"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/nvim-hlslens"
   },
   ["nvim-jdtls"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nvim-jdtls"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/nvim-jdtls"
   },
   ["nvim-jqx"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nvim-jqx"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/nvim-jqx"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
   },
   ["nvim-luapad"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nvim-luapad"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/nvim-luapad"
   },
   ["nvim-metals"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nvim-metals"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/nvim-metals"
   },
   ["nvim-tree-docs"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nvim-tree-docs"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/nvim-tree-docs"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
   },
   ["nvim-treesitter-refactor"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nvim-treesitter-refactor"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/nvim-treesitter-refactor"
   },
   ["nvim-treesitter-textobjects"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects"
   },
   ["nvim-ts-autotag"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
   ["one-small-step-for-vimkind"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/one-small-step-for-vimkind"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/one-small-step-for-vimkind"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/packer.nvim"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/packer.nvim"
   },
   playground = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/playground"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/playground"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/plenary.nvim"
   },
   ["popup.nvim"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/popup.nvim"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/popup.nvim"
   },
   ["quick-scope"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/quick-scope"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/quick-scope"
   },
   ["sql.nvim"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/sql.nvim"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/sql.nvim"
   },
   ["sqls.nvim"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/sqls.nvim"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/sqls.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
   ["tokyonight.nvim"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/tokyonight.nvim"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/tokyonight.nvim"
   },
   ["trouble.nvim"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/trouble.nvim"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/trouble.nvim"
   },
   ["twilight.nvim"] = {
     config = { "\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rtwilight\frequire\0" },
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/twilight.nvim"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/twilight.nvim"
   },
   ["vim-fugitive"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/vim-fugitive"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/vim-fugitive"
   },
   ["vim-tmux"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/vim-tmux"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/vim-tmux"
   },
   ["vista.vim"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/vista.vim"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/vista.vim"
   },
   ["which-key.nvim"] = {
     loaded = true,
-    path = "/home/jlopez/.local/share/nvim/site/pack/packer/start/which-key.nvim"
+    path = "/Users/jlopez/.local/share/nvim/site/pack/packer/start/which-key.nvim"
   }
 }
 
