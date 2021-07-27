@@ -1,1 +1,1 @@
-au BufNewFile,BufRead fluent.conf set filetype=xml
+au BufNewFile,BufRead fluent*.conf set filetype=xml
