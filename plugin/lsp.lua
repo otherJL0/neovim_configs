@@ -92,6 +92,7 @@ local lsp_servers = {
   'clangd',
   'sorbet',
   'dartls',
+  'cmake',
 }
 for _, lsp in ipairs(lsp_servers) do
   local lsp_settings = load_config(lsp)
@@ -102,28 +103,29 @@ end
 -- Custom LSP setups
 local sumneko_root_path = vim.fn.stdpath('cache') .. '/lua-language-server'
 local sumneko_binary = sumneko_root_path .. '/bin/' .. jit.os .. '/lua-language-server'
-lspconfig.sumneko_lua.setup(require('lua-dev').setup({
-  library = {
-    vimruntime = true, -- runtime path
-    types = true, -- full signature, docs and completion of vim.api, vim.treesitter, vim.lsp and others
-    plugins = true, -- installed opt or start plugins in packpath
-  },
-  -- pass any additional options that will be merged in the final lsp config
-  lspconfig = {
-    cmd = { sumneko_binary, '-E', sumneko_root_path .. '/main.lua' },
-    on_attach = on_attach,
-    settings = {
-      Lua = {
-        runtime = { version = 'LuaJIT', path = vim.split(package.path, ':') },
-
-        completion = { keyworkSnippet = 'Disable' },
-
-        diagnostics = { enable = true },
-
+lspconfig.sumneko_lua.setup(require('lua-dev').setup(
+                                {
+      library = {
+        vimruntime = true, -- runtime path
+        types = true, -- full signature, docs and completion of vim.api, vim.treesitter, vim.lsp and others
+        plugins = true, -- installed opt or start plugins in packpath
       },
-    },
-  },
-}))
+      -- pass any additional options that will be merged in the final lsp config
+      lspconfig = {
+        cmd = { sumneko_binary, '-E', sumneko_root_path .. '/main.lua' },
+        on_attach = on_attach,
+        settings = {
+          Lua = {
+            runtime = { version = 'LuaJIT', path = vim.split(package.path, ':') },
+
+            completion = { keyworkSnippet = 'Disable' },
+
+            diagnostics = { enable = true },
+
+          },
+        },
+      },
+    }))
 
 require('config.lsp.efm')
 
@@ -159,12 +161,9 @@ metals_config.settings = {
 }
 
 -- Example of how to ovewrite a handler
-metals_config.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp
-                                                                             .diagnostic
-                                                                             .on_publish_diagnostics,
-                                                                         {
-  virtual_text = { prefix = '' },
-})
+metals_config.handlers['textDocument/publishDiagnostics'] =
+    vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics,
+                 { virtual_text = { prefix = '' } })
 
 -- I *highly* recommend setting statusBarProvider to true, however if you do,
 -- you *have* to have a setting to display this in your statusline or else
