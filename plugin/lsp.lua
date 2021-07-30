@@ -2,20 +2,19 @@ local nnoremap = vim.keymap.nnoremap
 local nvim_command = vim.api.nvim_command
 local lspconfig = require('lspconfig')
 
-vim.lsp.handlers['textDocument/formatting'] =
-    function(err, _, result, _, bufnr)
-      if err ~= nil or result == nil then
-        return
-      end
-      if not vim.api.nvim_buf_get_option(bufnr, 'modified') then
-        local view = vim.fn.winsaveview()
-        vim.lsp.util.apply_text_edits(result, bufnr)
-        vim.fn.winrestview(view)
-        if bufnr == vim.api.nvim_get_current_buf() then
-          nvim_command('noautocmd :update')
-        end
-      end
+vim.lsp.handlers['textDocument/formatting'] = function(err, _, result, _, bufnr)
+  if err ~= nil or result == nil then
+    return
+  end
+  if not vim.api.nvim_buf_get_option(bufnr, 'modified') then
+    local view = vim.fn.winsaveview()
+    vim.lsp.util.apply_text_edits(result, bufnr)
+    vim.fn.winrestview(view)
+    if bufnr == vim.api.nvim_get_current_buf() then
+      nvim_command('noautocmd :update')
     end
+  end
+end
 
 vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 local function on_attach(client)
@@ -30,7 +29,7 @@ local function on_attach(client)
     vim.opt.cst = true
 
     if vim.fn.filereadable('cscope.out') == 1 then
-      vim.cmd [[silent cs add cscope.out]]
+      vim.cmd([[silent cs add cscope.out]])
     end
   end
 
@@ -39,39 +38,39 @@ local function on_attach(client)
   require('lsp-status').on_attach(client)
 
   -- nnoremap { 'K', vim.lsp.buf.hover }
-  nnoremap { 'K', vim.lsp.buf.signature_help }
-  nnoremap { ' ca', vim.lsp.buf.code_action }
-  nnoremap { 'gr', vim.lsp.buf.references }
-  nnoremap { 'gD', vim.lsp.buf.declaration }
-  nnoremap { 'gd', vim.lsp.buf.definition }
-  nnoremap { '[d', vim.lsp.diagnostic.goto_prev }
-  nnoremap { ']d', vim.lsp.diagnostic.goto_next }
-  nnoremap { ' D', vim.lsp.diagnostic.set_loclist }
-  nnoremap { 'gi', vim.lsp.buf.implementation }
-  nnoremap { ' wa', vim.lsp.buf.add_workspace_folder }
-  nnoremap { ' wr', vim.lsp.buf.remove_workspace_folder }
-  nnoremap {
+  nnoremap({ 'K', vim.lsp.buf.signature_help })
+  nnoremap({ ' ca', vim.lsp.buf.code_action })
+  nnoremap({ 'gr', vim.lsp.buf.references })
+  nnoremap({ 'gD', vim.lsp.buf.declaration })
+  nnoremap({ 'gd', vim.lsp.buf.definition })
+  nnoremap({ '[d', vim.lsp.diagnostic.goto_prev })
+  nnoremap({ ']d', vim.lsp.diagnostic.goto_next })
+  nnoremap({ ' D', vim.lsp.diagnostic.set_loclist })
+  nnoremap({ 'gi', vim.lsp.buf.implementation })
+  nnoremap({ ' wa', vim.lsp.buf.add_workspace_folder })
+  nnoremap({ ' wr', vim.lsp.buf.remove_workspace_folder })
+  nnoremap({
     ' wl',
     function()
       print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end,
-  }
-  nnoremap { ' K', vim.lsp.buf.type_definition }
-  nnoremap { ' e', vim.lsp.diagnostic.show_line_diagnostics }
-  nnoremap { ' R', vim.lsp.buf.rename }
+  })
+  nnoremap({ ' K', vim.lsp.buf.type_definition })
+  nnoremap({ ' e', vim.lsp.diagnostic.show_line_diagnostics })
+  nnoremap({ ' R', vim.lsp.buf.rename })
 
   if client.resolved_capabilities.document_highlight then
-    nvim_command [[autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()]]
-    nvim_command [[autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()]]
-    nvim_command [[autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()]]
+    nvim_command([[autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()]])
+    nvim_command([[autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()]])
+    nvim_command([[autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()]])
   end
 
   if client.resolved_capabilities.document_formatting then
-    nnoremap { ' F', vim.lsp.buf.formatting }
-    nvim_command [[augroup Format]]
-    nvim_command [[autocmd! * <buffer>]]
-    nvim_command [[autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()]]
-    nvim_command [[augroup END]]
+    nnoremap({ ' F', vim.lsp.buf.formatting })
+    nvim_command([[augroup Format]])
+    nvim_command([[autocmd! * <buffer>]])
+    nvim_command([[autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()]])
+    nvim_command([[augroup END]])
   end
 end
 
@@ -96,51 +95,50 @@ local lsp_servers = {
 }
 for _, lsp in ipairs(lsp_servers) do
   local lsp_settings = load_config(lsp)
-  lspconfig[lsp].setup { lsp_settings }
-  lspconfig[lsp].setup { on_attach = on_attach }
+  lspconfig[lsp].setup({ lsp_settings })
+  lspconfig[lsp].setup({ on_attach = on_attach })
 end
 
 -- Custom LSP setups
 local sumneko_root_path = vim.fn.stdpath('cache') .. '/lua-language-server'
 local sumneko_binary = sumneko_root_path .. '/bin/' .. jit.os .. '/lua-language-server'
-lspconfig.sumneko_lua.setup(require('lua-dev').setup(
-                                {
-      library = {
-        vimruntime = true, -- runtime path
-        types = true, -- full signature, docs and completion of vim.api, vim.treesitter, vim.lsp and others
-        plugins = true, -- installed opt or start plugins in packpath
+lspconfig.sumneko_lua.setup(require('lua-dev').setup({
+  library = {
+    vimruntime = true, -- runtime path
+    types = true, -- full signature, docs and completion of vim.api, vim.treesitter, vim.lsp and others
+    plugins = true, -- installed opt or start plugins in packpath
+  },
+  -- pass any additional options that will be merged in the final lsp config
+  lspconfig = {
+    cmd = { sumneko_binary, '-E', sumneko_root_path .. '/main.lua' },
+    on_attach = on_attach,
+    settings = {
+      Lua = {
+        runtime = { version = 'LuaJIT', path = vim.split(package.path, ':') },
+
+        completion = { keyworkSnippet = 'Disable' },
+
+        diagnostics = { enable = true },
       },
-      -- pass any additional options that will be merged in the final lsp config
-      lspconfig = {
-        cmd = { sumneko_binary, '-E', sumneko_root_path .. '/main.lua' },
-        on_attach = on_attach,
-        settings = {
-          Lua = {
-            runtime = { version = 'LuaJIT', path = vim.split(package.path, ':') },
-
-            completion = { keyworkSnippet = 'Disable' },
-
-            diagnostics = { enable = true },
-
-          },
-        },
-      },
-    }))
-
-require('config.lsp.efm')
+    },
+  },
+}))
 
 -- JDTSL config
-vim.cmd [[augroup jdtls]]
-vim.cmd [[au!]]
-vim.cmd [[au FileType java lua require('jdtls').start_or_attach({cmd = {vim.fn.stdpath('config') .. '/scripts/jdtls.sh'}})]]
-vim.cmd [[augroup end]]
+vim.cmd([[augroup jdtls]])
+vim.cmd([[au!]])
+vim.cmd(
+  [[au FileType java lua require('jdtls').start_or_attach({cmd = {vim.fn.stdpath('config') .. '/scripts/jdtls.sh'}})]]
+)
+vim.cmd([[augroup end]])
 
 -- LSP
 vim.cmd([[augroup metals]])
 vim.cmd([[autocmd!]])
 vim.cmd([[autocmd FileType scala setlocal omnifunc=v:lua.vim.lsp.omnifunc]])
 vim.cmd(
-    [[autocmd FileType scala,sbt lua require("metals").initialize_or_attach(metals_config)]])
+  [[autocmd FileType scala,sbt lua require("metals").initialize_or_attach(metals_config)]]
+)
 vim.cmd([[augroup end]])
 
 -- Need for symbol highlights to work correctly
@@ -161,9 +159,10 @@ metals_config.settings = {
 }
 
 -- Example of how to ovewrite a handler
-metals_config.handlers['textDocument/publishDiagnostics'] =
-    vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics,
-                 { virtual_text = { prefix = '' } })
+metals_config.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics,
+  { virtual_text = { prefix = '' } }
+)
 
 -- I *highly* recommend setting statusBarProvider to true, however if you do,
 -- you *have* to have a setting to display this in your statusline or else
@@ -172,6 +171,6 @@ metals_config.handlers['textDocument/publishDiagnostics'] =
 metals_config.init_options.statusBarProvider = 'on'
 metals_config.on_attach = on_attach
 
-vim.cmd [[set path+=src/**]]
+vim.cmd([[set path+=src/**]])
 
 local flutter_tools = require('flutter-tools')

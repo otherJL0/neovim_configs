@@ -30,7 +30,7 @@ vim.g.tokyonight_dark_sidebar = true
 
 -- 	Float windows like the lsp diagnostics windows get a darker background.
 vim.g.tokyonight_dark_float = true
-vim.cmd [[colorscheme tokyonight]]
+vim.cmd([[colorscheme tokyonight]])
 
 -- 	You can override specific color groups to use other groups or a hex color
--- vim.g.tokyonight_colors = {} 
+-- vim.g.tokyonight_colors = {}

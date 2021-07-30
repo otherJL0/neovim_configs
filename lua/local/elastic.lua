@@ -26,8 +26,7 @@ function Elastic:list_indices()
       self.indices = string.format('%s%s', self.indices, data[1])
     end,
     on_exit = function(job_id, exit_code, event_type)
-      local win_config = { relative = 'win', row = 30, col = 80, width = 90,
-                           height = 30 }
+      local win_config = { relative = 'win', row = 30, col = 80, width = 90, height = 30 }
 
       local float_buffer = vim.api.nvim_create_buf(false, false)
       local lines = vim.fn.json_decode(self.indices)
@@ -59,8 +58,7 @@ function Elastic:search(query)
       self.results = string.format('%s%s', self.results, data[1])
     end,
     on_exit = function(job_id, exit_code, event_type)
-      local win_config = { relative = 'win', row = 30, col = 80, width = 90,
-                           height = 30 }
+      local win_config = { relative = 'win', row = 30, col = 80, width = 90, height = 30 }
 
       local result_buffer = vim.api.nvim_create_buf(false, false)
       vim.api.nvim_buf_set_lines(result_buffer, 0, 0, false, { self.results })

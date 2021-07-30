@@ -8,15 +8,14 @@ vim.g.maplocalleader = ' '
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
-  fn.system(
-      { 'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path })
-  execute 'packadd packer.nvim'
+  fn.system({ 'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path })
+  execute('packadd packer.nvim')
 else
   -- All other logic depends on Packer being present
   require('packer_plugins')
 
   -- Force loading of astronauta first
-  vim.cmd [[runtime plugin/astronauta.vim]]
+  vim.cmd([[runtime plugin/astronauta.vim]])
 end
 
 if vim.env.CONDA_PYTHON_EXE then
@@ -43,10 +42,11 @@ local opt = vim.opt
 local nnoremap = vim.keymap.nnoremap
 
 -- Y yank until the end of line
-nnoremap { 'Y', 'y$' }
+nnoremap({ 'Y', 'y$' })
 
 -- Make current buffer more obvious
-vim.api.nvim_exec([[
+vim.api.nvim_exec(
+  [[
 augroup BgHighlight
   autocmd!
   autocmd WinEnter * set cursorcolumn
@@ -56,15 +56,20 @@ augroup BgHighlight
   autocmd WinLeave * set nocursorline
   autocmd WinLeave * set norelativenumber
 augroup END
-]], false)
+]],
+  false
+)
 
 -- Highlight on yank
-vim.api.nvim_exec([[
+vim.api.nvim_exec(
+  [[
   augroup YankHighlight
     autocmd!
     autocmd TextYankPost * silent! lua vim.highlight.on_yank()
   augroup end
-]], false)
+]],
+  false
+)
 
 -- Ignore compiled files
 opt.wildignore = '__pycache__'
@@ -111,12 +116,12 @@ opt.breakindent = true
 opt.showbreak = string.rep(' ', 3) -- Make it so that long lines wrap smartly
 opt.linebreak = true
 
-vim.cmd [[set undofile]]
+vim.cmd([[set undofile]])
 -- Always keep sign column on
 opt.signcolumn = 'yes'
 
-vim.cmd [[set cursorcolumn]]
-vim.cmd [[set cursorline]]
+vim.cmd([[set cursorcolumn]])
+vim.cmd([[set cursorline]])
 
 opt.foldmethod = 'marker'
 opt.foldlevel = 0
@@ -128,7 +133,7 @@ opt.clipboard = 'unnamedplus'
 
 opt.inccommand = 'nosplit'
 opt.swapfile = false -- Living on the edge
-opt.shada = { '!', '\'1000', '<50', 's10', 'h' }
+opt.shada = { '!', "'1000", '<50', 's10', 'h' }
 
 -- Only allow mouse in normal mode
 opt.mouse = 'n'
@@ -138,18 +143,23 @@ opt.mouse = 'n'
 --   2. gw{motion} - Put cursor back after formatting motion.
 --
 -- TODO: w, {v, b, l}
-opt.formatoptions = opt.formatoptions - 'a' -- Auto formatting is BAD.
-- 't' -- Don't auto format my code. I got linters for that.
-+ 'c' -- In general, I like it when comments respect textwidth
-+ 'q' -- Allow formatting comments w/ gq
-- 'o' -- O and o, don't continue comments
-+ 'r' -- But do continue when pressing enter.
-+ 'n' -- Indent past the formatlistpat, not underneath it.
-+ 'j' -- Auto-remove comments if possible.
-- '2' -- I'm not in gradeschool anymore
+opt.formatoptions = opt.formatoptions
+  - 'a' -- Auto formatting is BAD.
+  - 't' -- Don't auto format my code. I got linters for that.
+  + 'c' -- In general, I like it when comments respect textwidth
+  + 'q' -- Allow formatting comments w/ gq
+  - 'o' -- O and o, don't continue comments
+  + 'r' -- But do continue when pressing enter.
+  + 'n' -- Indent past the formatlistpat, not underneath it.
+  + 'j' -- Auto-remove comments if possible.
+  - '2' -- I'm not in gradeschool anymore
 
 -- set joinspaces
 opt.joinspaces = false -- Two spaces and grade school, we're done
 
 -- set fillchars=eob:~
 opt.fillchars = { eob = '~' }
+
+local func_test = function()
+  return 2
+end

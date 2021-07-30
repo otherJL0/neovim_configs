@@ -1,4 +1,4 @@
-require('gitsigns').setup {
+require('gitsigns').setup({
   signs = {
     add = {
       hl = 'GitSignsAdd',
@@ -40,11 +40,11 @@ require('gitsigns').setup {
 
     ['n ]c'] = {
       expr = true,
-      '&diff ? \']c\' : \'<cmd>lua require"gitsigns".next_hunk()<CR>\'',
+      "&diff ? ']c' : '<cmd>lua require\"gitsigns\".next_hunk()<CR>'",
     },
     ['n [c'] = {
       expr = true,
-      '&diff ? \'[c\' : \'<cmd>lua require"gitsigns".prev_hunk()<CR>\'',
+      "&diff ? '[c' : '<cmd>lua require\"gitsigns\".prev_hunk()<CR>'",
     },
 
     ['n <leader>hs'] = '<cmd>lua require"gitsigns".stage_hunk()<CR>',
@@ -66,4 +66,4 @@ require('gitsigns').setup {
   status_formatter = nil, -- Use default
   use_decoration_api = true,
   use_internal_diff = true, -- If luajit is present
-}
+})

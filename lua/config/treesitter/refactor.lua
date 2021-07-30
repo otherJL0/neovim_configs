@@ -24,5 +24,4 @@ return {
       goto_previous_usage = '<a-#>',
     },
   },
-
 }

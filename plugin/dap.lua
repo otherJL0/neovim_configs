@@ -1,8 +1,8 @@
 local dap = require('dap')
 local nnoremap = vim.keymap.nnoremap
 
-nnoremap { ' b', dap.toggle_breakpoint }
-nnoremap { ' c', dap.continue }
+nnoremap({ ' b', dap.toggle_breakpoint })
+nnoremap({ ' c', dap.continue })
 -- nnoremap { ' O', dap.step_over }
 -- nnoremap { ' I', dap.step_into }
 -- nnoremap { ' R', dap.repl.open }

@@ -12,15 +12,17 @@ end
 
 local cache_dir = vim.fn.stdpath('cache')
 local sumneko_root_path = cache_dir .. '/nlua/sumneko_lua/lua-language-server'
-local sumneko_binary = sumneko_root_path .. '/bin/' .. system_name ..
-                           '/lua-language-server'
+local sumneko_binary = sumneko_root_path
+  .. '/bin/'
+  .. system_name
+  .. '/lua-language-server'
 
 local lua_attach = function(client)
   require('lsp-status').on_attach(client)
-  nnoremap { '<C-K>', vim.lsp.buf.hover }
+  nnoremap({ '<C-K>', vim.lsp.buf.hover })
   if client.resolved_capabilities.document_highlight then
     vim.api.nvim_exec(
-        [[
+      [[
       hi LspReferenceRead cterm=bold ctermbg=red guibg=LightYellow
       hi LspReferenceText cterm=bold ctermbg=red guibg=LightYellow
       hi LspReferenceWrite cterm=bold ctermbg=red guibg=LightYellow
@@ -29,12 +31,13 @@ local lua_attach = function(client)
         autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
         autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
       augroup END
-    ]], false
+    ]],
+      false
     )
   end
 end
 
-require('lspconfig').sumneko_lua.setup {
+require('lspconfig').sumneko_lua.setup({
   cmd = { sumneko_binary, '-E', sumneko_root_path .. '/main.lua' },
 
   on_attach = lua_attach,
@@ -57,4 +60,4 @@ require('lspconfig').sumneko_lua.setup {
       workspace = {},
     },
   },
-}
+})

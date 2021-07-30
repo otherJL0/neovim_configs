@@ -6,8 +6,4 @@ local bracket_pair = function()
   local previous_node = f
 end
 
-
-
-
-
 -- inoremap { '(', function() end }

@@ -3,7 +3,7 @@ local ts_playground = require('config/treesitter/playground')
 local ts_refactor = require('config/treesitter/refactor')
 
 -- Treesitter config
-require('nvim-treesitter.configs').setup {
+require('nvim-treesitter.configs').setup({
   ensure_installed = 'maintained',
 
   -- Consistent syntax highlighting
@@ -29,5 +29,4 @@ require('nvim-treesitter.configs').setup {
   textobjects = ts_textobjects,
 
   playground = ts_playground,
-
-}
+})

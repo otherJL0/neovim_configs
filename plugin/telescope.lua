@@ -22,16 +22,16 @@ local center_list = themes.get_dropdown({
 finders.registers = function()
   local opts = vim.deepcopy(center_list)
 
-  require'telescope.builtin'.registers(opts)
+  require('telescope.builtin').registers(opts)
 end
 -- Find in neovim config with center theme
 finders.file_browser = function()
   local opts = vim.deepcopy(center_list)
 
-  require'telescope.builtin'.file_browser(opts)
+  require('telescope.builtin').file_browser(opts)
 end
 
-require('telescope').setup {
+require('telescope').setup({
   config = {
     prompt_position = 'top',
     layout_strategy = 'horizontal',
@@ -43,7 +43,7 @@ require('telescope').setup {
       },
     },
   },
-}
+})
 
 local ivy_find_files = function()
   local opts = {
@@ -80,7 +80,6 @@ local ivy_git_status = function()
   builtin.git_status(themes.get_ivy({}))
 end
 local ivy_git_commits = function()
-
   builtin.git_commits(themes.get_ivy({}))
 end
 
@@ -89,17 +88,17 @@ local dropdown_buffers = function()
 end
 
 -- nnoremap { '<C-F>', builtin.find_files }
-nnoremap { '<C-F>', ivy_find_files }
+nnoremap({ '<C-F>', ivy_find_files })
 -- nnoremap { '<C-G>', builtin.live_grep }
-nnoremap { '<C-G>', ivy_live_grep }
-nnoremap { '""', finders.registers }
-nnoremap { '<C-H>', ivy_help }
-inoremap { '<C-R>', ivy_lsp_implementations }
-nnoremap { 'gI', ivy_lsp_implementations }
-nnoremap { ' gbu', ivy_git_bcommits }
-nnoremap { ' gbr', ivy_git_branches }
-nnoremap { ' g?', ivy_git_status }
-nnoremap { ' Ghis', ivy_git_commits }
-nnoremap { ' v', finders.file_browser }
-nnoremap { ' V', dropdown_buffers }
-nnoremap { ' sql', sqls.telescope }
+nnoremap({ '<C-G>', ivy_live_grep })
+nnoremap({ '""', finders.registers })
+nnoremap({ '<C-H>', ivy_help })
+inoremap({ '<C-R>', ivy_lsp_implementations })
+nnoremap({ 'gI', ivy_lsp_implementations })
+nnoremap({ ' gbu', ivy_git_bcommits })
+nnoremap({ ' gbr', ivy_git_branches })
+nnoremap({ ' g?', ivy_git_status })
+nnoremap({ ' Ghis', ivy_git_commits })
+nnoremap({ ' v', finders.file_browser })
+nnoremap({ ' V', dropdown_buffers })
+nnoremap({ ' sql', sqls.telescope })

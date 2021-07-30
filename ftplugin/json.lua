@@ -36,4 +36,4 @@ local function get_json_full_path()
   vim.notify(vim.inspect(full_path))
 end
 
-nnoremap { '  k', get_json_full_path }
+nnoremap({ '  k', get_json_full_path })

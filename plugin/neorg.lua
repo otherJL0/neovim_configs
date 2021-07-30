@@ -1,4 +1,4 @@
-require('neorg').setup {
+require('neorg').setup({
   -- Tell Neorg what modules to load
   load = {
     ['core.defaults'] = {}, -- Load all the default modules
@@ -13,7 +13,7 @@ require('neorg').setup {
       config = { workspaces = { my_workspace = '~/neorg' } },
     },
   },
-}
+})
 
 local parser_configs = require('nvim-treesitter.parsers').get_parser_configs()
 
